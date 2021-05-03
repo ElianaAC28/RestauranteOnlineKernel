@@ -4,10 +4,16 @@
  * and open the template in the editor.
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
+import co.edu.unicauca.microkernel.restaurante.core.access.Factory;
+import co.edu.unicauca.microkernel.restaurante.core.services.ComponenteService;
+import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.successMessage;
+import co.edu.unicauca.microkernel.restaurante.commons.entities.Componente;
+import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IComponenteRepository;
+
 
 /**
  *
- * @author dania
+ * @author SoftwareTeam
  */
 public class AdminCompo extends javax.swing.JFrame {
 
@@ -35,13 +41,13 @@ public class AdminCompo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        textId = new javax.swing.JTextField();
+        textNombre = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbType = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -91,17 +97,22 @@ public class AdminCompo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, 30));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 130, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 130, -1));
+        getContentPane().add(textId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 130, -1));
+        getContentPane().add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 130, -1));
 
-        jButton2.setBackground(new java.awt.Color(102, 0, 0));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Agregar");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 339, 70, 30));
+        btnAgregar.setBackground(new java.awt.Color(102, 0, 0));
+        btnAgregar.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregar.setText("Agregar");
+        btnAgregar.setBorder(null);
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 339, 70, 30));
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jButton1.setText("Salir");
@@ -133,10 +144,10 @@ public class AdminCompo extends javax.swing.JFrame {
         jButton6.setText("Administrador");
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, 30));
 
-        jComboBox1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(153, 0, 51));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entrada", "Principio", "Bebida" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 120, 30));
+        cbType.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        cbType.setForeground(new java.awt.Color(153, 0, 51));
+        cbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entrada", "Principio", "Bebida" }));
+        getContentPane().add(cbType, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 120, 30));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 51));
@@ -183,6 +194,47 @@ public class AdminCompo extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+        int Idtipocomponente;
+        IComponenteRepository service= Factory.getInstance().getRepositoryComponente();
+        
+        ComponenteService componenteService= new ComponenteService(service);
+        Idtipocomponente = TipoComponente();
+        Componente componente = new Componente();
+        
+        componente.setIdComponente(Integer.parseInt(textId.getText()));
+        componente.setIdRestaurante(1); //revisar para enviar el id restaurante 
+        componente.setNombreComponente(textNombre.getText());
+        componente.setTipoComponente(cbType.getSelectedItem().toString());
+        componente.setIdtipoComponente(Idtipocomponente);
+        
+        try {
+            String response = componenteService.createComponente(componente);
+             successMessage("Componente " + response + " agregado con exito.", "Atención");
+             clearCotronls();
+             
+        } catch (Exception ex) {
+                System.out.println(ex);
+                successMessage(ex.getMessage() + "Error", "Atención");
+        }
+    }                                           
+    private void clearCotronls() {
+        textId.setText("");
+        textNombre.setText("");
+    }
+    private int TipoComponente(){
+        if(cbType.getSelectedItem().toString() == "Entrada")
+            return 1;
+        if(cbType.getSelectedItem().toString() == "Principio")
+            return 2;
+        if(cbType.getSelectedItem().toString() == "Proteína")
+            return 3;
+        if (cbType.getSelectedItem().toString() == "Bebida")
+            return 4;
+        return 0;
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -222,13 +274,13 @@ public class AdminCompo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JComboBox<String> cbType;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -237,7 +289,7 @@ public class AdminCompo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField textId;
+    private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables
 }

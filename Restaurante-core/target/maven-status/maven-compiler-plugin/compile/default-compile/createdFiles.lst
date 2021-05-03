@@ -39,6 +39,7 @@ co\edu\unicauca\microkernel\restaurante\core\app\Usuario$1.class
 co\edu\unicauca\microkernel\restaurante\core\services\Messages.class
 co\edu\unicauca\microkernel\restaurante\core\services\ComponenteService.class
 co\edu\unicauca\microkernel\restaurante\core\access\ComponenteRepositoryImplMysql.class
+co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\Contactanos$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzo$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$1.class
