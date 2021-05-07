@@ -21,51 +21,54 @@ import javax.swing.JOptionPane;
  *
  * @author SoftwareTeam
  */
-public class AlmuerzoRepositoryImplMysql implements IAlmuerzoRepository {
+public class  AlmuerzoRepositoryImplMysql implements IAlmuerzoRepository {
 
     /**
      * Conección con Mysql
      */
     public Connection conn;
-    public Connection conn2;
+ public Connection conn2;
+
+  /*  public String findAlmuerzo(Almuerzo parAlmuerzo) {
+        return "s";
+    }
+     public String createAlmuerzoID(Almuerzo parAlmuerzo){
+        return "a";
+    }
+   */
 
     /**
-     * Busca almuerzo en la base de datos
+     * Lista almuerzo en la base de datos
      *
      * @param idAlmuerzo
      * @return
      */
-    @Override
-    public Almuerzo findAlmuerzo(String idAlmuerzo) {
-
-        Almuerzo almuerzo = null;
-
+    public List<Almuerzo> findAllAlmuerzos() {
+        List<Almuerzo> objList = new ArrayList<Almuerzo>();
         this.connect();
+        Almuerzo objAlmuerzo = new Almuerzo();
         try {
 
-            String sql = "SELECT * from Almuerzo;";
+            String sql = "SELECT * FROM ALMUERZO ;";
+
             PreparedStatement pstmt = conn.prepareStatement(sql);
             ResultSet res = pstmt.executeQuery();
-            pstmt.setString(1, idAlmuerzo);
+            while (res.next()) {
 
-            if (res.next()) {
+                objAlmuerzo.setIdAlmuerzo(res.getString("ALMUID"));
+                objAlmuerzo.setRestId(res.getString("RESTID"));
+                objAlmuerzo.setCostoAlm(res.getString("ALMUCOSTO"));
 
-                /* almuerzo = new Almuerzo();
+                objList.add(objAlmuerzo);
+                objAlmuerzo = new Almuerzo();
 
-                almuerzo.setIdAlmuerzo(res.getString("ALMUID"));
-                almuerzo.setEntradaAlm(res.getString("ALMUENTRADA"));
-                almuerzo.setPrincipioAlm(res.getString("ALMUPRINCIPIO"));
-                almuerzo.setBebidaAlm(res.getString("ALMUBEBIDA"));
-                almuerzo.setCostoAlm(res.getString("ALMUCOSTO"));*/
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe un almuerzo con ese Id");
             }
-            pstmt.close();
             this.disconnect();
+
         } catch (SQLException ex) {
-            Logger.getLogger(UsuarioRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al consultar almuerzo de la base de datos", ex);
+            Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al consultar el restaurante de la base de datos", ex);
         }
-        return almuerzo;
+        return objList;
     }
 
     /**
@@ -80,6 +83,7 @@ public class AlmuerzoRepositoryImplMysql implements IAlmuerzoRepository {
             String pwd = Utilities.loadProperty("server.db.password");
             conn = DriverManager.getConnection(url, username, pwd);
             conn2 = DriverManager.getConnection(url, username, pwd);
+
             return 1;
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al consultar almuerzo de la base de datos", ex);
@@ -94,127 +98,23 @@ public class AlmuerzoRepositoryImplMysql implements IAlmuerzoRepository {
         try {
             conn.close();
             conn2.close();
+
         } catch (SQLException ex) {
             Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.FINER, "Error al cerrar Connection", ex);
         }
     }
 
     @Override
-    /**
-     * Actualiza almuerzo
-     *
-     * @param idAlmuerzo
-     * @return
-     */
-    public Almuerzo updateAlmuerzo(String idAlmuerzo) {
-        Almuerzo almuerzo = null;
-
-        /*this.connect();
-        try {
-
-            String sql = "UPDATE ALMUERZO SET ALMUENTRADA='" + almuerzo.getEntradaAlm() + "',ALMUPRINCIPIO='" 
-                    + almuerzo.getPrincipioAlm()+"',ALMUPROTEINA='"
-                    +almuerzo.getProteinaAlm()+"',ALMUBEBIDA='"
-                    +almuerzo.getBebidaAlm()+"' WHERE ALMUIDE = '"+almuerzo.getIdAlmuerzo()+"';'";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            ResultSet res = pstmt.executeQuery();
-            pstmt.setString(1, idAlmuerzo);
-
-            if (res.next()) {
-
-                almuerzo = new Almuerzo();
-
-                almuerzo.setIdAlmuerzo(res.getString("ALMUID"));
-                almuerzo.setEntradaAlm(res.getString("ALMUENTRADA"));
-                almuerzo.setPrincipioAlm(res.getString("ALMUPRINCIPIO"));
-                almuerzo.setBebidaAlm(res.getString("ALMUBEBIDA"));
-                almuerzo.setCostoAlm(res.getString("ALMUCOSTO"));
-
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe un almuerzo con ese Id");
-            }
-            pstmt.close();
-   
-            this.disconnect();
-        } catch (SQLException ex) {
-         Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al consultar el restaurante de la base de datos", ex);
-        }*/
-        return almuerzo;
-    }
-
-    /**
-     * Lista almuerzo en la base de datos
-     * @param idAlmuerzo
-     * @return
-     */
-    public List<Almuerzo> findAllAlmuerzos() {
-        List<Almuerzo> objList = new ArrayList<Almuerzo>();
-        /*this.connect();
-        Almuerzo objAlmuerzo = new Almuerzo();
-        try {
-
-            String sql = "SELECT * FROM ALMUERZO ;";
-
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            ResultSet res = pstmt.executeQuery();
-            while (res.next()) {
-
-                objAlmuerzo.setEntradaAlm(res.getString("ALMUENTRADA"));
-                objAlmuerzo.setPrincipioAlm(res.getString("ALMUPRINCIPIO"));
-                objAlmuerzo.setProteinaAlm(res.getString("ALMUPROTEINA"));
-                objAlmuerzo.setBebidaAlm(res.getString("ALMUBEBIDA"));
-                objAlmuerzo.setCostoAlm(res.getString("ALMUCOSTO"));
-                
-                objList.add(objAlmuerzo);
-                objAlmuerzo = new Almuerzo();
-
-            }
-            this.disconnect();
-
-} catch (SQLException ex) {
-            Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al consultar el restaurante de la base de datos", ex);
-        }*/
-        return objList;
-    }
-     /**
-     * Crea almuerzo en la base de datos
-     * @param parAlmuerzo
-     * @return
-     */
-    @Override
-    public String createAlmuerzoID(Almuerzo parAlmuerzo) {
-        try {
-            this.connect();
-            String sql = "INSERT INTO ALMUERZO (ALMUID, RESTID, ALMUCOSTO) VALUES (?,?,?) ";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, parAlmuerzo.getIdAlmuerzo());
-            pstmt.setString(2, parAlmuerzo.getRestId());
-            pstmt.setString(3, parAlmuerzo.getCostoAlm());
-            pstmt.executeUpdate();
-
-            pstmt.close();
-            this.disconnect();
-        } catch (SQLException ex) {
-            Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al insertar el registro", ex);
-        }
-        return (parAlmuerzo.getIdAlmuerzo());
-
-    }
-     /**
-     * Crea almuerzo en la base de datos
-     * @param parAlmuerzo
-     * @return
-     */
-    @Override
     public String createAlmuerzo(Almuerzo parAlmuerzo) {
-        try {
+
+try {
             this.connect();
 
-            String sql2 = "INSERT INTO TIENE (ALMUID, COMPID, COMPIDTIPO) VALUES (?,?,?)";
+            String sql2 = "INSERT INTO ALMUERZO (ALMUID, RESTID, ALMUCOSTO) VALUES (?,?,?)";
             PreparedStatement pstmt2 = conn.prepareStatement(sql2);
             pstmt2.setString(1, parAlmuerzo.getIdAlmuerzo());
-            pstmt2.setString(2, parAlmuerzo.getComp());
-            pstmt2.setString(3, parAlmuerzo.getIdComp());
+            pstmt2.setString(2, parAlmuerzo.getRestId());
+            pstmt2.setString(3, parAlmuerzo.getCostoAlm());
 
             pstmt2.executeUpdate();
 
@@ -224,6 +124,6 @@ public class AlmuerzoRepositoryImplMysql implements IAlmuerzoRepository {
             Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al insertar el registro", ex);
         }
         return (parAlmuerzo.getIdAlmuerzo());
-
     }
+ 
 }

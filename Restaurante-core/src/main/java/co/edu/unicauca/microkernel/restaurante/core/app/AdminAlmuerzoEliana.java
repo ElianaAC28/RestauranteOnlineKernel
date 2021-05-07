@@ -5,19 +5,39 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import co.edu.unicauca.microkernel.restaurante.commons.entities.Almuerzo;
+import co.edu.unicauca.microkernel.restaurante.commons.entities.Componente;
+import co.edu.unicauca.microkernel.restaurante.commons.infra.JsonError;
+import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IAlmuerzoRepository;
+import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IComponenteRepository;
+import co.edu.unicauca.microkernel.restaurante.core.access.Factory;
+import co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoService;
+import co.edu.unicauca.microkernel.restaurante.core.services.ComponenteService;
+import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.successMessage;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author dania
  */
-public class AdminAlmuerzo extends javax.swing.JFrame {
+public class AdminAlmuerzoEliana extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminComponentes
      */
-    public AdminAlmuerzo() {
+    List<Componente> objListComponentes = new ArrayList<Componente>();
+    String tipoid;
+    public AdminAlmuerzoEliana() throws Exception {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Administrador Almuerzo");
+         setLocationRelativeTo(null); //centrar la ventana
+       
+        mostrar();
+        
     }
 
     /**
@@ -35,25 +55,27 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txtCosto = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        Costo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbxEntrada = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbxPrincipio = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cbxProteina = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        cbxBebida = new javax.swing.JComboBox<>();
         btnSeleccionarImg = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        txtAlmu = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtRestId = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,13 +91,13 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Admin");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(100, 110, 104, 51);
+        jLabel3.setBounds(160, 70, 104, 51);
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel5.setText("Añadir almuerzp");
+        jLabel5.setText("Agregar almuerzo");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(100, 160, 124, 23);
+        jLabel5.setBounds(100, 130, 160, 23);
 
         jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(153, 0, 0));
@@ -104,18 +126,8 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         });
         jPanel1.add(jButton4);
         jButton4.setBounds(80, 390, 187, 27);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(180, 190, 200, 20);
-
-        jButton2.setBackground(new java.awt.Color(102, 0, 0));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Agregar");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(jButton2);
-        jButton2.setBounds(470, 360, 70, 30);
+        jPanel1.add(txtCosto);
+        txtCosto.setBounds(160, 220, 220, 20);
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jButton1.setText("Salir");
@@ -150,33 +162,22 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(jButton6);
         jButton6.setBounds(500, 60, 125, 29);
 
-        jComboBox1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(153, 0, 51));
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(300, 220, 80, 23);
-
-        jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel7.setText("Id Almuerzo:");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(100, 190, 90, 20);
-
-        jLabel6.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel6.setText("Seleccionar tipo de componente:");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(100, 220, 230, 20);
+        Costo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        Costo.setForeground(new java.awt.Color(153, 0, 51));
+        Costo.setText("Costo:");
+        jPanel1.add(Costo);
+        Costo.setBounds(100, 220, 100, 20);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
         jLabel4.setText("Id:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(-30, 0, 16, 17);
+        jLabel4.setBounds(-30, 0, 16, 18);
 
-        jComboBox2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(153, 0, 51));
-        jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(160, 250, 220, 23);
+        cbxEntrada.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        cbxEntrada.setForeground(new java.awt.Color(153, 0, 51));
+        jPanel1.add(cbxEntrada);
+        cbxEntrada.setBounds(160, 250, 220, 26);
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 0, 51));
@@ -188,34 +189,34 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(153, 0, 51));
         jLabel9.setText("Principio:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(100, 280, 230, 20);
+        jLabel9.setBounds(100, 280, 55, 20);
 
-        jComboBox3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jComboBox3.setForeground(new java.awt.Color(153, 0, 51));
-        jPanel1.add(jComboBox3);
-        jComboBox3.setBounds(160, 280, 220, 23);
+        cbxPrincipio.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        cbxPrincipio.setForeground(new java.awt.Color(153, 0, 51));
+        jPanel1.add(cbxPrincipio);
+        cbxPrincipio.setBounds(160, 280, 220, 26);
 
         jLabel10.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 0, 51));
         jLabel10.setText("Proteina: ");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(100, 310, 230, 20);
+        jLabel10.setBounds(100, 310, 60, 20);
 
-        jComboBox4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jComboBox4.setForeground(new java.awt.Color(153, 0, 51));
-        jPanel1.add(jComboBox4);
-        jComboBox4.setBounds(160, 310, 220, 23);
+        cbxProteina.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        cbxProteina.setForeground(new java.awt.Color(153, 0, 51));
+        jPanel1.add(cbxProteina);
+        cbxProteina.setBounds(160, 310, 220, 26);
 
         jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(153, 0, 51));
         jLabel11.setText("Bebida: ");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(100, 340, 230, 20);
+        jLabel11.setBounds(100, 340, 60, 20);
 
-        jComboBox5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jComboBox5.setForeground(new java.awt.Color(153, 0, 51));
-        jPanel1.add(jComboBox5);
-        jComboBox5.setBounds(160, 340, 220, 23);
+        cbxBebida.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        cbxBebida.setForeground(new java.awt.Color(153, 0, 51));
+        jPanel1.add(cbxBebida);
+        cbxBebida.setBounds(160, 340, 220, 26);
 
         btnSeleccionarImg.setBackground(new java.awt.Color(153, 0, 51));
         btnSeleccionarImg.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -227,11 +228,40 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSeleccionarImg);
-        btnSeleccionarImg.setBounds(420, 330, 145, 25);
+        btnSeleccionarImg.setBounds(430, 310, 145, 27);
+
+        btnAgregar.setBackground(new java.awt.Color(102, 0, 0));
+        btnAgregar.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregar.setText("Agregar");
+        btnAgregar.setActionCommand("");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregar);
+        btnAgregar.setBounds(440, 350, 125, 29);
+        jPanel1.add(txtAlmu);
+        txtAlmu.setBounds(180, 160, 200, 20);
 
         lblImagen.setForeground(new java.awt.Color(153, 0, 0));
         jPanel1.add(lblImagen);
-        lblImagen.setBounds(390, 180, 240, 140);
+        lblImagen.setBounds(390, 160, 240, 140);
+
+        jLabel13.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel13.setText("Restaurante id:");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(100, 190, 100, 20);
+
+        jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel12.setText("Id Almuerzo:");
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(100, 160, 90, 20);
+        jPanel1.add(txtRestId);
+        txtRestId.setBounds(200, 190, 180, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -267,25 +297,37 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnSeleccionarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarImgActionPerformed
-        // TODO add your handling code here:
-
-        /*String Ruta = "";
-        JFileChooser jFileChooser = new JFileChooser();
-        FileNameExtensionFilter filtrado = new FileNameExtensionFilter("JGP, PNG & GIF", "jpg", "png", "gif");
-        jFileChooser.setFileFilter(filtrado);
-
-        int respuesta = jFileChooser.showOpenDialog(this);
-
-        if (respuesta == JFileChooser.APPROVE_OPTION) {
-            Ruta = jFileChooser.getSelectedFile().getPath();
-
-            Image mImagen = new ImageIcon(Ruta).getImage();
-            ImageIcon mIcono = new ImageIcon(mImagen.getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_SMOOTH));
-            lblImagen.setIcon(mIcono);
-
-        }*/
+      
     }//GEN-LAST:event_btnSeleccionarImgActionPerformed
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+        
+        IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo();
+        AlmuerzoService objService= new AlmuerzoService(service);
+        Almuerzo objAlmu = new Almuerzo();
+        
+        objAlmu.setIdAlmuerzo(txtAlmu.getText());
+        objAlmu.setRestId(txtRestId.getText());
+        objAlmu.setCostoAlm(txtCosto.getText());
+        
+        try {
+            String response = objService.createAlmuerzo(objAlmu);
+             successMessage("Almuerzo" + response + " agregado con exito.", "Atención");
+             clearCotronls();
+             
+        } catch (Exception ex) {
+                System.out.println(ex);
+                successMessage(ex.getMessage() + "Error", "Atención");
+        }
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+     private void clearCotronls() {
+        txtAlmu.setText("");
+        txtRestId.setText("");
+        txtCosto.setText("");
+
+    }
     /**
      * @param args the command line arguments
      */
@@ -303,14 +345,18 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminAlmuerzo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlmuerzoEliana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminAlmuerzo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlmuerzoEliana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminAlmuerzo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlmuerzoEliana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminAlmuerzo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlmuerzoEliana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -319,37 +365,76 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminAlmuerzo().setVisible(true);
+                try {
+                    new AdminAlmuerzoEliana().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(AdminAlmuerzoEliana.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
+     public void mostrar() throws Exception {
+         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
+        ComponenteService componenteService = new ComponenteService(service);
+
+        Componente objComponente = new Componente();
+
+        objListComponentes = componenteService.listComponentes();
+
+        for (int i = 0; i < objListComponentes.size(); i++) {
+
+            if ("Entrada".equals(objListComponentes.get(i).getTipoComponente())) {
+                String componenteMenu = objListComponentes.get(i).getNombreComponente();
+                cbxEntrada.addItem(componenteMenu);
+
+            }
+            if ("Principio".equals(objListComponentes.get(i).getTipoComponente())) {
+                String componenteMenu = objListComponentes.get(i).getNombreComponente();
+                cbxPrincipio.addItem(componenteMenu);
+            }
+            if ("Proteina".equals(objListComponentes.get(i).getTipoComponente()) || "Proteína".equals(objListComponentes.get(i).getTipoComponente())) {
+                String componenteMenu = objListComponentes.get(i).getNombreComponente();
+                cbxProteina.addItem(componenteMenu);
+            }
+            if ("Bebida".equals(objListComponentes.get(i).getTipoComponente())) {
+                String componenteMenu = objListComponentes.get(i).getNombreComponente();
+                cbxBebida.addItem(componenteMenu);
+            }
+
+        }
+     }
+
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Costo;
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnSeleccionarImg;
+    private javax.swing.JComboBox<String> cbxBebida;
+    private javax.swing.JComboBox<String> cbxEntrada;
+    private javax.swing.JComboBox<String> cbxPrincipio;
+    private javax.swing.JComboBox<String> cbxProteina;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblImagen;
+    private javax.swing.JTextField txtAlmu;
+    private javax.swing.JTextField txtCosto;
+    private javax.swing.JTextField txtRestId;
     // End of variables declaration//GEN-END:variables
 }

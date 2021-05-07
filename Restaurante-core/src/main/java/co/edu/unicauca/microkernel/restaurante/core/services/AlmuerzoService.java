@@ -24,13 +24,27 @@ public class AlmuerzoService {
         this.repositoryAlm = repositoryAlm;
     }
 
-public Almuerzo findAlmuerzo(String idAlmuerzo) throws Exception {
-        return repositoryAlm.findAlmuerzo(idAlmuerzo);
+    public AlmuerzoService() {
     }
-public Almuerzo updateAlmuerzo(String idAlmuerzo) throws Exception {
-        return repositoryAlm.updateAlmuerzo(idAlmuerzo);
+
+       /**
+     * Crea un nuevo componente
+     */
+    public String createAlmuerzo(Almuerzo parAlmuerzo) {
+        List<JsonError> errors = new ArrayList<>();
+        if (parAlmuerzo.getIdAlmuerzo()== null || parAlmuerzo.getRestId()==null || parAlmuerzo.getCostoAlm().isEmpty()
+                ) {
+            errors.add(new JsonError("400", "BAD_REQUEST", "LA INFORMACION  ES OBLIGATORIA "));
+        }
+        if (!errors.isEmpty()) {
+            Gson gson = new Gson();
+            String errorJson = gson.toJson(errors);
+            return errorJson;
+        }
+        return repositoryAlm.createAlmuerzo(parAlmuerzo);
     }
-  /**
+    
+     /**
      * Metodo encargado de obtener una lista de todos los componentes
      * existentes.
      *
@@ -43,42 +57,6 @@ public Almuerzo updateAlmuerzo(String idAlmuerzo) throws Exception {
             }
         }
         return repositoryAlm.findAllAlmuerzos();
-    }
-    
-    
-    
-     /**
-      *Crea el identificador de Almuerzo 
-      * 
-      **/
-     public String createAlmuerzoID(Almuerzo parAlmuerzo) {
-        List<JsonError> errors = new ArrayList<>();
-        if (parAlmuerzo.getIdAlmuerzo().isEmpty() || parAlmuerzo.getRestId().isEmpty() || parAlmuerzo.getCostoAlm().isEmpty()){
-            errors.add(new JsonError("400", "BAD_REQUEST", "LA INFORMACION X ES OBLIGATORIA "));
-        }
-        if (!errors.isEmpty()) {
-            Gson gson = new Gson();
-            String errorJson = gson.toJson(errors);
-            return errorJson;
-        }
-        return repositoryAlm.createAlmuerzoID(parAlmuerzo);
-    }
-     
-     /**
-      *Crea Almuerzo 
-      * 
-      **/
-     public String createAlmuerzo(Almuerzo parAlmuerzo) {
-        List<JsonError> errors = new ArrayList<>();
-        if (parAlmuerzo.getIdAlmuerzo().isEmpty() || parAlmuerzo.getComp().isEmpty() || parAlmuerzo.getIdComp().isEmpty()){
-            errors.add(new JsonError("400", "BAD_REQUEST", "LA INFORMACION X ES OBLIGATORIA "));
-        }
-        if (!errors.isEmpty()) {
-            Gson gson = new Gson();
-            String errorJson = gson.toJson(errors);
-            return errorJson;
-        }
-        return repositoryAlm.createAlmuerzo(parAlmuerzo);
     }
    
 }

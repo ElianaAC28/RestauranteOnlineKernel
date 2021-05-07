@@ -13,21 +13,14 @@ public class Almuerzo {
 
     String idAlmuerzo;
     String restId;
-    String comp;
-    String idComp;
     String costoAlm;
 
-    /**
-     *
-     */
     public Almuerzo() {
     }
 
-    public Almuerzo(String idAlmuerzo, String restId, String comp, String idComp, String costoAlm) {
+    public Almuerzo(String idAlmuerzo, String restId, String costoAlm) {
         this.idAlmuerzo = idAlmuerzo;
         this.restId = restId;
-        this.comp = comp;
-        this.idComp = idComp;
         this.costoAlm = costoAlm;
     }
 
@@ -47,22 +40,6 @@ public class Almuerzo {
         this.restId = restId;
     }
 
-    public String getComp() {
-        return comp;
-    }
-
-    public void setComp(String comp) {
-        this.comp = comp;
-    }
-
-    public String getIdComp() {
-        return idComp;
-    }
-
-    public void setIdComp(String idComp) {
-        this.idComp = idComp;
-    }
-
     public String getCostoAlm() {
         return costoAlm;
     }
@@ -70,6 +47,8 @@ public class Almuerzo {
     public void setCostoAlm(String costoAlm) {
         this.costoAlm = costoAlm;
     }
+
+    
 
     
 }

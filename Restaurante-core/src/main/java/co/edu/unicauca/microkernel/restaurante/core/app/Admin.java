@@ -5,6 +5,9 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author dania
@@ -82,6 +85,11 @@ public class Admin extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Administrador");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, 30));
 
         jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -171,7 +179,12 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        AdminAlmuerzo adalmu = new AdminAlmuerzo();
+        AdminAlmuerzoEliana adalmu = null;
+        try {
+            adalmu = new AdminAlmuerzoEliana();
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         adalmu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -181,6 +194,10 @@ public class Admin extends javax.swing.JFrame {
         adcom.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
