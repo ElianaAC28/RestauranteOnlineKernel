@@ -5,6 +5,12 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import co.edu.unicauca.microkernel.restaurante.commons.entities.Componente;
+import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IComponenteRepository;
+import co.edu.unicauca.microkernel.restaurante.core.access.Factory;
+import co.edu.unicauca.microkernel.restaurante.core.services.ComponenteService;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,6 +27,12 @@ public class Admin extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Administrador");
+        try {
+            llenarTabla();
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
@@ -233,6 +245,31 @@ public class Admin extends javax.swing.JFrame {
                 new Admin().setVisible(true);
             }
         });
+    }
+    
+    private void llenarTabla() throws Exception {
+        IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
+        ComponenteService componenteService = new ComponenteService(service);
+
+        //Componente objComponente = new Componente();
+        List<Componente> objListComponentes = new ArrayList<Componente>();
+
+        objListComponentes = componenteService.listComponentes();
+
+        String matriz[][] = new String[objListComponentes.size()][3];
+
+        for (int i = 0; i < objListComponentes.size(); i++) {
+            matriz[i][0] = objListComponentes.get(i).getIdComponente()+"";
+            matriz[i][1] = objListComponentes.get(i).getNombreComponente();
+            matriz[i][2] = objListComponentes.get(i).getTipoComponente();
+        }
+
+        tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{
+                     "ID","Nombre", "Tipo"
+                }
+        ));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

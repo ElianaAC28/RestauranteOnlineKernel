@@ -163,7 +163,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         jButton6.setBounds(500, 60, 125, 29);
 
         Costo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        Costo.setForeground(new java.awt.Color(153, 0, 51));
+        Costo.setForeground(new java.awt.Color(153, 0, 0));
         Costo.setText("Costo:");
         jPanel1.add(Costo);
         Costo.setBounds(100, 220, 100, 20);
@@ -172,21 +172,21 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
         jLabel4.setText("Id:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(-30, 0, 16, 18);
+        jLabel4.setBounds(-30, 0, 16, 17);
 
         cbxEntrada.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxEntrada.setForeground(new java.awt.Color(153, 0, 51));
         jPanel1.add(cbxEntrada);
-        cbxEntrada.setBounds(160, 250, 220, 26);
+        cbxEntrada.setBounds(160, 250, 220, 23);
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel8.setForeground(new java.awt.Color(153, 0, 0));
         jLabel8.setText("Entrada:");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(100, 250, 230, 20);
 
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel9.setForeground(new java.awt.Color(153, 0, 0));
         jLabel9.setText("Principio:");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(100, 280, 55, 20);
@@ -194,10 +194,10 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         cbxPrincipio.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxPrincipio.setForeground(new java.awt.Color(153, 0, 51));
         jPanel1.add(cbxPrincipio);
-        cbxPrincipio.setBounds(160, 280, 220, 26);
+        cbxPrincipio.setBounds(160, 280, 220, 23);
 
         jLabel10.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel10.setForeground(new java.awt.Color(153, 0, 0));
         jLabel10.setText("Proteina: ");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(100, 310, 60, 20);
@@ -205,10 +205,10 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         cbxProteina.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxProteina.setForeground(new java.awt.Color(153, 0, 51));
         jPanel1.add(cbxProteina);
-        cbxProteina.setBounds(160, 310, 220, 26);
+        cbxProteina.setBounds(160, 310, 220, 23);
 
         jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel11.setForeground(new java.awt.Color(153, 0, 0));
         jLabel11.setText("Bebida: ");
         jPanel1.add(jLabel11);
         jLabel11.setBounds(100, 340, 60, 20);
@@ -216,9 +216,9 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         cbxBebida.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxBebida.setForeground(new java.awt.Color(153, 0, 51));
         jPanel1.add(cbxBebida);
-        cbxBebida.setBounds(160, 340, 220, 26);
+        cbxBebida.setBounds(160, 340, 220, 23);
 
-        btnSeleccionarImg.setBackground(new java.awt.Color(153, 0, 51));
+        btnSeleccionarImg.setBackground(new java.awt.Color(102, 0, 0));
         btnSeleccionarImg.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         btnSeleccionarImg.setForeground(new java.awt.Color(255, 255, 255));
         btnSeleccionarImg.setText("Seleccionar imagen");
@@ -228,7 +228,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSeleccionarImg);
-        btnSeleccionarImg.setBounds(430, 310, 145, 27);
+        btnSeleccionarImg.setBounds(430, 310, 145, 25);
 
         btnAgregar.setBackground(new java.awt.Color(102, 0, 0));
         btnAgregar.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -250,13 +250,13 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         lblImagen.setBounds(390, 160, 240, 140);
 
         jLabel13.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel13.setForeground(new java.awt.Color(153, 0, 0));
         jLabel13.setText("Restaurante id:");
         jPanel1.add(jLabel13);
         jLabel13.setBounds(100, 190, 100, 20);
 
         jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
         jLabel12.setText("Id Almuerzo:");
         jPanel1.add(jLabel12);
         jLabel12.setBounds(100, 160, 90, 20);
@@ -374,7 +374,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         });
     }
      public void mostrar() throws Exception {
-         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
+        IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
 
         Componente objComponente = new Componente();
