@@ -95,6 +95,29 @@ public class ComponenteRepositoryImplMysql implements IComponenteRepository {
         }
         return objList;
     }
+    
+    @Override
+    public List<Componente> almuerzoComponentes(int almuerzo) {
+        List<Componente> objList = new ArrayList<Componente>();
+        this.connect();
+        Componente objComponente = new Componente();
+        try {
+            String sql = "SELECT tiene.COMPID, COMPNOMBRE,COMPTIPO FROM componente inner join tiene on tiene.COMPID = componente.COMPID where tiene.ALMUID ="+ almuerzo+";";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet comp = pstmt.executeQuery();
+            while (comp.next()) {
+                objComponente.setIdComponente(comp.getInt("COMPID"));
+                objComponente.setNombreComponente(comp.getString("COMPNOMBRE"));
+                objComponente.setTipoComponente(comp.getString("COMPTIPO"));
+                objList.add(objComponente);
+                objComponente = new Componente();
+            }
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(ComponenteRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al consultar el restaurante de la base de datos", ex);
+        }
+        return objList;
+    }
 
     /**
      * Metodo que se encarga de realizar la conexion con la base de datos.

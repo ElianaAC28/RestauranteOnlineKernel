@@ -104,8 +104,8 @@ public class  AlmuerzoRepositoryImplMysql implements IAlmuerzoRepository {
         }
     }
 
-    @Override
-    public String createAlmuerzo(Almuerzo parAlmuerzo) {
+@Override
+public String createAlmuerzo(Almuerzo parAlmuerzo) {
 
 try {
             this.connect();
@@ -122,6 +122,27 @@ try {
             this.disconnect();
         } catch (SQLException ex) {
             Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al insertar el registro", ex);
+        }
+        return (parAlmuerzo.getIdAlmuerzo());
+    }
+@Override
+public String updateAlmuerzo(Almuerzo parAlmuerzo) {
+
+try {
+            this.connect();
+
+            String sql2 = "UPDATE TIENE SET COMPID = ? WHERE ALMUID = ? AND COMPID = ?";
+            PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+            pstmt2.setString(1, parAlmuerzo.getCostoAlm());
+            pstmt2.setString(2, parAlmuerzo.getIdAlmuerzo());
+            pstmt2.setString(3, parAlmuerzo.getRestId());
+
+            pstmt2.executeUpdate();
+
+            pstmt2.close();
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al actualizar el registro", ex);
         }
         return (parAlmuerzo.getIdAlmuerzo());
     }

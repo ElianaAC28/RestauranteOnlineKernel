@@ -64,4 +64,13 @@ public class ComponenteService {
         }
         return repoComponente.findAllComponentes();
     }
+    public List<Componente> listComponentesAlmuerzo(int almuerzo) {
+        List<JsonError> errors = new ArrayList<>();
+        if (!repoComponente.almuerzoComponentes(almuerzo).isEmpty()) {
+            if (!errors.isEmpty()) {
+                errors.add(new JsonError("400", "BAD_REQUEST", "ERROR AL GENERAR PEDIDO SQL"));
+            }
+        }
+        return repoComponente.almuerzoComponentes(almuerzo);
+    }
 }

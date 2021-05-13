@@ -58,5 +58,18 @@ public class AlmuerzoService {
         }
         return repositoryAlm.findAllAlmuerzos();
     }
+
+    public String updateAlmuerzo(Almuerzo parAlmuerzo) {
+        List<JsonError> errors = new ArrayList<>();
+        if (parAlmuerzo.getIdAlmuerzo()== null || parAlmuerzo.getRestId()==null ) {
+            errors.add(new JsonError("400", "BAD_REQUEST", "LA INFORMACION  ES OBLIGATORIA "));
+        }
+        if (!errors.isEmpty()) {
+            Gson gson = new Gson();
+            String errorJson = gson.toJson(errors);
+            return errorJson;
+        }
+        return repositoryAlm.updateAlmuerzo(parAlmuerzo);
+    }
    
 }
