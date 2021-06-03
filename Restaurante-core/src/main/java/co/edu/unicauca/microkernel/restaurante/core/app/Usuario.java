@@ -5,7 +5,19 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import co.edu.unicauca.microkernel.restaurante.commons.entities.Componente;
+import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IComponenteRepository;
+import co.edu.unicauca.microkernel.restaurante.core.access.Factory;
+import co.edu.unicauca.microkernel.restaurante.core.services.ComponenteService;
+import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -18,6 +30,12 @@ public class Usuario extends javax.swing.JFrame {
      */
     public Usuario() {
         initComponents();
+        selecionarImagen();        
+        try {
+            llenarTabla();
+        } catch (Exception ex) {
+            Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -34,7 +52,7 @@ public class Usuario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblImagen = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         cbxEntrada = new javax.swing.JComboBox<>();
         cbxProteina = new javax.swing.JComboBox<>();
@@ -75,9 +93,9 @@ public class Usuario extends javax.swing.JFrame {
         jLabel5.setText("Seleccionar Componentes");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 280, 30));
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 0, 0));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 140, 110));
+        lblImagen.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        lblImagen.setForeground(new java.awt.Color(153, 0, 0));
+        getContentPane().add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 140, 110));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 0));
@@ -258,6 +276,58 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void llenarTabla() throws Exception {
+        IComponenteRepository service= Factory.getInstance().getRepositoryComponente();
+        ComponenteService componenteService= new ComponenteService(service);
+
+        List<Componente> objListComponentes = new ArrayList<Componente>();
+        int almuerzo = 1;
+        objListComponentes = componenteService.listComponentesAlmuerzo(almuerzo);
+        
+
+        String matriz[][] = new String[objListComponentes.size()][3];
+
+        for (int i = 0; i < objListComponentes.size(); i++) {
+            matriz[i][0] = objListComponentes.get(i).getNombreComponente();
+            matriz[i][1] = objListComponentes.get(i).getTipoComponente();
+            if("Entrada".equals(objListComponentes.get(i).getTipoComponente()))
+            {
+                cbxEntrada.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+            if("Principio".equals(objListComponentes.get(i).getTipoComponente()))
+            {
+                cbxPrincipio.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+            if("Proteina".equals(objListComponentes.get(i).getTipoComponente()))
+            {
+                cbxProteina.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+            if("Bebida".equals(objListComponentes.get(i).getTipoComponente()))
+            {
+                cbxBebida.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+        }
+        
+    }
+    
+    private void selecionarImagen() 
+    {
+        String Ruta = "";
+        JFileChooser jFileChooser = new JFileChooser();
+        FileNameExtensionFilter filtrado = new FileNameExtensionFilter("JGP, PNG & GIF", "jpg", "png", "gif");
+        jFileChooser.setFileFilter(filtrado);
+        
+        int respuesta = jFileChooser.showOpenDialog(this);
+        
+        if (respuesta == JFileChooser.APPROVE_OPTION) {
+            Ruta = jFileChooser.getSelectedFile().getPath();
+            
+            Image mImagen = new ImageIcon(Ruta).getImage();
+            ImageIcon mIcono = new ImageIcon(mImagen.getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_SMOOTH));
+            lblImagen.setIcon(mIcono); 
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbxBebida;
@@ -274,12 +344,14 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblImagen;
     // End of variables declaration//GEN-END:variables
+
+
 }

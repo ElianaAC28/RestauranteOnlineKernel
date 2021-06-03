@@ -91,7 +91,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Admin");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(160, 70, 105, 51);
+        jLabel3.setBounds(160, 70, 104, 51);
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
@@ -125,7 +125,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(80, 390, 191, 26);
+        jButton4.setBounds(80, 390, 187, 27);
         jPanel1.add(txtCosto);
         txtCosto.setBounds(160, 220, 220, 20);
 
@@ -160,7 +160,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Administrador");
         jPanel1.add(jButton6);
-        jButton6.setBounds(500, 60, 125, 37);
+        jButton6.setBounds(500, 60, 125, 29);
 
         Costo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         Costo.setForeground(new java.awt.Color(153, 0, 0));
@@ -172,12 +172,17 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
         jLabel4.setText("Id:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(-30, 0, 16, 18);
+        jLabel4.setBounds(-30, 0, 16, 17);
 
         cbxEntrada.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxEntrada.setForeground(new java.awt.Color(153, 0, 51));
+        cbxEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEntradaActionPerformed(evt);
+            }
+        });
         jPanel1.add(cbxEntrada);
-        cbxEntrada.setBounds(160, 250, 220, 28);
+        cbxEntrada.setBounds(160, 250, 220, 23);
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 0, 0));
@@ -189,12 +194,12 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(153, 0, 0));
         jLabel9.setText("Principio:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(100, 280, 57, 20);
+        jLabel9.setBounds(100, 280, 55, 20);
 
         cbxPrincipio.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxPrincipio.setForeground(new java.awt.Color(153, 0, 51));
         jPanel1.add(cbxPrincipio);
-        cbxPrincipio.setBounds(160, 280, 220, 28);
+        cbxPrincipio.setBounds(160, 280, 220, 23);
 
         jLabel10.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 0, 0));
@@ -205,7 +210,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         cbxProteina.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxProteina.setForeground(new java.awt.Color(153, 0, 51));
         jPanel1.add(cbxProteina);
-        cbxProteina.setBounds(160, 310, 220, 28);
+        cbxProteina.setBounds(160, 310, 220, 23);
 
         jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(153, 0, 0));
@@ -216,7 +221,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         cbxBebida.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbxBebida.setForeground(new java.awt.Color(153, 0, 51));
         jPanel1.add(cbxBebida);
-        cbxBebida.setBounds(160, 340, 220, 28);
+        cbxBebida.setBounds(160, 340, 220, 23);
 
         btnSeleccionarImg.setBackground(new java.awt.Color(102, 0, 0));
         btnSeleccionarImg.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -228,7 +233,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSeleccionarImg);
-        btnSeleccionarImg.setBounds(430, 310, 147, 34);
+        btnSeleccionarImg.setBounds(430, 310, 145, 25);
 
         btnAgregar.setBackground(new java.awt.Color(102, 0, 0));
         btnAgregar.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -241,9 +246,9 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAgregar);
-        btnAgregar.setBounds(440, 350, 125, 37);
+        btnAgregar.setBounds(440, 350, 125, 29);
         jPanel1.add(txtAlmu);
-        txtAlmu.setBounds(180, 160, 200, 24);
+        txtAlmu.setBounds(180, 160, 200, 20);
 
         lblImagen.setForeground(new java.awt.Color(153, 0, 0));
         jPanel1.add(lblImagen);
@@ -261,7 +266,7 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
         jPanel1.add(jLabel12);
         jLabel12.setBounds(100, 160, 90, 20);
         jPanel1.add(txtRestId);
-        txtRestId.setBounds(200, 190, 180, 24);
+        txtRestId.setBounds(200, 190, 180, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -321,6 +326,10 @@ public class AdminAlmuerzoEliana extends javax.swing.JFrame {
                 successMessage(ex.getMessage() + "Error", "Atención");
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void cbxEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEntradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxEntradaActionPerformed
 
      private void clearCotronls() {
         txtAlmu.setText("");
