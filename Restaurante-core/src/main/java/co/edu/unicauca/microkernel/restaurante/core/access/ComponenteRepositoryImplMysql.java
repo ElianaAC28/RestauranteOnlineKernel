@@ -52,19 +52,27 @@ public class ComponenteRepositoryImplMysql implements IComponenteRepository {
         return (parComponente.getNombreComponente());
     }
 
-    @Override
-    public String deleteComponente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     @Override
-    public String uptadeComponente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public String contarComponente(int almuid, int idtipocom) {
+        int cont=0;
+        try {
+            this.connect();
+            String sql = "select count(comptipo) from tiene inner join componente on tiene.compid = componente.compid where almuid ="+almuid+" and compidtipo ="+idtipocom+";";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet comp = pstmt.executeQuery();
+            if(comp.next()){
+                cont = comp.getInt(1);
+            }
+            pstmt.close();
 
-    @Override
-    public String findComponente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(ComponenteRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al insertar el registro", ex);
+        }
+        return cont+"";    
+    
     }
     
     

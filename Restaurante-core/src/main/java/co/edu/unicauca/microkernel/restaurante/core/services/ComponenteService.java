@@ -50,6 +50,16 @@ public class ComponenteService {
         return repoComponente.createComponente(parComponente);
     }
     
+    public String contarComponente (int almuid, int idtipocom){
+        List<JsonError> errors = new ArrayList<>();
+        if (!repoComponente.almuerzoComponentes(almuid).isEmpty()) {
+            if (!errors.isEmpty()) {
+                errors.add(new JsonError("400", "BAD_REQUEST", "ERROR AL GENERAR PEDIDO SQL"));
+            }
+        }
+        return repoComponente.contarComponente(almuid,idtipocom);
+        
+    }
     /**
      * Metodo encargado de obtener una lista de todos los componentes
      * existentes.

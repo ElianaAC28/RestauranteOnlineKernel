@@ -17,7 +17,6 @@ public class Componente {
      * Id del componente
      */
     private Integer idComponente;
-
     /**
      * Id del restaurante
      */

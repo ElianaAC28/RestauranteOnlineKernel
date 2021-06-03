@@ -131,7 +131,7 @@ public String updateAlmuerzo(Almuerzo parAlmuerzo) {
 try {
             this.connect();
 
-            String sql2 = "UPDATE TIENE SET COMPID = ? WHERE ALMUID = ? AND COMPID = ?";
+            String sql2 = "UPDATE TIENE SET COMPID = ? WHERE ALMUID = ? AND COMPID = ?;";
             PreparedStatement pstmt2 = conn.prepareStatement(sql2);
             pstmt2.setString(1, parAlmuerzo.getCostoAlm());
             pstmt2.setString(2, parAlmuerzo.getIdAlmuerzo());

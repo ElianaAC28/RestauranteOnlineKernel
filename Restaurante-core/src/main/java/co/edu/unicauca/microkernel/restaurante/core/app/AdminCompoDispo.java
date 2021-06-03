@@ -43,9 +43,7 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Actualizar Componente Almuerzo");  
-    }
-     
-        
+    } 
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -209,25 +207,50 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         //Sacamos el ide de la tabla con los componentes
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
         
+        int ban=0;
+        
         String idCompNuevo=String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
-        //Traer los datos desde el adminAlmuerzo
+        String nombreCom = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),2));
+        
+
+        //VARIABLE PARA SACAR ID COMPTIPO
+        String idTipoCom = convert(nombreCom);
                
         IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo();
         AlmuerzoService objService= new AlmuerzoService(service);
+        
+        IComponenteRepository serviceCom = Factory.getInstance().getRepositoryComponente();
+        ComponenteService objServiceCom = new ComponenteService(serviceCom);
+        
         Almuerzo objAlmu = new Almuerzo();
+        
         objAlmu.setIdAlmuerzo(idAlmu);
         objAlmu.setRestId(idComp);
         objAlmu.setCostoAlm(idCompNuevo); //mandarle el id del componente nuevo
-        
+           
         try {
-            String response = objService.updateAlmuerzo(objAlmu);
-             successMessage("Componente de Almuerzo " + response + " Actualizado con exito.", "Atención");
-             
+             String response = objServiceCom.contarComponente(Integer.parseInt(idAlmu), Integer.parseInt(idTipoCom));
+             int valor = Integer.parseInt(response);
+             if(valor < 5){
+                ban =1;
+             } else {
+                 successMessage("Error el Almuerzo "+idAlmu+" ya cuenta con 5 "+nombreCom+".", "Atención");
+             }
         } catch (Exception ex) {
                 System.out.println(ex);
                 successMessage(ex.getMessage() + "Error", "Atención");
         }
         
+        if(ban == 1){
+            try {
+                String response = objService.updateAlmuerzo(objAlmu);
+                 successMessage("Componente de Almuerzo " + response + " Actualizado con exito.", "Atención");
+
+            } catch (Exception ex) {
+                    System.out.println(ex);
+                    successMessage(ex.getMessage() + "Error", "Atención");
+            }
+        }
         adcom.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -350,6 +373,19 @@ public class AdminCompoDispo extends javax.swing.JFrame {
                      "ID","Nombre", "Tipo"
                 }
         ));
+    }
+    
+    private String convert(String nombre){
+        if(nombre.equals("Entrada")){
+            return 1+"";
+        }
+        if(nombre.equals("Principio")){
+            return 2+"";
+        }
+        if(nombre.equals("Proteina")){
+            return 3+"";
+        }
+        return 4+"";
     }
 
     

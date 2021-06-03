@@ -18,11 +18,8 @@ public interface IComponenteRepository {
      */
     public String createComponente(Componente parComponente);
 
-    public String deleteComponente();
 
-    public String uptadeComponente();
-
-    public String findComponente();
+    public String contarComponente(int almuid, int idtipocom);
     
     public List<Componente> findAllComponentes();
     
