@@ -16,10 +16,10 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author dania
+ * @author SoftwareTeam
  */
 public class Admin extends javax.swing.JFrame {
-
+    String restId = "";
     /**
      * Creates new form Admin
      */
@@ -32,7 +32,13 @@ public class Admin extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+    }
+
+    public Admin(String restId) {
+        this.restId = restId;
+        initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Administrador");
     }
 
     /**
@@ -179,7 +185,7 @@ public class Admin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LogIn log= new LogIn();
+        LogIn log = new LogIn();
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -246,7 +252,7 @@ public class Admin extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private void llenarTabla() throws Exception {
         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
@@ -259,7 +265,7 @@ public class Admin extends javax.swing.JFrame {
         String matriz[][] = new String[objListComponentes.size()][3];
 
         for (int i = 0; i < objListComponentes.size(); i++) {
-            matriz[i][0] = objListComponentes.get(i).getIdComponente()+"";
+            matriz[i][0] = objListComponentes.get(i).getIdComponente() + "";
             matriz[i][1] = objListComponentes.get(i).getNombreComponente();
             matriz[i][2] = objListComponentes.get(i).getTipoComponente();
         }
@@ -267,7 +273,7 @@ public class Admin extends javax.swing.JFrame {
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{
-                     "ID","Nombre", "Tipo"
+                    "ID", "Nombre", "Tipo"
                 }
         ));
     }

@@ -42,7 +42,7 @@ public class UsuarioService
     /**
      * Autentica usuario
      */
-    public boolean autenticarUsuario(String username, String userpassword){
+    public String autenticarUsuario(String username, String userpassword){
         List<JsonError> errors = new ArrayList<>();
         if (username.isEmpty() || userpassword.isEmpty()) {
             errors.add(new JsonError("400", "BAD_REQUEST", "Nombre de usuario y password son requeridos"));
