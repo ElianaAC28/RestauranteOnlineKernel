@@ -5,9 +5,16 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IUsuarioRepository;
+import co.edu.unicauca.microkernel.restaurante.core.access.Factory;
+import co.edu.unicauca.microkernel.restaurante.core.services.UsuarioService;
+import co.edu.unicauca.microkernel.restaurante.core.services.Messages.*;
+import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.successMessage;
+import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.warningMessage;
+
 /**
  *
- * @author dania
+ * @author SoftwareTeam
  */
 public class LogIn extends javax.swing.JFrame {
 
@@ -18,7 +25,7 @@ public class LogIn extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Log In");
-        
+
     }
 
     /**
@@ -31,9 +38,9 @@ public class LogIn extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPassword = new javax.swing.JPasswordField();
         jButton2 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -42,6 +49,8 @@ public class LogIn extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(null);
+        jPanel1.add(jPassword);
+        jPassword.setBounds(400, 370, 150, 30);
 
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton2.setText("Log In");
@@ -56,15 +65,9 @@ public class LogIn extends javax.swing.JFrame {
         jPanel1.add(jButton2);
         jButton2.setBounds(560, 340, 60, 30);
 
-        jTextField2.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField2.setText("Contraseña");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(400, 360, 150, 30);
-
-        jTextField1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField1.setText("Usuario");
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(400, 320, 150, 30);
+        txtUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        jPanel1.add(txtUsuario);
+        txtUsuario.setBounds(400, 320, 150, 30);
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -96,17 +99,57 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Admin admin = new Admin();
-        admin.setVisible(true);
-        this.dispose();
-        Usuario user = new Usuario();
-        user.setVisible(true);
-        this.dispose();
+//        Admin admin = new Admin();
+//        admin.setVisible(true);
+//        this.dispose();
+//        Usuario user = new Usuario();
+//        user.setVisible(true);
+//        this.dispose();
+        IUsuarioRepository repo = Factory.getInstance().getRepositoryUsuario();
+        UsuarioService customerService = new UsuarioService(repo);
+        try {
+            if (txtUsuario.getText().isEmpty() || jPassword.getText().isEmpty()) {
+                warningMessage("CAMPOS VACIOS", "Atención");
+            } else {
+                String login = customerService.autenticarUsuario(txtUsuario.getText(), jPassword.getText());
+                if (login == "usuario") {
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                            String restId = "";
+                            Usuario ins = new Usuario(restId);
+
+                            ins.setVisible(true);
+
+                            successMessage("Autenticacion exitosa!", "BIENVENIDO");
+                        }
+                    });
+                    this.dispose();
+                }
+                if (login == "admin") {
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                            String restId = "";
+                            Admin ins = new Admin(restId);
+
+                            ins.setVisible(true);
+
+                            successMessage("Autenticacion exitosa!", "BIENVENIDO");
+                        }
+                    });
+                    this.dispose();
+                }
+                if (login != "admin" && login != "usuario") {
+                    warningMessage("DATOS NO ENCONTRADOS!", "ERROR");
+                    txtUsuario.setText("");
+                    jPassword.setText("");
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+            successMessage(ex.getMessage() + "", "");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
-    
-    
     /**
      * @param args the command line arguments
      */
@@ -148,7 +191,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

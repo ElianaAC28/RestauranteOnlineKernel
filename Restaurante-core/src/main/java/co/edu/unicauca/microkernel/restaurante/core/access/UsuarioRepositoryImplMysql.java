@@ -69,18 +69,28 @@ public class UsuarioRepositoryImplMysql implements IUsuarioRepository {
      * @param userpassword
      * @return
      */
-    public boolean autenticarUsuario(String username, String userpassword) {
-        Usuario usuario = null;
-        boolean ingreso = false;
+    public String autenticarUsuario(String username, String userpassword) {
+        //Usuario usuario = null;
+        String ingreso = "";
         this.connect();
         try {
-            String sql = "SELECT * from usuario where username='" + username + "' and  userpassword='" + userpassword + "'";
+            String sql2 = "SELECT * "
+                    + "from restaurante a INNER JOIN usuario b on a.restadmin = b.userid "
+                    + "where username='" + username + "' and  userpassword='" + userpassword + "'";
+            Statement pstmt2 = conn.createStatement();
+            ResultSet res2 = pstmt2.executeQuery(sql2);
+            if (res2.next()) {
+                ingreso = "admin";
+                return ingreso;
+            }
+            String sql = "SELECT * "
+                    + "from restaurante a RIGHT JOIN usuario b on a.restadmin = b.userid "
+                    + "where username='" + username + "' and  userpassword='" + userpassword + "'";
             Statement pstmt = conn.createStatement();
             ResultSet res = pstmt.executeQuery(sql);
             if (res.next()) {
-                ingreso = true;
+                ingreso = "usuario";
                 return ingreso;
-
             }
             pstmt.close();
             this.disconnect();

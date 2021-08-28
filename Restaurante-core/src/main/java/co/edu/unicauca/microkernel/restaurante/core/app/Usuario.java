@@ -21,10 +21,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
- * @author dania
+ * @author SoftwareTeam
  */
 public class Usuario extends javax.swing.JFrame {
-
+    String restId = "";
     /**
      * Creates new form Usuario
      */
@@ -37,7 +37,12 @@ public class Usuario extends javax.swing.JFrame {
             Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    public Usuario(String restId) {
+        this.restId = restId;
+        initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Usuario");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

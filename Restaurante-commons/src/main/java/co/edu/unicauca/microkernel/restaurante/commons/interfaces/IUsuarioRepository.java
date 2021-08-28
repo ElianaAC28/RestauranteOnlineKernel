@@ -24,6 +24,6 @@ public interface IUsuarioRepository {
      * @param userpassword id del usuario
      * @return  objeto de tipo Usuario
      */
-    public boolean autenticarUsuario(String username, String userpassword);
+    public String autenticarUsuario(String username, String userpassword);
 
 }
