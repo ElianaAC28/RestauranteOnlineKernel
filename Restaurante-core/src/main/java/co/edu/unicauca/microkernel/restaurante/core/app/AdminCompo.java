@@ -9,6 +9,8 @@ import co.edu.unicauca.microkernel.restaurante.core.services.ComponenteService;
 import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.successMessage;
 import co.edu.unicauca.microkernel.restaurante.commons.entities.Componente;
 import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IComponenteRepository;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -171,7 +173,12 @@ public class AdminCompo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        AdminCompo adalmu = new AdminCompo();
+        AdminAlmuerzoEliana adalmu = null;
+        try {
+            adalmu = new AdminAlmuerzoEliana();
+        } catch (Exception ex) {
+            Logger.getLogger(AdminCompo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         adalmu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed

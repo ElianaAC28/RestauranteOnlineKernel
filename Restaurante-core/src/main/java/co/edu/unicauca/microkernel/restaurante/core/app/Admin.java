@@ -39,6 +39,11 @@ public class Admin extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Administrador");
+        try {
+            llenarTabla();
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

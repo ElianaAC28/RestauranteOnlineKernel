@@ -112,7 +112,7 @@ public class LogIn extends javax.swing.JFrame {
                 warningMessage("CAMPOS VACIOS", "Atención");
             } else {
                 String login = customerService.autenticarUsuario(txtUsuario.getText(), jPassword.getText());
-                if (login == "usuario") {
+                if (login.equals("usuario")) {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
                             String restId = "";
@@ -125,7 +125,7 @@ public class LogIn extends javax.swing.JFrame {
                     });
                     this.dispose();
                 }
-                if (login == "admin") {
+                if (login.equals("admin")) {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
                             String restId = "";
