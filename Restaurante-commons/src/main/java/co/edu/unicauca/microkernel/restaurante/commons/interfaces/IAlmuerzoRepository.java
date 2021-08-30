@@ -24,7 +24,7 @@ public interface IAlmuerzoRepository {
 
     public String createAlmuerzo(Almuerzo parAlmuerzo);
     public String updateAlmuerzo(Almuerzo parAlmuerzo);
-
+    public String deleteCompAlmuerzo(Almuerzo parAlmuerzo);
     public List<Almuerzo> findAllAlmuerzos();
 
 }

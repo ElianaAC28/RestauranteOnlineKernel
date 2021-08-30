@@ -147,4 +147,23 @@ try {
         return (parAlmuerzo.getIdAlmuerzo());
     }
  
+public String deleteCompAlmuerzo(Almuerzo parAlmuerzo) {
+
+try {
+            this.connect();
+
+            String sql2 = "DELETE FROM TIENE WHERE ALMUID = ? AND COMPID = ?;";
+            PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+            pstmt2.setString(1, parAlmuerzo.getIdAlmuerzo());
+            pstmt2.setString(2, parAlmuerzo.getRestId());
+
+            pstmt2.executeUpdate();
+
+            pstmt2.close();
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al actualizar el registro", ex);
+        }
+        return (parAlmuerzo.getIdAlmuerzo());
+    }
 }

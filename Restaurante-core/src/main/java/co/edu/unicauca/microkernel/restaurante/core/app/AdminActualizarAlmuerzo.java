@@ -48,6 +48,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton8 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
@@ -68,6 +69,20 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(null);
+
+        jButton8.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(153, 0, 0));
+        jButton8.setText("Quitar");
+        jButton8.setBorder(null);
+        jButton8.setBorderPainted(false);
+        jButton8.setContentAreaFilled(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton8);
+        jButton8.setBounds(420, 390, 100, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
         jPanel1.add(jLabel2);
@@ -90,7 +105,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(153, 0, 0));
-        jButton3.setText("Seleccionar");
+        jButton3.setText("Actualizar");
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -100,7 +115,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(460, 390, 190, 30);
+        jButton3.setBounds(520, 390, 120, 30);
 
         jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(153, 0, 0));
@@ -260,6 +275,32 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
+        dato = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
+        String nombre = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),1));
+
+        String id_Almu = txtAlmu.getText();
+               
+        IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo();
+        AlmuerzoService objService= new AlmuerzoService(service);
+                
+        Almuerzo objAlmu = new Almuerzo();
+        
+        objAlmu.setIdAlmuerzo(id_Almu);
+        objAlmu.setRestId(dato); //mandamos el id del componente a eliminar, reutilizando la variable restId
+          
+        try {
+            String response = objService.deleteCompAlmuerzo(objAlmu);
+            successMessage("Componente " + nombre + " Fue eliminado del almuerzo "+dato+" con exito.", "Atención");
+            initComponents(); //limpiar todo
+        } catch (Exception ex) {
+                System.out.println(ex);
+                successMessage(ex.getMessage() + "Error", "Atención");
+            }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -368,6 +409,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
