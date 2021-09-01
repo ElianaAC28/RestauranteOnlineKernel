@@ -42,22 +42,22 @@ public class Contactanos extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel2.setText("Hola, ¿En qué te podemos ayudar?");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(80, 130, 560, 50);
+        jLabel2.setBounds(120, 140, 560, 50);
 
         jLabel3.setText("Whatsapp: 311 7568328");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(480, 370, 160, 40);
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton3.setText("Dudas sobre pagos");
         jButton3.setContentAreaFilled(false);
         jPanel1.add(jButton3);
         jButton3.setBounds(100, 270, 160, 30);
 
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton2.setText("Devuelve el pedido");
         jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,9 +66,9 @@ public class Contactanos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(100, 210, 157, 40);
+        jButton2.setBounds(100, 210, 145, 40);
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton1.setText("Inicio");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);

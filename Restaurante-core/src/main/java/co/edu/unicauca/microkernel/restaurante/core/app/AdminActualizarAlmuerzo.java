@@ -57,13 +57,12 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaComp = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtAlmu = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,11 +87,11 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(80, 80, 90, 60);
 
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Actualizar almuerzo");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(160, 110, 160, 23);
+        jLabel5.setBounds(240, 90, 250, 50);
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +128,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(80, 390, 191, 26);
+        jButton4.setBounds(80, 390, 187, 27);
 
         tblListaComp.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
@@ -172,27 +171,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(450, 60, 33, 30);
-
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton5.setText("Contactanos");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton5);
-        jButton5.setBounds(340, 60, 81, 30);
-
-        jButton6.setBackground(new java.awt.Color(102, 0, 0));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Administrador");
-        jPanel1.add(jButton6);
-        jButton6.setBounds(500, 60, 125, 37);
+        jButton1.setBounds(590, 70, 33, 30);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
@@ -200,17 +179,13 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(-30, 0, 16, 18);
         jPanel1.add(txtAlmu);
-        txtAlmu.setBounds(170, 140, 130, 24);
+        txtAlmu.setBounds(170, 140, 130, 20);
 
         jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(153, 0, 0));
         jLabel12.setText("Id Almuerzo:");
         jPanel1.add(jLabel12);
         jLabel12.setBounds(90, 140, 90, 20);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -20, 770, 530);
 
         jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jButton7.setText("Contactanos");
@@ -223,7 +198,25 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton7);
-        jButton7.setBounds(340, 60, 81, 30);
+        jButton7.setBounds(500, 70, 81, 30);
+
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Contactanos");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(530, 70, 81, 23);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, -20, 770, 530);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
@@ -253,12 +246,6 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Contactanos cont = new Contactanos();
-        cont.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -300,6 +287,12 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
                 successMessage(ex.getMessage() + "Error", "Atención");
             }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Contactanos cont = new Contactanos();
+        cont.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -404,10 +397,9 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;

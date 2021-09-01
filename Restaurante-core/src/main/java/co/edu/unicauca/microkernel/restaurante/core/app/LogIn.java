@@ -50,10 +50,10 @@ public class LogIn extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
         jPanel1.add(jPassword);
-        jPassword.setBounds(400, 370, 150, 30);
+        jPassword.setBounds(370, 360, 150, 30);
 
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jButton2.setText("Log In");
+        jButton2.setText("Login");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -63,11 +63,17 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(560, 340, 60, 30);
+        jButton2.setBounds(570, 320, 60, 30);
 
         txtUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        txtUsuario.setActionCommand("null");
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtUsuario);
-        txtUsuario.setBounds(400, 320, 150, 30);
+        txtUsuario.setBounds(370, 320, 150, 30);
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,6 +156,10 @@ public class LogIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -175,6 +185,12 @@ public class LogIn extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

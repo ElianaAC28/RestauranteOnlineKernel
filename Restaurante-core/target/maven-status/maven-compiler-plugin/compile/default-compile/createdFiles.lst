@@ -1,6 +1,7 @@
 co\edu\unicauca\microkernel\restaurante\core\services\Gson.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\Contactanos$2.class
+co\edu\unicauca\microkernel\restaurante\core\app\LogIn1$6.class
 co\edu\unicauca\microkernel\restaurante\core\access\RestauranteRepositoryImplMysql.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzoEliana$7.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo$5.class
@@ -12,10 +13,12 @@ co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$4.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$6.class
+co\edu\unicauca\microkernel\restaurante\core\app\LogIn1$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo$4.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$5.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$8.class
+co\edu\unicauca\microkernel\restaurante\core\app\LogIn1.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo.class
@@ -31,6 +34,7 @@ co\edu\unicauca\microkernel\restaurante\core\app\Usuario$5.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzoEliana$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo$4.class
+co\edu\unicauca\microkernel\restaurante\core\app\LogIn1$4.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo$7.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo.class
 co\edu\unicauca\microkernel\restaurante\core\access\AlmuerzoRepositoryImplMysql.class
@@ -39,10 +43,10 @@ co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzoEliana.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo$1.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzoEliana$5.class
-co\edu\unicauca\microkernel\restaurante\core\app\Admin$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzoEliana$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$4.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$2.class
+co\edu\unicauca\microkernel\restaurante\core\app\LogIn1$1.class
 co\edu\unicauca\microkernel\restaurante\core\app\Contactanos.class
 co\edu\unicauca\microkernel\restaurante\core\app\LogIn$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$3.class
@@ -59,14 +63,14 @@ co\edu\unicauca\microkernel\restaurante\core\services\Messages.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$8.class
 co\edu\unicauca\microkernel\restaurante\core\services\ComponenteService.class
 co\edu\unicauca\microkernel\restaurante\core\access\ComponenteRepositoryImplMysql.class
+co\edu\unicauca\microkernel\restaurante\core\app\LogIn1$5.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\Contactanos$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo$5.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$1.class
-co\edu\unicauca\microkernel\restaurante\core\app\Admin$7.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo$2.class
+co\edu\unicauca\microkernel\restaurante\core\app\LogIn1$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\LogIn$1.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$4.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$5.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$7.class
-co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzoEliana$8.class
