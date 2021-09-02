@@ -154,7 +154,7 @@ public class Usuario extends javax.swing.JFrame {
         getContentPane().add(cbxBebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 90, -1));
 
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Realizar Pedido");
         jButton2.setBorder(null);
