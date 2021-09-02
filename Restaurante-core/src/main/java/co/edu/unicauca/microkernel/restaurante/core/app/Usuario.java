@@ -42,6 +42,11 @@ public class Usuario extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Usuario");
+        try {
+            llenarTabla();
+        } catch (Exception ex) {
+            Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
