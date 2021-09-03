@@ -108,8 +108,9 @@ public class AdminCompoDispo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(80, 390, 200, 27);
+        jButton4.setBounds(80, 390, 200, 26);
 
+        tblListaComp.setAutoCreateRowSorter(true);
         tblListaComp.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -349,7 +350,7 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         //Componente objComponente = new Componente();
         List<Componente> objListComponentes = new ArrayList<Componente>();
 
-        objListComponentes = componenteService.listComponentes();
+        objListComponentes = componenteService.listComponentes(idComp);
 
         String matriz[][] = new String[objListComponentes.size()][3];
 

@@ -128,8 +128,9 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(80, 390, 187, 27);
+        jButton4.setBounds(80, 390, 191, 26);
 
+        tblListaComp.setAutoCreateRowSorter(true);
         tblListaComp.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -179,7 +180,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(-30, 0, 16, 18);
         jPanel1.add(txtAlmu);
-        txtAlmu.setBounds(170, 140, 130, 20);
+        txtAlmu.setBounds(170, 140, 130, 24);
 
         jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(153, 0, 0));
@@ -227,6 +228,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
                 
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
         dato=String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
+        
         
         //Utilizamos el constructor para enviar datos al otro jframe
         AdminCompoDispo adcom = new AdminCompoDispo(dato,txtAlmu.getText());        

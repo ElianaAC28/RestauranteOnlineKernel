@@ -146,8 +146,8 @@ public class AdminCompo extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel7.setText("Id:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 80, 30));
+        jLabel7.setText("Tipo:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 80, 30));
 
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 0, 51));

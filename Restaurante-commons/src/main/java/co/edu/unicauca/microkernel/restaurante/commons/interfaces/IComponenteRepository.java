@@ -20,6 +20,11 @@ public interface IComponenteRepository {
 
 
     public String contarComponente(int almuid, int idtipocom);
+    /**
+    * Retornar todos los datos de los componente sin mostar
+    * Un componente con el id que llega
+    */
+    public List<Componente> findAllComponentes(String idcomp);
     
     public List<Componente> findAllComponentes();
     

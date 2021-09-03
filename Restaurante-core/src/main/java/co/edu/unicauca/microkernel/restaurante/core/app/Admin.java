@@ -74,6 +74,7 @@ public class Admin extends javax.swing.JFrame {
         jPanel1.setLayout(null);
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        tblListaComp.setAutoCreateRowSorter(true);
         tblListaComp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

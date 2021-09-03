@@ -62,6 +62,20 @@ public class ComponenteService {
     }
     /**
      * Metodo encargado de obtener una lista de todos los componentes
+     * existentes en un restaurante sin mostrar el componente que se le solicita.
+     * 
+     */
+    public List<Componente> listComponentes(String idcomp) {
+        List<JsonError> errors = new ArrayList<>();
+        if (!repoComponente.findAllComponentes().isEmpty()) {
+            if (!errors.isEmpty()) {
+                errors.add(new JsonError("400", "BAD_REQUEST", "ERROR AL GENERAR PEDIDO SQL"));
+            }
+        }
+        return repoComponente.findAllComponentes(idcomp);
+    }
+    /**
+     * Metodo encargado de obtener una lista de todos los componentes
      * existentes.
      * 
      */
