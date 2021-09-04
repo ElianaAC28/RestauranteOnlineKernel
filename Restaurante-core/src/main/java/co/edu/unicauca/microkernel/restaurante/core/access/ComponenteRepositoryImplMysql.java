@@ -52,6 +52,30 @@ public class ComponenteRepositoryImplMysql implements IComponenteRepository {
         return (parComponente.getNombreComponente());
     }
 
+    /**
+     * Metodo encargado de sacar el tipo de componente.
+
+     */
+    @Override
+    public String extraerTipoComponente(int idComp) {
+        String tipo="";
+        try {
+            this.connect();
+            String sql = "Select comptipo from componente where compid = "+ idComp +";";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet comp = pstmt.executeQuery();
+            if(comp.next()){
+                tipo = comp.getString("comptipo");
+            }
+            pstmt.close();
+
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(ComponenteRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al insertar el registro", ex);
+        }
+        return tipo;
+    }
+
 
 
     @Override
@@ -75,6 +99,7 @@ public class ComponenteRepositoryImplMysql implements IComponenteRepository {
     
     }
     
+    @Override
     public String contarComponentex(int almuid, String nomComp) {
         int cont=0;
         try {

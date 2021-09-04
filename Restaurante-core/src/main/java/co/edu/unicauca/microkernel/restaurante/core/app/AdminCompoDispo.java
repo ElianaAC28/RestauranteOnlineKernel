@@ -201,6 +201,7 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
         
         int ban=0;
+        String tipoCom = "";
         
         String idCompNuevo=String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
         String nombreCom = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),2));
@@ -222,19 +223,19 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         objAlmu.setCostoAlm(idCompNuevo); //mandarle el id del componente nuevo
            
         try {
+             tipoCom = objServiceCom.extraerTipoComponente(Integer.parseInt(idCompNuevo));
              String response = objServiceCom.contarComponente(Integer.parseInt(idAlmu), Integer.parseInt(idTipoCom));
+             
              int valor = Integer.parseInt(response);
-             if(valor < 5){
-                ban =1;
-             } else {
-                 successMessage("Error el Almuerzo "+idAlmu+" ya cuenta con 5 "+nombreCom+".", "Atención");
-             }
+             if(valor <= 4 ){
+                ban = 1;
+             } 
         } catch (Exception ex) {
                 System.out.println(ex);
                 successMessage(ex.getMessage() + "Error", "Atención");
         }
         
-        if(ban == 1){
+        if(ban == 1 && tipoCom.equals(nombreCom)){
             try {
                 String response = objService.updateAlmuerzo(objAlmu);
                  successMessage("Componente de Almuerzo " + response + " Actualizado con exito.", "Atención");
@@ -243,6 +244,10 @@ public class AdminCompoDispo extends javax.swing.JFrame {
                     System.out.println(ex);
                     successMessage(ex.getMessage() + "Error", "Atención");
             }
+        }
+        else{
+             successMessage("El almuerzo se encuentra con 5 componentes", "Atención");
+
         }
         adcom.setVisible(true);
         this.dispose();

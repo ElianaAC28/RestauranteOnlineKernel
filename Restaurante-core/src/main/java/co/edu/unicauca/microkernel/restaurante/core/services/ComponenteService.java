@@ -70,6 +70,17 @@ public class ComponenteService {
         return repoComponente.contarComponentex(almuid, nomComp);
         
     }
+    public String extraerTipoComponente (int almuid){
+        List<JsonError> errors = new ArrayList<>();
+        if (!repoComponente.almuerzoComponentes(almuid).isEmpty()) {
+            if (!errors.isEmpty()) {
+                errors.add(new JsonError("400", "BAD_REQUEST", "ERROR AL GENERAR PEDIDO SQL"));
+            }
+        }
+        return repoComponente.extraerTipoComponente(almuid);
+        
+    }
+    
     
     /**
      * Metodo encargado de obtener una lista de todos los componentes
