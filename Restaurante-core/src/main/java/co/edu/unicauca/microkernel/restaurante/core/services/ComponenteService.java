@@ -57,9 +57,31 @@ public class ComponenteService {
                 errors.add(new JsonError("400", "BAD_REQUEST", "ERROR AL GENERAR PEDIDO SQL"));
             }
         }
-        return repoComponente.contarComponente(almuid,idtipocom);
+        return repoComponente.contarComponente(almuid,idtipocom);        
+    }
+    
+    public String contarComponentex (int almuid, String nomComp){
+        List<JsonError> errors = new ArrayList<>();
+        if (!repoComponente.almuerzoComponentes(almuid).isEmpty()) {
+            if (!errors.isEmpty()) {
+                errors.add(new JsonError("400", "BAD_REQUEST", "ERROR AL GENERAR PEDIDO SQL"));
+            }
+        }
+        return repoComponente.contarComponentex(almuid, nomComp);
         
     }
+    public String extraerTipoComponente (int almuid){
+        List<JsonError> errors = new ArrayList<>();
+        if (!repoComponente.almuerzoComponentes(almuid).isEmpty()) {
+            if (!errors.isEmpty()) {
+                errors.add(new JsonError("400", "BAD_REQUEST", "ERROR AL GENERAR PEDIDO SQL"));
+            }
+        }
+        return repoComponente.extraerTipoComponente(almuid);
+        
+    }
+    
+    
     /**
      * Metodo encargado de obtener una lista de todos los componentes
      * existentes en un restaurante sin mostrar el componente que se le solicita.

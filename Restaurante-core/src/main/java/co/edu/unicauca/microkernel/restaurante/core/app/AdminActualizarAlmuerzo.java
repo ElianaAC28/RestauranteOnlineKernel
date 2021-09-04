@@ -282,8 +282,9 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
           
         try {
             String response = objService.deleteCompAlmuerzo(objAlmu);
-            successMessage("Componente " + nombre + " Fue eliminado del almuerzo "+dato+" con exito.", "Atención");
-            initComponents(); //limpiar todo
+            successMessage("Componente " + nombre + " Fue eliminado del almuerzo "+response+" con exito.", "Atención");
+            tabla1.setRowCount(0);
+            txtAlmu.setText("");
         } catch (Exception ex) {
                 System.out.println(ex);
                 successMessage(ex.getMessage() + "Error", "Atención");

@@ -18,7 +18,8 @@ public interface IComponenteRepository {
      */
     public String createComponente(Componente parComponente);
 
-
+    public String extraerTipoComponente(int idComp);
+    
     public String contarComponente(int almuid, int idtipocom);
     /**
     * Retornar todos los datos de los componente sin mostar
@@ -29,4 +30,6 @@ public interface IComponenteRepository {
     public List<Componente> findAllComponentes();
     
     public List<Componente> almuerzoComponentes(int almuerzo);
+
+    public String contarComponentex(int almuid, String nomComp);
 }

@@ -36,9 +36,10 @@ public class Visitante extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btnRest1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,7 +50,7 @@ public class Visitante extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Elige un restaurante ");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(190, 90, 350, 40);
+        jLabel3.setBounds(200, 80, 350, 40);
 
         btniniciarsesion2.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         btniniciarsesion2.setBorder(null);
@@ -61,7 +62,7 @@ public class Visitante extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btniniciarsesion2);
-        btniniciarsesion2.setBounds(370, 330, 210, 23);
+        btniniciarsesion2.setBounds(370, 330, 210, 20);
 
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -121,20 +122,20 @@ public class Visitante extends javax.swing.JFrame {
         jPanel1.add(jButton8);
         jButton8.setBounds(150, 230, 170, 50);
 
-        jButton9.setBackground(new java.awt.Color(102, 0, 0));
-        jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Buffon Hut");
-        jButton9.setBorder(null);
-        jButton9.setBorderPainted(false);
-        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnRest1.setBackground(new java.awt.Color(102, 0, 0));
+        btnRest1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRest1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRest1.setText("Buffon Hut");
+        btnRest1.setBorder(null);
+        btnRest1.setBorderPainted(false);
+        btnRest1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRest1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnRest1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton9);
-        jButton9.setBounds(150, 160, 170, 50);
+        jPanel1.add(btnRest1);
+        btnRest1.setBounds(150, 160, 170, 50);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,6 +148,10 @@ public class Visitante extends javax.swing.JFrame {
         jLabel5.setText("¿Desea iniciar sesión?");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(410, 320, 180, 40);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Log in.png"))); // NOI18N
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(0, 0, 690, 480);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
@@ -163,19 +168,30 @@ public class Visitante extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       // JOptionPane.showMessageDialog(null, "Su pedido se ha realizado con éxito");
+      GUIVisitante vist = new GUIVisitante();
+        vist.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+       LogIn login = new LogIn();
+       login.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+    GUIVisitante vist = new GUIVisitante();
+        vist.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btnRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+        GUIVisitante vist = new GUIVisitante();
+        vist.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRest1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,15 +232,16 @@ public class Visitante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRest1;
     private javax.swing.JButton btniniciarsesion2;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
