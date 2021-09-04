@@ -350,7 +350,7 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         //Componente objComponente = new Componente();
         List<Componente> objListComponentes = new ArrayList<Componente>();
 
-        objListComponentes = componenteService.listComponentes(idComp);
+        objListComponentes = componenteService.listComponentes(idAlmu);
 
         String matriz[][] = new String[objListComponentes.size()][3];
 

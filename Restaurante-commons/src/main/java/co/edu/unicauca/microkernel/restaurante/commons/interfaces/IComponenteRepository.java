@@ -29,4 +29,6 @@ public interface IComponenteRepository {
     public List<Componente> findAllComponentes();
     
     public List<Componente> almuerzoComponentes(int almuerzo);
+
+    public String contarComponentex(int almuid, String nomComp);
 }
