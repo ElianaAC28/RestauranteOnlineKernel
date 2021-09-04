@@ -20,6 +20,8 @@ import java.util.logging.Logger;
  */
 public class Admin extends javax.swing.JFrame {
     String restId = "";
+    int cantidad = 5;
+    int index = 0;
     /**
      * Creates new form Admin
      */
@@ -28,7 +30,7 @@ public class Admin extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setTitle("Administrador");
         try {
-            llenarTabla();
+            llenarTabla(0);
         } catch (Exception ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -40,7 +42,7 @@ public class Admin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Administrador");
         try {
-            llenarTabla();
+            llenarTabla(0);
         } catch (Exception ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -61,6 +63,11 @@ public class Admin extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -140,17 +147,62 @@ public class Admin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 60, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 60, 30));
 
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(102, 0, 0));
+        jButton2.setText("20");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 50, -1));
+
+        jButton6.setBackground(new java.awt.Color(102, 0, 0));
+        jButton6.setText("5");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 50, -1));
+
+        jButton8.setBackground(new java.awt.Color(102, 0, 0));
+        jButton8.setText("10");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 50, -1));
+
+        jButton9.setBackground(new java.awt.Color(102, 0, 0));
+        jButton9.setText("Next");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
+
+        jButton10.setBackground(new java.awt.Color(102, 0, 0));
+        jButton10.setText("Back");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel5.setText("Mostrar componentes");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 280, 30));
+        jLabel5.setText("Cantidad de elementos");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 280, 30));
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel4.setText("Estos son los componentes del plato ejecutivo");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 390, 60));
+        jLabel4.setText("En esta lista encontrara los componentes del restaurante");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 390, 60));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
@@ -170,7 +222,7 @@ public class Admin extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 90, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
@@ -204,6 +256,55 @@ public class Admin extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        cantidad = 20;
+        try {
+            llenarTabla(0);
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        cantidad = 5;
+        try {
+            llenarTabla(0);
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        cantidad = 10;
+        try {
+            llenarTabla(0);
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        if(index < returnCantidad()-cantidad){
+            index = index + cantidad;
+            try {
+                llenarTabla(index);
+            } catch (Exception ex) {
+                Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        if(index > 0){
+            index = index - cantidad;
+            try {
+                llenarTabla(index);
+            } catch (Exception ex) {
+                Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,7 +342,9 @@ public class Admin extends javax.swing.JFrame {
         });
     }
 
-    private void llenarTabla() throws Exception {
+    private void llenarTabla(int indicador) throws Exception {
+        index = indicador;
+        
         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
 
@@ -257,20 +360,64 @@ public class Admin extends javax.swing.JFrame {
             matriz[i][1] = objListComponentes.get(i).getNombreComponente();
             matriz[i][2] = objListComponentes.get(i).getTipoComponente();
         }
+        
+        int residuo = objListComponentes.size() % cantidad;
+        int temp = cantidad;
+                
+        if(( objListComponentes.size()-index)==residuo){
+            cantidad = residuo;
+        }
+        
+        String littleMatriz[][] = new String[cantidad][3];
+        
+        for (int j = 0; j < cantidad; j++){
+            if(index == objListComponentes.size()-1)
+                break;
+            littleMatriz[j][0] = matriz[index+j][0];
+            littleMatriz[j][1] = matriz[index+j][1];
+            littleMatriz[j][2] = matriz[index+j][2];
+        }
+        
+        cantidad = temp;
+        
 
-        tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
+        /*tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
+                new String[]{
+                    "ID", "Nombre", "Tipo"
+                }
+        ));*/
+        
+        tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
+                littleMatriz,
                 new String[]{
                     "ID", "Nombre", "Tipo"
                 }
         ));
     }
+    
+    private int returnCantidad(){
+        IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
+        ComponenteService componenteService = new ComponenteService(service);
+
+        //Componente objComponente = new Componente();
+        List<Componente> objListComponentes = new ArrayList<Componente>();
+
+        objListComponentes = componenteService.listComponentes();
+        
+        return objListComponentes.size();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

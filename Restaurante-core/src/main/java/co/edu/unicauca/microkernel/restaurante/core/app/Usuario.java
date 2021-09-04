@@ -30,7 +30,9 @@ public class Usuario extends javax.swing.JFrame {
      */
     public Usuario() {
         initComponents();
-        selecionarImagen();        
+        selecionarImagen();  
+        setLocationRelativeTo(null);
+        setTitle("Usuario");
         try {
             llenarTabla();
         } catch (Exception ex) {
