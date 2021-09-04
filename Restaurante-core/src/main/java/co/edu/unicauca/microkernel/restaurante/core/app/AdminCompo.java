@@ -206,11 +206,13 @@ public class AdminCompo extends javax.swing.JFrame {
         try {
             String response = componenteService.contarComponentex(componente.getIdComponente(), componente.getNombreComponente());
             if (response.equals(1+"") || response.equals(2+"")){
-                successMessage("Error Id o el nombre del componente ya existe ", "Atención");
+                successMessage("Id o el nombre del componente ya existe ", "Error");
+                clearCotronls();
             }
             else{
-             successMessage("Componente " + response + " agregado con exito.", "Atención");
-             clearCotronls();   
+                String response2 = componenteService.createComponente(componente);
+                successMessage("Componente " + response2 + " agregado con exito.", "Atención");
+                clearCotronls();   
             }           
              
         } catch (Exception ex) {
