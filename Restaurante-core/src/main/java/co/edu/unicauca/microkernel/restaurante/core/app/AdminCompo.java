@@ -39,19 +39,20 @@ public class AdminCompo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        btnAgregarAlm = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnMostrarComp = new javax.swing.JButton();
         textId = new javax.swing.JTextField();
         textNombre = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         cbType = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        lblAdmi = new javax.swing.JLabel();
+        imgContacto1 = new javax.swing.JLabel();
+        btnContacto = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,45 +62,40 @@ public class AdminCompo extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, 70));
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel3.setText("Administrador");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 100, 50));
+        btnAgregarAlm.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
+        btnAgregarAlm.setForeground(new java.awt.Color(153, 0, 0));
+        btnAgregarAlm.setText("Añadir Almuerzo");
+        btnAgregarAlm.setBorder(null);
+        btnAgregarAlm.setBorderPainted(false);
+        btnAgregarAlm.setContentAreaFilled(false);
+        btnAgregarAlm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAlmActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregarAlm, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Agregar componentes");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 390, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 390, 40));
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(153, 0, 0));
-        jButton3.setText("Añadir Almuerzo");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarComp.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
+        btnMostrarComp.setForeground(new java.awt.Color(153, 0, 0));
+        btnMostrarComp.setText("Mostrar Componentes");
+        btnMostrarComp.setBorder(null);
+        btnMostrarComp.setBorderPainted(false);
+        btnMostrarComp.setContentAreaFilled(false);
+        btnMostrarComp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnMostrarCompActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, -1, 30));
-
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(153, 0, 0));
-        jButton4.setText("Mostrar Componentes");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, 30));
-        getContentPane().add(textId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 130, -1));
-        getContentPane().add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 130, -1));
+        getContentPane().add(btnMostrarComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, 30));
+        getContentPane().add(textId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 130, 30));
+        getContentPane().add(textNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 130, 30));
 
         btnAgregar.setBackground(new java.awt.Color(102, 0, 0));
         btnAgregar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -113,31 +109,7 @@ public class AdminCompo extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 339, 150, 30));
-
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 60, 30));
-
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton5.setText("Contactanos");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, -1, 30));
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 150, 30));
 
         cbType.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         cbType.setForeground(new java.awt.Color(153, 0, 51));
@@ -159,34 +131,61 @@ public class AdminCompo extends javax.swing.JFrame {
         jLabel4.setText("Id:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
 
+        lblAdmi.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        lblAdmi.setForeground(new java.awt.Color(153, 0, 0));
+        lblAdmi.setText("Administrador");
+        getContentPane().add(lblAdmi, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
+
+        imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cc.png"))); // NOI18N
+        getContentPane().add(imgContacto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 70, 70));
+
+        btnContacto.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        btnContacto.setText("Contactanos");
+        btnContacto.setBorder(null);
+        btnContacto.setBorderPainted(false);
+        btnContacto.setContentAreaFilled(false);
+        btnContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContactoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, 30));
+
+        btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 60, 30));
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 720, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        AdminAlmuerzoEliana adalmu = null;
+    private void btnAgregarAlmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAlmActionPerformed
+        AdminAlmuerzo adalmu = null;
         try {
-            adalmu = new AdminAlmuerzoEliana();
+            adalmu = new AdminAlmuerzo();
         } catch (Exception ex) {
             Logger.getLogger(AdminCompo.class.getName()).log(Level.SEVERE, null, ex);
         }
         adalmu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnAgregarAlmActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnMostrarCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCompActionPerformed
         Admin admin = new Admin();
         admin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LogIn log= new LogIn();
-        log.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMostrarCompActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
@@ -236,11 +235,18 @@ public class AdminCompo extends javax.swing.JFrame {
         return 0;
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Contactanos cont = new Contactanos();
+    private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
+        // TODO add your handling code here:
+        Contacto cont = new Contacto();
         cont.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnContactoActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        Login log = new Login();
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,19 +288,20 @@ public class AdminCompo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregarAlm;
+    private javax.swing.JButton btnContacto;
+    private javax.swing.JButton btnMostrarComp;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cbType;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel imgContacto1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblAdmi;
     private javax.swing.JTextField textId;
     private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables

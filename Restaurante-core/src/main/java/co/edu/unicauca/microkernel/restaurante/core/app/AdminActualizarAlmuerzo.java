@@ -48,20 +48,22 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton8 = new javax.swing.JButton();
+        btnQuitar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaComp = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtAlmu = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        imgContacto = new javax.swing.JLabel();
+        btnContacto = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        imgContacto1 = new javax.swing.JLabel();
+        imgContacto2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,30 +71,32 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jButton8.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(153, 0, 0));
-        jButton8.setText("Quitar");
-        jButton8.setBorder(null);
-        jButton8.setBorderPainted(false);
-        jButton8.setContentAreaFilled(false);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnQuitar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnQuitar.setForeground(new java.awt.Color(153, 0, 0));
+        btnQuitar.setText("Quitar");
+        btnQuitar.setBorder(null);
+        btnQuitar.setBorderPainted(false);
+        btnQuitar.setContentAreaFilled(false);
+        btnQuitar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnQuitarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton8);
-        jButton8.setBounds(420, 390, 100, 30);
+        jPanel1.add(btnQuitar);
+        btnQuitar.setBounds(420, 390, 60, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(80, 80, 90, 60);
+        jLabel2.setBounds(90, 70, 90, 60);
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Actualizar almuerzo");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(240, 90, 250, 50);
+        jLabel5.setBounds(210, 80, 250, 50);
 
+        btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,38 +104,38 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnBuscar);
-        btnBuscar.setBounds(310, 140, 70, 20);
+        btnBuscar.setBounds(360, 130, 80, 30);
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(153, 0, 0));
-        jButton3.setText("Actualizar");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(153, 0, 0));
+        btnActualizar.setText("Actualizar");
+        btnActualizar.setBorder(null);
+        btnActualizar.setBorderPainted(false);
+        btnActualizar.setContentAreaFilled(false);
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(520, 390, 120, 30);
+        jPanel1.add(btnActualizar);
+        btnActualizar.setBounds(510, 390, 120, 30);
 
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(153, 0, 0));
-        jButton4.setText("Mostrar Componentes");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnMostrar.setForeground(new java.awt.Color(153, 0, 0));
+        btnMostrar.setText("Mostrar Componentes");
+        btnMostrar.setBorder(null);
+        btnMostrar.setBorderPainted(false);
+        btnMostrar.setContentAreaFilled(false);
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnMostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(80, 390, 191, 26);
+        jPanel1.add(btnMostrar);
+        btnMostrar.setBounds(90, 390, 171, 23);
 
         tblListaComp.setAutoCreateRowSorter(true);
-        tblListaComp.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        tblListaComp.setFont(new java.awt.Font("Calibri Light", 2, 14)); // NOI18N
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -159,20 +163,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblListaComp);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(90, 170, 540, 180);
-
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(590, 70, 33, 30);
+        jScrollPane1.setBounds(120, 180, 510, 180);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
@@ -180,51 +171,63 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(-30, 0, 16, 18);
         jPanel1.add(txtAlmu);
-        txtAlmu.setBounds(170, 140, 130, 24);
+        txtAlmu.setBounds(220, 130, 130, 30);
 
         jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(153, 0, 0));
         jLabel12.setText("Id Almuerzo:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(90, 140, 90, 20);
+        jLabel12.setBounds(130, 140, 90, 20);
 
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton7.setText("Contactanos");
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        imgContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update.png"))); // NOI18N
+        jPanel1.add(imgContacto);
+        imgContacto.setBounds(610, 390, 30, 30);
+
+        btnContacto.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        btnContacto.setText("Contactanos");
+        btnContacto.setBorder(null);
+        btnContacto.setBorderPainted(false);
+        btnContacto.setContentAreaFilled(false);
+        btnContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnContactoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7);
-        jButton7.setBounds(500, 70, 81, 30);
+        jPanel1.add(btnContacto);
+        btnContacto.setBounds(510, 80, 77, 19);
 
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Contactanos");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(530, 70, 81, 23);
+        jPanel1.add(btnSalir);
+        btnSalir.setBounds(600, 80, 27, 19);
 
+        imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cc.png"))); // NOI18N
+        jPanel1.add(imgContacto1);
+        imgContacto1.setBounds(470, 60, 48, 48);
+
+        imgContacto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar2.png"))); // NOI18N
+        jPanel1.add(imgContacto2);
+        imgContacto2.setBounds(480, 390, 20, 30);
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -20, 770, 530);
+        jLabel1.setBounds(10, -20, 770, 530);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
                 
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
         dato=String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
@@ -235,23 +238,13 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         
         adcom.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
     
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         Admin admin = new Admin();
         admin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LogIn log= new LogIn();
-        log.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
@@ -264,7 +257,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarActionPerformed
         // TODO add your handling code here:
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
         dato = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
@@ -289,13 +282,20 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
                 System.out.println(ex);
                 successMessage(ex.getMessage() + "Error", "Atención");
             }
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnQuitarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Contactanos cont = new Contactanos();
+    private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
+        // TODO add your handling code here:
+        Contacto cont = new Contacto();
         cont.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnContactoActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        Login log = new Login();
+        log.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -398,13 +398,15 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnContacto;
+    private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnQuitar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel imgContacto;
+    private javax.swing.JLabel imgContacto1;
+    private javax.swing.JLabel imgContacto2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

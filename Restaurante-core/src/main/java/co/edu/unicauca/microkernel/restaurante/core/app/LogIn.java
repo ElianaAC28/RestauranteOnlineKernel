@@ -8,7 +8,7 @@ package co.edu.unicauca.microkernel.restaurante.core.app;
 import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IUsuarioRepository;
 import co.edu.unicauca.microkernel.restaurante.core.access.Factory;
 import co.edu.unicauca.microkernel.restaurante.core.services.UsuarioService;
-//import co.edu.unicauca.microkernel.restaurante.core.services.Messages.*;
+import co.edu.unicauca.microkernel.restaurante.core.services.Messages.*;
 import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.successMessage;
 import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.warningMessage;
 
@@ -16,12 +16,12 @@ import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.war
  *
  * @author SoftwareTeam
  */
-public class LogIn extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form LogIn
      */
-    public LogIn() {
+    public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Login");
@@ -38,49 +38,51 @@ public class LogIn extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPassword = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
+        btnIniciarSesion = new javax.swing.JButton();
         txtUsuario = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnContacto = new javax.swing.JButton();
+        btnInvitado = new javax.swing.JButton();
+        lblIngreseUser = new javax.swing.JLabel();
+        lblIngreseUser1 = new javax.swing.JLabel();
+        imgWp5 = new javax.swing.JLabel();
+        imgWp8 = new javax.swing.JLabel();
+        imgWp6 = new javax.swing.JLabel();
+        imgContacto = new javax.swing.JLabel();
+        imgContacto1 = new javax.swing.JLabel();
+        imgWp7 = new javax.swing.JLabel();
+        imgContacto2 = new javax.swing.JLabel();
+        imgContacto3 = new javax.swing.JLabel();
+        imgContacto4 = new javax.swing.JLabel();
+        imgContacto5 = new javax.swing.JLabel();
+        imgContacto6 = new javax.swing.JLabel();
+        imgWp3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Ventana"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(null);
-        jPanel1.add(jPassword);
-        jPassword.setBounds(370, 360, 150, 30);
 
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jButton2.setText("Invitado");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        txtPassword.setFont(new java.awt.Font("Calibri Light", 0, 10)); // NOI18N
+        jPanel1.add(txtPassword);
+        txtPassword.setBounds(440, 290, 180, 30);
+
+        btnIniciarSesion.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
+        btnIniciarSesion.setText("Iniciar Sesión");
+        btnIniciarSesion.setBorder(null);
+        btnIniciarSesion.setBorderPainted(false);
+        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(570, 360, 60, 30);
+        jPanel1.add(btnIniciarSesion);
+        btnIniciarSesion.setBounds(480, 350, 120, 40);
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jButton3.setText("Login");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(570, 320, 60, 30);
-
+        txtUsuario.setFont(new java.awt.Font("Calibri Light", 0, 10)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(102, 102, 102));
-        txtUsuario.setText("Ingrese ");
         txtUsuario.setActionCommand("null");
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,56 +90,117 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtUsuario);
-        txtUsuario.setBounds(370, 320, 150, 30);
+        txtUsuario.setBounds(440, 200, 180, 30);
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Contactanos");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnContacto.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnContacto.setForeground(new java.awt.Color(255, 255, 255));
+        btnContacto.setText("Contactanos");
+        btnContacto.setBorder(null);
+        btnContacto.setBorderPainted(false);
+        btnContacto.setContentAreaFilled(false);
+        btnContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnContactoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(530, 70, 81, 23);
+        jPanel1.add(btnContacto);
+        btnContacto.setBounds(570, 40, 110, 23);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Log in.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 720, 480);
+        btnInvitado.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnInvitado.setForeground(new java.awt.Color(255, 255, 255));
+        btnInvitado.setText("Omitir");
+        btnInvitado.setBorder(null);
+        btnInvitado.setBorderPainted(false);
+        btnInvitado.setContentAreaFilled(false);
+        btnInvitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInvitadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnInvitado);
+        btnInvitado.setBounds(550, 410, 171, 23);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
+        lblIngreseUser.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
+        lblIngreseUser.setText("Contraseña");
+        jPanel1.add(lblIngreseUser);
+        lblIngreseUser.setBounds(480, 260, 130, 30);
+
+        lblIngreseUser1.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
+        lblIngreseUser1.setText("Usuario");
+        jPanel1.add(lblIngreseUser1);
+        lblIngreseUser1.setBounds(480, 170, 80, 30);
+
+        imgWp5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jPanel1.add(imgWp5);
+        imgWp5.setBounds(660, 0, 130, 480);
+
+        imgWp8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jPanel1.add(imgWp8);
+        imgWp8.setBounds(510, 0, 360, 480);
+
+        imgWp6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jPanel1.add(imgWp6);
+        imgWp6.setBounds(500, 0, 360, 480);
+
+        imgContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/round-account-button-with-user-inside_icon-icons.com_72596 (2).png"))); // NOI18N
+        jPanel1.add(imgContacto);
+        imgContacto.setBounds(440, 160, 32, 40);
+
+        imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/key-silhouette-security-tool-interface-symbol-of-password_icon-icons.com_54503.png"))); // NOI18N
+        jPanel1.add(imgContacto1);
+        imgContacto1.setBounds(440, 250, 40, 40);
+
+        imgWp7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jPanel1.add(imgWp7);
+        imgWp7.setBounds(350, 0, 350, 480);
+
+        imgContacto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_restaurante .png"))); // NOI18N
+        jPanel1.add(imgContacto2);
+        imgContacto2.setBounds(70, 140, 200, 140);
+
+        imgContacto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/whatsapp-logo.png"))); // NOI18N
+        jPanel1.add(imgContacto3);
+        imgContacto3.setBounds(110, 320, 32, 40);
+
+        imgContacto4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fb_icon-icons.com_65434.png"))); // NOI18N
+        jPanel1.add(imgContacto4);
+        imgContacto4.setBounds(540, 30, 32, 40);
+
+        imgContacto5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/instagram_icon_125245.png"))); // NOI18N
+        jPanel1.add(imgContacto5);
+        imgContacto5.setBounds(160, 320, 30, 40);
+
+        imgContacto6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fb_icon-icons.com_65434.png"))); // NOI18N
+        jPanel1.add(imgContacto6);
+        imgContacto6.setBounds(200, 320, 32, 40);
+
+        imgWp3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/blanco.jpg"))); // NOI18N
+        jPanel1.add(imgWp3);
+        imgWp3.setBounds(-40, 0, 430, 510);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Contactanos cont = new Contactanos();
+    private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
+        Contacto cont = new Contacto();
         cont.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//Aqui Invitado
-        Visitante visi = new Visitante();
-        visi.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnContactoActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
          IUsuarioRepository repo = Factory.getInstance().getRepositoryUsuario();
         UsuarioService customerService = new UsuarioService(repo);
         try {
-            if (txtUsuario.getText().isEmpty() || jPassword.getText().isEmpty()) {
+            if (txtUsuario.getText().isEmpty() || txtPassword.getText().isEmpty()) {
                 warningMessage("CAMPOS VACIOS", "Atención");
             } else {
-                String login = customerService.autenticarUsuario(txtUsuario.getText(), jPassword.getText());
+                String login = customerService.autenticarUsuario(txtUsuario.getText(), txtPassword.getText());
                 if (login.equals("usuario")) {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
@@ -167,7 +230,7 @@ public class LogIn extends javax.swing.JFrame {
                 if (login != "admin" && login != "usuario") {
                     warningMessage("DATOS NO ENCONTRADOS!", "ERROR");
                     txtUsuario.setText("");
-                    jPassword.setText("");
+                    txtPassword.setText("");
                 }
             }
         } catch (Exception ex) {
@@ -175,7 +238,13 @@ public class LogIn extends javax.swing.JFrame {
             successMessage(ex.getMessage() + "", "");
         }
     
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
+    private void btnInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvitadoActionPerformed
+        Visitante vist = new Visitante();
+        vist.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnInvitadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,14 +263,22 @@ public class LogIn extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -214,18 +291,31 @@ public class LogIn extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LogIn().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnContacto;
+    private javax.swing.JButton btnIniciarSesion;
+    private javax.swing.JButton btnInvitado;
+    private javax.swing.JLabel imgContacto;
+    private javax.swing.JLabel imgContacto1;
+    private javax.swing.JLabel imgContacto2;
+    private javax.swing.JLabel imgContacto3;
+    private javax.swing.JLabel imgContacto4;
+    private javax.swing.JLabel imgContacto5;
+    private javax.swing.JLabel imgContacto6;
+    private javax.swing.JLabel imgWp3;
+    private javax.swing.JLabel imgWp5;
+    private javax.swing.JLabel imgWp6;
+    private javax.swing.JLabel imgWp7;
+    private javax.swing.JLabel imgWp8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JLabel lblIngreseUser;
+    private javax.swing.JLabel lblIngreseUser1;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

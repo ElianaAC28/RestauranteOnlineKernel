@@ -17,7 +17,7 @@ public class Visitante extends javax.swing.JFrame {
     public Visitante() {
         initComponents();
         this.setLocationRelativeTo(null);
-        setTitle("Contactanos");
+        setTitle("Visitante");
     }
 
     /**
@@ -32,13 +32,14 @@ public class Visitante extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btniniciarsesion2 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRest3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnIniciarSesion = new javax.swing.JButton();
+        btnRest2 = new javax.swing.JButton();
         btnRest1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        imgContacto2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,20 +65,20 @@ public class Visitante extends javax.swing.JFrame {
         jPanel1.add(btniniciarsesion2);
         btniniciarsesion2.setBounds(370, 330, 210, 20);
 
-        jButton2.setBackground(new java.awt.Color(102, 0, 0));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("El Sotano");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRest3.setBackground(new java.awt.Color(102, 0, 0));
+        btnRest3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRest3.setForeground(new java.awt.Color(255, 255, 255));
+        btnRest3.setText("El Sotano");
+        btnRest3.setBorder(null);
+        btnRest3.setBorderPainted(false);
+        btnRest3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRest3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRest3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(150, 300, 170, 50);
+        jPanel1.add(btnRest3);
+        btnRest3.setBounds(150, 300, 170, 50);
 
         jButton6.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton6.setText("Inicio");
@@ -92,35 +93,35 @@ public class Visitante extends javax.swing.JFrame {
         jPanel1.add(jButton6);
         jButton6.setBounds(530, 80, 90, 23);
 
-        jButton7.setBackground(new java.awt.Color(102, 0, 0));
-        jButton7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Iniciar sesión");
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciarSesion.setBackground(new java.awt.Color(102, 0, 0));
+        btnIniciarSesion.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarSesion.setText("Iniciar sesión");
+        btnIniciarSesion.setBorder(null);
+        btnIniciarSesion.setBorderPainted(false);
+        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7);
-        jButton7.setBounds(420, 360, 130, 30);
+        jPanel1.add(btnIniciarSesion);
+        btnIniciarSesion.setBounds(420, 360, 130, 30);
 
-        jButton8.setBackground(new java.awt.Color(102, 0, 0));
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Sazón de Emmy");
-        jButton8.setBorder(null);
-        jButton8.setBorderPainted(false);
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnRest2.setBackground(new java.awt.Color(102, 0, 0));
+        btnRest2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRest2.setForeground(new java.awt.Color(255, 255, 255));
+        btnRest2.setText("Sazón de Emmy");
+        btnRest2.setBorder(null);
+        btnRest2.setBorderPainted(false);
+        btnRest2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRest2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnRest2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton8);
-        jButton8.setBounds(150, 230, 170, 50);
+        jPanel1.add(btnRest2);
+        btnRest2.setBounds(150, 230, 170, 50);
 
         btnRest1.setBackground(new java.awt.Color(102, 0, 0));
         btnRest1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -149,7 +150,11 @@ public class Visitante extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(410, 320, 180, 40);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Log in.png"))); // NOI18N
+        imgContacto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_restaurante .png"))); // NOI18N
+        jPanel1.add(imgContacto2);
+        imgContacto2.setBounds(390, 180, 200, 140);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/visitante.jpg"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(0, 0, 690, 480);
 
@@ -166,25 +171,25 @@ public class Visitante extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btniniciarsesion2ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRest3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest3ActionPerformed
       // JOptionPane.showMessageDialog(null, "Su pedido se ha realizado con éxito");
       GUIVisitante vist = new GUIVisitante();
         vist.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRest3ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       LogIn login = new LogIn();
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+       Login login = new Login();
        login.setVisible(true);
        this.dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnRest2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest2ActionPerformed
         // TODO add your handling code here:
     GUIVisitante vist = new GUIVisitante();
         vist.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnRest2ActionPerformed
 
     private void btnRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest1ActionPerformed
         // TODO add your handling code here:
@@ -232,12 +237,13 @@ public class Visitante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton btnRest1;
+    private javax.swing.JButton btnRest2;
+    private javax.swing.JButton btnRest3;
     private javax.swing.JButton btniniciarsesion2;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel imgContacto2;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

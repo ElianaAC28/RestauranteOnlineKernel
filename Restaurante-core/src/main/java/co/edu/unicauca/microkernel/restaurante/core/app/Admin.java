@@ -111,7 +111,7 @@ public class Admin extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 540, 170));
 
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(153, 0, 0));
         jButton4.setText("Añadir Componentes");
         jButton4.setBorder(null);
@@ -124,7 +124,7 @@ public class Admin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, 30));
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(153, 0, 0));
         jButton3.setText("Añadir Almuerzo");
         jButton3.setBorder(null);
@@ -137,7 +137,7 @@ public class Admin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, 30));
 
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton1.setText("Salir");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
@@ -150,6 +150,7 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 60, 30));
 
         jButton2.setBackground(new java.awt.Color(102, 0, 0));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setText("20");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +160,7 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 50, -1));
 
         jButton6.setBackground(new java.awt.Color(102, 0, 0));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton6.setText("5");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +170,7 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 50, -1));
 
         jButton8.setBackground(new java.awt.Color(102, 0, 0));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton8.setText("10");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +180,7 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 50, -1));
 
         jButton9.setBackground(new java.awt.Color(102, 0, 0));
+        jButton9.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton9.setText("Next");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +190,7 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
 
         jButton10.setBackground(new java.awt.Color(102, 0, 0));
+        jButton10.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton10.setText("Back");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,15 +209,15 @@ public class Admin extends javax.swing.JFrame {
         jLabel4.setText("En esta lista encontrara los componentes del restaurante");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 390, 60));
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri Light", 2, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel3.setText("Admin");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 180, 70));
+        jLabel3.setText("Administrador");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 320, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 70, 50));
 
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jButton7.setText("Contactanos");
         jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
@@ -224,22 +229,23 @@ public class Admin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 90, 30));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 720, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LogIn log = new LogIn();
+        Login log = new Login();
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        AdminAlmuerzoEliana adalmu = null;
+        AdminAlmuerzo adalmu = null;
         try {
-            adalmu = new AdminAlmuerzoEliana();
+            adalmu = new AdminAlmuerzo();
         } catch (Exception ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }

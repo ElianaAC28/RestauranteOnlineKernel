@@ -41,7 +41,7 @@ public class GUIVisitante extends javax.swing.JFrame {
         this.restId = restId;
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Usuario");
+        setTitle("Visitante");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,8 +54,7 @@ public class GUIVisitante extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblBienvenido = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         cbxEntrada = new javax.swing.JComboBox<>();
         cbxProteina = new javax.swing.JComboBox<>();
@@ -64,14 +63,14 @@ public class GUIVisitante extends javax.swing.JFrame {
         cbxPrincipio = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         cbxBebida = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        btnRealizarPedido = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        btnAtras1 = new javax.swing.JButton();
+        btnIniciarSesion = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        imgRes = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,92 +81,85 @@ public class GUIVisitante extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 0, 0));
         jLabel6.setText("mejores menús y llevarte lo que selecciones hasta donde te encuentres.");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 550, 30));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 550, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 70, 50));
-
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel3.setText("Bienvenido");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 180, 70));
+        lblBienvenido.setFont(new java.awt.Font("Calibri Light", 3, 36)); // NOI18N
+        lblBienvenido.setForeground(new java.awt.Color(153, 0, 0));
+        lblBienvenido.setText("Bienvenido");
+        getContentPane().add(lblBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 180, 70));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 0, 0));
         jLabel7.setText("Entrada:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 60, 20));
 
-        cbxEntrada.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        cbxEntrada.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         cbxEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxEntradaActionPerformed(evt);
             }
         });
-        getContentPane().add(cbxEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 90, -1));
+        getContentPane().add(cbxEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 90, -1));
 
-        cbxProteina.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        cbxProteina.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         cbxProteina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxProteinaActionPerformed(evt);
             }
         });
-        getContentPane().add(cbxProteina, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 90, -1));
+        getContentPane().add(cbxProteina, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 90, -1));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 0, 0));
         jLabel8.setText("Proteina:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 0, 0));
         jLabel9.setText("Principio:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
 
-        cbxPrincipio.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        cbxPrincipio.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         cbxPrincipio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxPrincipioActionPerformed(evt);
             }
         });
-        getContentPane().add(cbxPrincipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 90, -1));
+        getContentPane().add(cbxPrincipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 90, -1));
 
         jLabel10.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 0, 0));
         jLabel10.setText("Bebida:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
 
-        cbxBebida.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        cbxBebida.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         cbxBebida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxBebidaActionPerformed(evt);
             }
         });
-        getContentPane().add(cbxBebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 90, -1));
+        getContentPane().add(cbxBebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 90, -1));
 
-        jButton2.setBackground(new java.awt.Color(102, 0, 0));
-        jButton2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Realizar Pedido");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRealizarPedido.setBackground(new java.awt.Color(102, 0, 0));
+        btnRealizarPedido.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnRealizarPedido.setForeground(new java.awt.Color(255, 255, 255));
+        btnRealizarPedido.setText("Realizar Pedido");
+        btnRealizarPedido.setBorder(null);
+        btnRealizarPedido.setBorderPainted(false);
+        btnRealizarPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRealizarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRealizarPedidoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 110, 30));
+        getContentPane().add(btnRealizarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 110, 30));
 
         jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(153, 0, 0));
         jLabel11.setText("Sabemos que el almuerzo es el plato más importante de día por eso queremos ofrecerte los");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 560, 30));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 560, 30));
 
-        jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 140, 110));
-
-        btnAtras.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnAtras.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnAtras.setText("Atras");
         btnAtras.setBorder(null);
         btnAtras.setBorderPainted(false);
@@ -177,49 +169,43 @@ public class GUIVisitante extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 60, 30));
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 60, 30));
 
-        jButton7.setBackground(new java.awt.Color(102, 0, 0));
-        jButton7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Iniciar sesión");
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnIniciarSesion.setBackground(new java.awt.Color(102, 0, 0));
+        btnIniciarSesion.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarSesion.setText("Iniciar sesión");
+        btnIniciarSesion.setBorder(null);
+        btnIniciarSesion.setBorderPainted(false);
+        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnIniciarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 90, 30));
+        getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 90, 30));
 
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jButton3.setText("Salir");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 60, 30));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 60, 30));
 
-        btnAtras1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnAtras1.setText("Atras");
-        btnAtras1.setBorder(null);
-        btnAtras1.setBorderPainted(false);
-        btnAtras1.setContentAreaFilled(false);
-        btnAtras1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtras1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 60, 30));
+        imgRes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.jpg"))); // NOI18N
+        getContentPane().add(imgRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 220, 180));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
-        jLabel1.setText("\n");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
+        jLabel1.setText(" ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 490));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 70, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -240,9 +226,9 @@ public class GUIVisitante extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxBebidaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
         JOptionPane.showMessageDialog(null, "Debe iniciar sesión para poder realizar el pedido");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRealizarPedidoActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
        Visitante vist = new Visitante();
@@ -250,24 +236,20 @@ public class GUIVisitante extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
-        LogIn login = new LogIn();
+        Login login = new Login();
         login.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
-    private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtras1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        LogIn log= new LogIn();
+        Login log= new Login();
         log.setVisible(true);
         this.dispose();
     
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,25 +327,24 @@ public class GUIVisitante extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnAtras1;
+    private javax.swing.JButton btnIniciarSesion;
+    private javax.swing.JButton btnRealizarPedido;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cbxBebida;
     private javax.swing.JComboBox<String> cbxEntrada;
     private javax.swing.JComboBox<String> cbxPrincipio;
     private javax.swing.JComboBox<String> cbxProteina;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JLabel imgRes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblBienvenido;
     // End of variables declaration//GEN-END:variables
 
 
