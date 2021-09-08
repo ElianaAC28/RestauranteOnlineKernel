@@ -146,7 +146,69 @@ try {
         }
         return (parAlmuerzo.getIdAlmuerzo());
     }
- 
+
+@Override
+public String updateCosto(Almuerzo parAlmuerzo) {
+
+try {
+            this.connect();
+
+            String sql2 = "UPDATE AlMUERZO SET ALMUCOSTO = ? WHERE ALMUID = ? AND RESTID = ?;";
+            PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+            pstmt2.setString(1, parAlmuerzo.getCostoAlm());
+            pstmt2.setString(2, parAlmuerzo.getIdAlmuerzo());
+            pstmt2.setString(3, parAlmuerzo.getRestId());
+
+            pstmt2.executeUpdate();
+
+            pstmt2.close();
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al actualizar el registro", ex);
+        }
+        return (parAlmuerzo.getIdAlmuerzo());
+    }
+
+@Override
+    public String contarAlmu(Almuerzo parAlmuerzo) {
+        int cont=0;
+        try {
+            this.connect();
+            String sql = "select count(*) from Almuerzo where almuid ="+parAlmuerzo.getIdAlmuerzo()+" and restid ="+parAlmuerzo.getRestId()+";";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet comp = pstmt.executeQuery();
+            if(comp.next()){
+                cont = comp.getInt(1);
+            }
+            pstmt.close();
+
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(ComponenteRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al insertar el registro", ex);
+        }
+        return cont+"";    
+    
+    }
+
+    public String asociarComp(String almuid, String compid){
+        try {
+            this.connect();
+
+            String sql2 = "INSERT INTO TIENE (ALMUID, COMPID) VALUES (?,?);";
+            PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+            pstmt2.setString(1, almuid);
+            pstmt2.setString(2, compid);
+
+            pstmt2.executeUpdate();
+
+            pstmt2.close();
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(AlmuerzoRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al actualizar el registro", ex);
+        }
+        return (almuid+"");
+    }
+    
 public String deleteCompAlmuerzo(Almuerzo parAlmuerzo) {
 
 try {
