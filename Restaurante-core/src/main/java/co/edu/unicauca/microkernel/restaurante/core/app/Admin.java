@@ -414,16 +414,13 @@ public class Admin extends javax.swing.JFrame {
         cantidad = temp;
 
         //Anterior codigo para llenar con todos los componentes disponibles sin restringir elementos
-<<<<<<< HEAD
+
         /*tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{
                     "ID", "Nombre", "Tipo"
                 }
         ));*/
-=======
-     
->>>>>>> 19a2d118a93c18e7e5f01dac96c5afe2eef8e961
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 littleMatriz,
                 new String[]{
@@ -433,20 +430,12 @@ public class Admin extends javax.swing.JFrame {
     }
 
     //Metodo que retorna la cantidad de componentes, usado en el boton next para
-<<<<<<< HEAD
-    // evitar que el usuaria avance mas de los componentes permitidos
-=======
-    // evitar que el usuariO avance mas de los componentes permitidos
->>>>>>> 19a2d118a93c18e7e5f01dac96c5afe2eef8e961
+    // evitar que el usuario avance mas de los componentes permitidos
     private int returnCantidad() {
         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
         List<Componente> objListComponentes = new ArrayList<Componente>();
         objListComponentes = componenteService.listComponentes();
-<<<<<<< HEAD
-
-=======
->>>>>>> 19a2d118a93c18e7e5f01dac96c5afe2eef8e961
         return objListComponentes.size();
     }
 
