@@ -19,9 +19,11 @@ import java.util.logging.Logger;
  * @author SoftwareTeam
  */
 public class Admin extends javax.swing.JFrame {
+
     String restId = "";
     int cantidad = 5;
     int index = 0;
+
     /**
      * Creates new form Admin
      */
@@ -302,7 +304,7 @@ public class Admin extends javax.swing.JFrame {
 
     //Boton para ir avanzar a los siguientes X elementos en la lista
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        if(index < returnCantidad()-cantidad){
+        if (index < returnCantidad() - cantidad) {
             index = index + cantidad;
             try {
                 llenarTabla(index);
@@ -314,7 +316,7 @@ public class Admin extends javax.swing.JFrame {
 
     //Boton para retroceder a los siguientes X elementos en la lista
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        if(index > 0){
+        if (index > 0) {
             index = index - cantidad;
             try {
                 llenarTabla(index);
@@ -363,7 +365,7 @@ public class Admin extends javax.swing.JFrame {
     //Metodo para llenar la tabla con todos los componentes
     private void llenarTabla(int indicador) throws Exception {
         index = indicador;
-        
+
         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
 
@@ -379,26 +381,27 @@ public class Admin extends javax.swing.JFrame {
             matriz[i][1] = objListComponentes.get(i).getNombreComponente();
             matriz[i][2] = objListComponentes.get(i).getTipoComponente();
         }
-        
+
         int residuo = objListComponentes.size() % cantidad;
         int temp = cantidad;
-                
-        if(( objListComponentes.size()-index)==residuo){
+
+        if ((objListComponentes.size() - index) == residuo) {
             cantidad = residuo;
         }
-        
+
         String littleMatriz[][] = new String[cantidad][3];
-        
-        for (int j = 0; j < cantidad; j++){
-            if(index == objListComponentes.size()-1)
+
+        for (int j = 0; j < cantidad; j++) {
+            if (index == objListComponentes.size() - 1) {
                 break;
-            littleMatriz[j][0] = matriz[index+j][0];
-            littleMatriz[j][1] = matriz[index+j][1];
-            littleMatriz[j][2] = matriz[index+j][2];
+            }
+            littleMatriz[j][0] = matriz[index + j][0];
+            littleMatriz[j][1] = matriz[index + j][1];
+            littleMatriz[j][2] = matriz[index + j][2];
         }
-        
+
         cantidad = temp;
-        
+
         //Anterior codigo para llenar con todos los componentes disponibles sin restringir elementos
         /*tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
@@ -406,7 +409,6 @@ public class Admin extends javax.swing.JFrame {
                     "ID", "Nombre", "Tipo"
                 }
         ));*/
-        
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 littleMatriz,
                 new String[]{
@@ -414,10 +416,10 @@ public class Admin extends javax.swing.JFrame {
                 }
         ));
     }
-    
+
     //Metodo que retorna la cantidad de componentes, usado en el boton next para
     // evitar que el usuaria avance mas de los componentes permitidos
-    private int returnCantidad(){
+    private int returnCantidad() {
         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
 
@@ -425,7 +427,7 @@ public class Admin extends javax.swing.JFrame {
         List<Componente> objListComponentes = new ArrayList<Componente>();
 
         objListComponentes = componenteService.listComponentes();
-        
+
         return objListComponentes.size();
     }
 
