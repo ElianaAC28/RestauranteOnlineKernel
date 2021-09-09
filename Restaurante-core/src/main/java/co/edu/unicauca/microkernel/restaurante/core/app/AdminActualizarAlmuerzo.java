@@ -132,7 +132,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnMostrar);
-        btnMostrar.setBounds(90, 390, 171, 23);
+        btnMostrar.setBounds(120, 390, 171, 23);
 
         tblListaComp.setAutoCreateRowSorter(true);
         tblListaComp.setFont(new java.awt.Font("Calibri Light", 2, 14)); // NOI18N
@@ -220,7 +220,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, -20, 770, 530);
+        jLabel1.setBounds(10, -10, 720, 510);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
@@ -249,7 +249,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         try {
-            llenarTabla();
+            llenarTabla(); //Metodo para llenar la tabla con los componentes del almuerzo buscado
         } catch (Exception ex) {
             Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -259,25 +259,31 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
 
     private void btnQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
-        dato = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
-        String nombre = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),1));
+        
+        DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel(); // crea la tabla 1, y se le asiigna el modelo
+        dato = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0)); // sacar el id del compoente que se selecciona en la tabla1   
+        String nombre = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),1)); // Saca el nombre de componente que se selecciona en la tabla 1 y se asigna a la variable nombre
 
-        String id_Almu = txtAlmu.getText();
-               
-        IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo();
+        String id_Almu = txtAlmu.getText(); // Guarda el id del almuerzo que se escribe en el txt y se guarda en id_almu
+        
+        //Generar la instancia del repositoro de la factoria para ser guardada en serivicio.
+        IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo(); 
+        
+        // Creamos el almuerzoService y le amndamos el servicio creado anteriormente
         AlmuerzoService objService= new AlmuerzoService(service);
-                
+        
+        // creamos el objeto objAlmu de la clase Almuerzo
         Almuerzo objAlmu = new Almuerzo();
         
+        //Al objAlmu creado que hereda los atributos de la clase almuero y le enviamos el id del almuerzo para que sea gutado en IdAlmuero de objAlmu
         objAlmu.setIdAlmuerzo(id_Almu);
         objAlmu.setRestId(dato); //mandamos el id del componente a eliminar, reutilizando la variable restId
           
         try {
             String response = objService.deleteCompAlmuerzo(objAlmu);
             successMessage("Componente " + nombre + " Fue eliminado del almuerzo "+response+" con exito.", "Atención");
-            tabla1.setRowCount(0);
-            txtAlmu.setText("");
+            tabla1.setRowCount(0); //reset de la tabla
+            txtAlmu.setText(""); //limpiamos el txt
         } catch (Exception ex) {
                 System.out.println(ex);
                 successMessage(ex.getMessage() + "Error", "Atención");

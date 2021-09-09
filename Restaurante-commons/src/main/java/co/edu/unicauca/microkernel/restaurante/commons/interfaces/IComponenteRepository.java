@@ -18,7 +18,6 @@ public interface IComponenteRepository {
      */
     public String createComponente(Componente parComponente);
 
-    public String extraerTipoComponente(int idComp);
     
     public String contarComponente(int almuid, int idtipocom);
     /**

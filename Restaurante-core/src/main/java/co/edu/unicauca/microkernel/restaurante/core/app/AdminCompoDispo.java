@@ -221,21 +221,21 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         objAlmu.setCostoAlm(idCompNuevo); //mandarle el id del componente nuevo
            
         try {
-             tipoCom = objServiceCom.extraerTipoComponente(Integer.parseInt(idCompNuevo));
+             // Así mismo como el anterior vamos a contar cuantos tiposs de componentes hay en un almuerzo determinado. 
              String response = objServiceCom.contarComponente(Integer.parseInt(idAlmu), Integer.parseInt(idTipoCom));
              
-             int valor = Integer.parseInt(response);
+             int valor = Integer.parseInt(response); //convertimos a entero la respuesta de contarComponente
              if(valor <= 4 ){
-                ban = 1;
+                ban = 1; //bandera para saber que hay menos de 4 componentes del mismo tipo
              } 
         } catch (Exception ex) {
                 System.out.println(ex);
                 successMessage(ex.getMessage() + "Error", "Atención");
         }
         
-        if(ban == 1 && tipoCom.equals(nombreCom)){
+        if(ban == 1){ // comparamos la bandera para saber la cantidad de componentes que tiene el almuerzo del mismo tipo
             try {
-                String response = objService.updateAlmuerzo(objAlmu);
+                String response = objService.updateAlmuerzo(objAlmu); // enviamos al objService el metodo de updateAlmuerzo el objeto almuerzo con los datos
                  successMessage("Componente de Almuerzo " + response + " Actualizado con exito.", "Atención");
 
             } catch (Exception ex) {

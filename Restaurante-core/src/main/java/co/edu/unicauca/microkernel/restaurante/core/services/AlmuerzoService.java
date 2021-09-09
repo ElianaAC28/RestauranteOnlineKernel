@@ -72,6 +72,19 @@ public class AlmuerzoService {
         return repositoryAlm.updateAlmuerzo(parAlmuerzo);
     }
     
+    public String updateCosto(Almuerzo parAlmuerzo) {
+        List<JsonError> errors = new ArrayList<>();
+        if (parAlmuerzo.getIdAlmuerzo()== null || parAlmuerzo.getRestId()==null || parAlmuerzo.getCostoAlm() == null ) {
+            errors.add(new JsonError("400", "BAD_REQUEST", "LA INFORMACION  ES OBLIGATORIA "));
+        }
+        if (!errors.isEmpty()) {
+            Gson gson = new Gson();
+            String errorJson = gson.toJson(errors);
+            return errorJson;
+        }
+        return repositoryAlm.updateCosto(parAlmuerzo);
+    }
+    
     public String deleteCompAlmuerzo(Almuerzo parAlmuerzo) {
         List<JsonError> errors = new ArrayList<>();
         if (parAlmuerzo.getIdAlmuerzo()== null || parAlmuerzo.getRestId()==null ) {
@@ -84,5 +97,25 @@ public class AlmuerzoService {
         }
         return repositoryAlm.deleteCompAlmuerzo(parAlmuerzo);
     }
+   public String contarAlmu (Almuerzo parAlmuerzo) {
+        List<JsonError> errors = new ArrayList<>();
+        if (parAlmuerzo.getIdAlmuerzo()== null || parAlmuerzo.getRestId()==null ) {
+            errors.add(new JsonError("400", "BAD_REQUEST", "LA INFORMACION  ES OBLIGATORIA "));
+        }
+        if (!errors.isEmpty()) {
+            Gson gson = new Gson();
+            String errorJson = gson.toJson(errors);
+            return errorJson;
+        }
+        return repositoryAlm.contarAlmu(parAlmuerzo);
+    }
    
+    public String asociarComp (String almuid, String compid) {
+        List<JsonError> errors = new ArrayList<>();
+        if (almuid == null || compid == null ) {
+            errors.add(new JsonError("400", "BAD_REQUEST", "LA INFORMACION  ES OBLIGATORIA "));
+        }
+        return repositoryAlm.asociarComp(almuid, compid);
+    }       
+    
 }
