@@ -292,7 +292,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
 
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
         // TODO add your handling code here:
-        Contacto cont = new Contacto();
+        Contacto cont = new Contacto(2);
         cont.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnContactoActionPerformed

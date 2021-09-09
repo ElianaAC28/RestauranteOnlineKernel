@@ -36,16 +36,7 @@ public class Admin extends javax.swing.JFrame {
         }
     }
     
-     public Admin(int numInterfaz) {
-        initComponents();
-        this.setLocationRelativeTo(null);
-        setTitle("Administrador");
-        try {
-            llenarTabla(0);
-        } catch (Exception ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+     
 
     //Constructor usado por Login para manejar el usuario que se Loggea
     public Admin(String restId) {
@@ -276,7 +267,8 @@ public class Admin extends javax.swing.JFrame {
 
     //Boton para acceder a la interfaz grafica de contacto
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
-        Contacto cont = new Contacto();
+        
+        Contacto cont = new Contacto(1);
         cont.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnContactoActionPerformed
