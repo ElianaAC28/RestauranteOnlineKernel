@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -56,17 +57,17 @@ public class AdminCompoDispo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        lblCompDispo = new javax.swing.JLabel();
+        btnSeleccionar = new javax.swing.JButton();
+        btnMostrarComp = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaComp = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblAdmin = new javax.swing.JLabel();
         imgContacto1 = new javax.swing.JLabel();
         btnContacto = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,39 +78,39 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(90, 70, 90, 60);
 
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel5.setText("Componentes Disponibles");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(170, 110, 410, 50);
+        lblCompDispo.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        lblCompDispo.setForeground(new java.awt.Color(153, 0, 0));
+        lblCompDispo.setText("Componentes Disponibles");
+        jPanel1.add(lblCompDispo);
+        lblCompDispo.setBounds(170, 110, 410, 50);
 
-        jButton3.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(153, 0, 0));
-        jButton3.setText("Seleccionar");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSeleccionar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnSeleccionar.setForeground(new java.awt.Color(153, 0, 0));
+        btnSeleccionar.setText("Seleccionar componente");
+        btnSeleccionar.setBorder(null);
+        btnSeleccionar.setBorderPainted(false);
+        btnSeleccionar.setContentAreaFilled(false);
+        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSeleccionarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(440, 380, 190, 30);
+        jPanel1.add(btnSeleccionar);
+        btnSeleccionar.setBounds(430, 380, 190, 30);
 
-        jButton4.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(153, 0, 0));
-        jButton4.setText("Mostrar Componentes");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarComp.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnMostrarComp.setForeground(new java.awt.Color(153, 0, 0));
+        btnMostrarComp.setText("Mostrar Componentes");
+        btnMostrarComp.setBorder(null);
+        btnMostrarComp.setBorderPainted(false);
+        btnMostrarComp.setContentAreaFilled(false);
+        btnMostrarComp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnMostrarCompActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(90, 380, 200, 27);
+        jPanel1.add(btnMostrarComp);
+        btnMostrarComp.setBounds(90, 380, 200, 27);
 
         tblListaComp.setAutoCreateRowSorter(true);
         tblListaComp.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
@@ -148,11 +149,11 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(-30, 0, 16, 18);
 
-        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel3.setText("Administrador");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(390, 70, 104, 40);
+        lblAdmin.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        lblAdmin.setForeground(new java.awt.Color(153, 0, 0));
+        lblAdmin.setText("Administrador");
+        jPanel1.add(lblAdmin);
+        lblAdmin.setBounds(380, 80, 90, 20);
 
         imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cc.png"))); // NOI18N
         jPanel1.add(imgContacto1);
@@ -184,16 +185,16 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         jPanel1.add(btnSalir);
         btnSalir.setBounds(600, 80, 27, 19);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, -20, 770, 530);
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
+        jPanel1.add(lblFondo);
+        lblFondo.setBounds(0, -20, 770, 530);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
         AdminActualizarAlmuerzo adcom = new AdminActualizarAlmuerzo();
         //Sacamos el ide de la tabla con los componentes
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
@@ -249,27 +250,31 @@ public class AdminCompoDispo extends javax.swing.JFrame {
         }
         adcom.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSeleccionarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnMostrarCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCompActionPerformed
         try {
             llenarTabla();
         } catch (Exception ex) {
             Logger.getLogger(AdminCompoDispo.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnMostrarCompActionPerformed
 
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
         // TODO add your handling code here:
-        Contacto cont = new Contacto();
+        Contacto cont = new Contacto(5);
         cont.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnContactoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         //resp =0 si, resp = 1 no.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp==0){
         Login log = new Login();
         log.setVisible(true);
         this.dispose();
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
@@ -386,17 +391,17 @@ public class AdminCompoDispo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnContacto;
+    private javax.swing.JButton btnMostrarComp;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSeleccionar;
     private javax.swing.JLabel imgContacto1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAdmin;
+    private javax.swing.JLabel lblCompDispo;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JTable tblListaComp;
     // End of variables declaration//GEN-END:variables
 }

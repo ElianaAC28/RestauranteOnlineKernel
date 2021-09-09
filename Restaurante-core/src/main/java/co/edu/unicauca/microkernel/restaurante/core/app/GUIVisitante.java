@@ -24,25 +24,30 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author SoftwareTeam
  */
 public class GUIVisitante extends javax.swing.JFrame {
+
     String restId = "";
+
     /**
      * Creates new form Usuario
      */
     public GUIVisitante() {
-        initComponents();
-          
+        initComponents();//inicializa
+         setLocationRelativeTo(null);
+
         try {
-            llenarTabla();
+            llenarTabla();//llama al metodo que se encarga de llenar los cbx
         } catch (Exception ex) {
             Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public GUIVisitante(String restId) {
         this.restId = restId;
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Visitante");
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -225,30 +230,34 @@ public class GUIVisitante extends javax.swing.JFrame {
     private void cbxBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBebidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxBebidaActionPerformed
-
+    //Envia un mensaje al cliente de que debe inicar sesion
     private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
-        JOptionPane.showMessageDialog(null, "Debe iniciar sesión para poder realizar el pedido");
+
+        JOptionPane.showMessageDialog(null, "Debe iniciar sesión para poder realizar el pedido", "Realizar pedido", JOptionPane.WARNING_MESSAGE);
+
     }//GEN-LAST:event_btnRealizarPedidoActionPerformed
-
+    //Aqui se devuelve a la anterior ventana
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-       Visitante vist = new Visitante();
-       vist.setVisible(true);
-       this.dispose();
+        Visitante vist = new Visitante();
+        vist.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
-
+    //Aqui envia a la ventana LogIn
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
-
+    //Vuelve a LogIn
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
-        Login log= new Login();
+         //resp =0 si, resp = 1 no.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp==0){
+        Login log = new Login();
         log.setVisible(true);
         this.dispose();
-    
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
@@ -288,42 +297,37 @@ public class GUIVisitante extends javax.swing.JFrame {
             }
         });
     }
-    
+
+    //Aqui es donde se realiza todo el proceso de llenado de los cbx
     private void llenarTabla() throws Exception {
-        IComponenteRepository service= Factory.getInstance().getRepositoryComponente();
-        ComponenteService componenteService= new ComponenteService(service);
+        IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
+        ComponenteService componenteService = new ComponenteService(service);
 
         List<Componente> objListComponentes = new ArrayList<Componente>();
         int almuerzo = 1;
         objListComponentes = componenteService.listComponentesAlmuerzo(almuerzo);
-        
 
         String matriz[][] = new String[objListComponentes.size()][3];
 
         for (int i = 0; i < objListComponentes.size(); i++) {
             matriz[i][0] = objListComponentes.get(i).getNombreComponente();
             matriz[i][1] = objListComponentes.get(i).getTipoComponente();
-            if("Entrada".equals(objListComponentes.get(i).getTipoComponente()))
-            {
+            if ("Entrada".equals(objListComponentes.get(i).getTipoComponente())) {
                 cbxEntrada.addItem(objListComponentes.get(i).getNombreComponente());
             }
-            if("Principio".equals(objListComponentes.get(i).getTipoComponente()))
-            {
+            if ("Principio".equals(objListComponentes.get(i).getTipoComponente())) {
                 cbxPrincipio.addItem(objListComponentes.get(i).getNombreComponente());
             }
-            if("Proteina".equals(objListComponentes.get(i).getTipoComponente()))
-            {
+            if ("Proteina".equals(objListComponentes.get(i).getTipoComponente())) {
                 cbxProteina.addItem(objListComponentes.get(i).getNombreComponente());
             }
-            if("Bebida".equals(objListComponentes.get(i).getTipoComponente()))
-            {
+            if ("Bebida".equals(objListComponentes.get(i).getTipoComponente())) {
                 cbxBebida.addItem(objListComponentes.get(i).getNombreComponente());
             }
         }
-        
+
     }
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
@@ -346,6 +350,5 @@ public class GUIVisitante extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBienvenido;
     // End of variables declaration//GEN-END:variables
-
 
 }

@@ -5,9 +5,11 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author dania
+ * @author SoftwareTeam
  */
 public class Visitante extends javax.swing.JFrame {
 
@@ -30,8 +32,8 @@ public class Visitante extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        btniniciarsesion2 = new javax.swing.JButton();
+        lblElegirRest = new javax.swing.JLabel();
+        lblInicioSesion = new javax.swing.JButton();
         btnRest3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         btnIniciarSesion = new javax.swing.JButton();
@@ -39,7 +41,7 @@ public class Visitante extends javax.swing.JFrame {
         btnRest1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        imgContacto2 = new javax.swing.JLabel();
+        imgLogo = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,23 +49,23 @@ public class Visitante extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Elige un restaurante ");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(200, 80, 350, 40);
+        lblElegirRest.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        lblElegirRest.setForeground(new java.awt.Color(255, 255, 255));
+        lblElegirRest.setText("Elige un restaurante ");
+        jPanel1.add(lblElegirRest);
+        lblElegirRest.setBounds(190, 90, 460, 40);
 
-        btniniciarsesion2.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        btniniciarsesion2.setBorder(null);
-        btniniciarsesion2.setBorderPainted(false);
-        btniniciarsesion2.setContentAreaFilled(false);
-        btniniciarsesion2.addActionListener(new java.awt.event.ActionListener() {
+        lblInicioSesion.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        lblInicioSesion.setBorder(null);
+        lblInicioSesion.setBorderPainted(false);
+        lblInicioSesion.setContentAreaFilled(false);
+        lblInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btniniciarsesion2ActionPerformed(evt);
+                lblInicioSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btniniciarsesion2);
-        btniniciarsesion2.setBounds(370, 330, 210, 20);
+        jPanel1.add(lblInicioSesion);
+        lblInicioSesion.setBounds(370, 330, 210, 20);
 
         btnRest3.setBackground(new java.awt.Color(102, 0, 0));
         btnRest3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -150,13 +152,13 @@ public class Visitante extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(410, 320, 180, 40);
 
-        imgContacto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_restaurante .png"))); // NOI18N
-        jPanel1.add(imgContacto2);
-        imgContacto2.setBounds(390, 180, 200, 140);
+        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_restaurante .png"))); // NOI18N
+        jPanel1.add(imgLogo);
+        imgLogo.setBounds(390, 180, 200, 140);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/visitante.jpg"))); // NOI18N
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(0, 0, 690, 480);
+        jLabel6.setBounds(0, 0, 720, 480);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
@@ -167,15 +169,14 @@ public class Visitante extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void btniniciarsesion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarsesion2ActionPerformed
+    private void lblInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblInicioSesionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btniniciarsesion2ActionPerformed
+    }//GEN-LAST:event_lblInicioSesionActionPerformed
 
     private void btnRest3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest3ActionPerformed
       // JOptionPane.showMessageDialog(null, "Su pedido se ha realizado con éxito");
-      GUIVisitante vist = new GUIVisitante();
-        vist.setVisible(true);
-        this.dispose();
+              JOptionPane.showMessageDialog(null, "Lo sentimos, aún estamos trabajando para darte lo mejor", "En contrucción", JOptionPane.WARNING_MESSAGE);
+
     }//GEN-LAST:event_btnRest3ActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
@@ -186,9 +187,8 @@ public class Visitante extends javax.swing.JFrame {
 
     private void btnRest2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest2ActionPerformed
         // TODO add your handling code here:
-    GUIVisitante vist = new GUIVisitante();
-        vist.setVisible(true);
-        this.dispose();
+            JOptionPane.showMessageDialog(null, "Lo sentimos, aún estamos trabajando para darte lo mejor", "En contrucción", JOptionPane.WARNING_MESSAGE);
+
     }//GEN-LAST:event_btnRest2ActionPerformed
 
     private void btnRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest1ActionPerformed
@@ -241,13 +241,13 @@ public class Visitante extends javax.swing.JFrame {
     private javax.swing.JButton btnRest1;
     private javax.swing.JButton btnRest2;
     private javax.swing.JButton btnRest3;
-    private javax.swing.JButton btniniciarsesion2;
-    private javax.swing.JLabel imgContacto2;
+    private javax.swing.JLabel imgLogo;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblElegirRest;
+    private javax.swing.JButton lblInicioSesion;
     // End of variables declaration//GEN-END:variables
 }
