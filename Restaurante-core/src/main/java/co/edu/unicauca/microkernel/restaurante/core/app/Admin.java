@@ -47,6 +47,7 @@ public class Admin extends javax.swing.JFrame {
         }
     }
 
+    //Constructor usado por Login para manejar el usuario que se Loggea
     public Admin(String restId) {
         this.restId = restId;
         initComponents();
@@ -71,9 +72,9 @@ public class Admin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaComp = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnGUIComponentes = new javax.swing.JButton();
+        btnAñadorAlmuerzo = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         btnVeinte = new javax.swing.JButton();
         btnCinco = new javax.swing.JButton();
         btnDiez = new javax.swing.JButton();
@@ -83,7 +84,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        btnContacto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,43 +123,43 @@ public class Admin extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 540, 170));
 
-        jButton4.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(153, 0, 0));
-        jButton4.setText("Añadir Componentes");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnGUIComponentes.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnGUIComponentes.setForeground(new java.awt.Color(153, 0, 0));
+        btnGUIComponentes.setText("Añadir Componentes");
+        btnGUIComponentes.setBorder(null);
+        btnGUIComponentes.setBorderPainted(false);
+        btnGUIComponentes.setContentAreaFilled(false);
+        btnGUIComponentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnGUIComponentesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, 30));
+        getContentPane().add(btnGUIComponentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, 30));
 
-        jButton3.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(153, 0, 0));
-        jButton3.setText("Añadir Almuerzo");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnAñadorAlmuerzo.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnAñadorAlmuerzo.setForeground(new java.awt.Color(153, 0, 0));
+        btnAñadorAlmuerzo.setText("Añadir Almuerzo");
+        btnAñadorAlmuerzo.setBorder(null);
+        btnAñadorAlmuerzo.setBorderPainted(false);
+        btnAñadorAlmuerzo.setContentAreaFilled(false);
+        btnAñadorAlmuerzo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnAñadorAlmuerzoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, 30));
+        getContentPane().add(btnAñadorAlmuerzo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, 30));
 
-        jButton1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 60, 30));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 60, 30));
 
         btnVeinte.setBackground(new java.awt.Color(255, 255, 255));
         btnVeinte.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -228,17 +229,17 @@ public class Admin extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 70, 50));
 
-        jButton7.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jButton7.setText("Contactanos");
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnContacto.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        btnContacto.setText("Contactanos");
+        btnContacto.setBorder(null);
+        btnContacto.setBorderPainted(false);
+        btnContacto.setContentAreaFilled(false);
+        btnContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnContactoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 90, 30));
+        getContentPane().add(btnContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
@@ -247,13 +248,15 @@ public class Admin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    //Boton salir de la sesion y devolverse a Login
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         Login log = new Login();
         log.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    //Boton para acceder a la interfaz grafica de agregar almuerzo
+    private void btnAñadorAlmuerzoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadorAlmuerzoActionPerformed
         AdminAlmuerzo adalmu = null;
         try {
             adalmu = new AdminAlmuerzo();
@@ -262,18 +265,23 @@ public class Admin extends javax.swing.JFrame {
         }
         adalmu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnAñadorAlmuerzoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    //Boton para acceder a la interfaz grafica de agregar componente
+    private void btnGUIComponentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGUIComponentesActionPerformed
         AdminCompo adcom = new AdminCompo();
         adcom.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnGUIComponentesActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    //Boton para acceder a la interfaz grafica de contacto
+    private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
+        Contacto cont = new Contacto();
+        cont.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnContactoActionPerformed
 
+    //Boton para definir la cantidad de elementos a 20 en lista
     private void btnVeinteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeinteActionPerformed
         cantidad = 20;
         try {
@@ -283,6 +291,7 @@ public class Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnVeinteActionPerformed
 
+    //Boton para definir la cantidad de elementos a 5 en lista (default)
     private void btnCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCincoActionPerformed
         cantidad = 5;
         try {
@@ -292,6 +301,7 @@ public class Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCincoActionPerformed
 
+    //Boton para definir la cantidad de elementos a 10 en lista
     private void btnDiezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiezActionPerformed
         cantidad = 10;
         try {
@@ -301,6 +311,7 @@ public class Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnDiezActionPerformed
 
+    //Boton para ir avanzar a los siguientes X elementos en la lista
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         if(index < returnCantidad()-cantidad){
             index = index + cantidad;
@@ -312,6 +323,7 @@ public class Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnNextActionPerformed
 
+    //Boton para retroceder a los siguientes X elementos en la lista
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         if(index > 0){
             index = index - cantidad;
@@ -359,6 +371,7 @@ public class Admin extends javax.swing.JFrame {
         });
     }
 
+    //Metodo para llenar la tabla con todos los componentes
     private void llenarTabla(int indicador) throws Exception {
         index = indicador;
         
@@ -397,7 +410,7 @@ public class Admin extends javax.swing.JFrame {
         
         cantidad = temp;
         
-
+        //Anterior codigo para llenar con todos los componentes disponibles sin restringir elementos
         /*tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{
@@ -413,6 +426,8 @@ public class Admin extends javax.swing.JFrame {
         ));
     }
     
+    //Metodo que retorna la cantidad de componentes, usado en el boton next para
+    // evitar que el usuaria avance mas de los componentes permitidos
     private int returnCantidad(){
         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
@@ -426,15 +441,15 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAñadorAlmuerzo;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCinco;
+    private javax.swing.JButton btnContacto;
     private javax.swing.JButton btnDiez;
+    private javax.swing.JButton btnGUIComponentes;
     private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnVeinte;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
