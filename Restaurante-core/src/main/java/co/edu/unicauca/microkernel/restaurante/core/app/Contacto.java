@@ -32,7 +32,7 @@ public class Contacto extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         imgWp = new javax.swing.JLabel();
         btnDudas = new javax.swing.JButton();
         btnDevolver = new javax.swing.JButton();
@@ -55,18 +55,18 @@ public class Contacto extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(470, 350, 160, 40);
 
-        jButton1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jButton1.setText("Inicio");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAtras.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.setBorder(null);
+        btnAtras.setBorderPainted(false);
+        btnAtras.setContentAreaFilled(false);
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(530, 73, 90, 30);
+        jPanel1.add(btnAtras);
+        btnAtras.setBounds(540, 70, 90, 30);
 
         imgWp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/whatsapp-logo.png"))); // NOI18N
         jPanel1.add(imgWp);
@@ -119,11 +119,11 @@ public class Contacto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         Login log= new Login();
         log.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnDudasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDudasActionPerformed
         // TODO add your handling code here:
@@ -174,12 +174,12 @@ public class Contacto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnDevolver;
     private javax.swing.JButton btnDudas;
     private javax.swing.JLabel imgContacto;
     private javax.swing.JLabel imgHome;
     private javax.swing.JLabel imgWp;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

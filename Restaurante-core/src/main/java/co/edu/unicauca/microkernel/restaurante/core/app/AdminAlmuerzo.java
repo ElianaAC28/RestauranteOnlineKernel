@@ -64,15 +64,17 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         imgContacto1 = new javax.swing.JLabel();
         btnContacto = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnSeleccionarImg = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         txtCosto = new javax.swing.JTextField();
         btnFinalizar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         jPanel1.setLayout(null);
 
         tblListaComp.setAutoCreateRowSorter(true);
@@ -104,19 +106,19 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblListaComp);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(90, 180, 550, 200);
+        jScrollPane1.setBounds(80, 150, 550, 170);
 
         jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 0, 0));
         jLabel3.setText("Administrador");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(390, 70, 104, 40);
+        jLabel3.setBounds(400, 40, 104, 40);
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
         jLabel5.setText("Agregar almuerzo");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(90, 70, 300, 50);
+        jLabel5.setBounds(70, 30, 300, 50);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
@@ -133,11 +135,11 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCrear);
-        btnCrear.setBounds(310, 130, 70, 30);
+        btnCrear.setBounds(310, 100, 70, 30);
 
         btnSeleccionar.setBackground(new java.awt.Color(255, 255, 255));
         btnSeleccionar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnSeleccionar.setText("AgregarCompo");
+        btnSeleccionar.setText("Agregar componentes");
         btnSeleccionar.setActionCommand("");
         btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,9 +147,9 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSeleccionar);
-        btnSeleccionar.setBounds(510, 390, 130, 30);
+        btnSeleccionar.setBounds(430, 100, 200, 30);
         jPanel1.add(txtAlmu);
-        txtAlmu.setBounds(170, 130, 130, 30);
+        txtAlmu.setBounds(170, 100, 130, 30);
 
         lblImagen.setForeground(new java.awt.Color(153, 0, 0));
         jPanel1.add(lblImagen);
@@ -157,11 +159,11 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(153, 0, 0));
         jLabel12.setText("Costo:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(460, 140, 50, 20);
+        jLabel12.setBounds(180, 360, 50, 20);
 
         imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cc.png"))); // NOI18N
         jPanel1.add(imgContacto1);
-        imgContacto1.setBounds(470, 60, 48, 48);
+        imgContacto1.setBounds(480, 40, 40, 30);
 
         btnContacto.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         btnContacto.setText("Contactanos");
@@ -174,7 +176,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnContacto);
-        btnContacto.setBounds(510, 80, 71, 18);
+        btnContacto.setBounds(520, 50, 77, 19);
 
         btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         btnSalir.setText("Salir");
@@ -187,30 +189,19 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(600, 80, 24, 18);
-
-        btnSeleccionarImg.setBackground(new java.awt.Color(255, 255, 255));
-        btnSeleccionarImg.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnSeleccionarImg.setText("Seleccionar imagen");
-        btnSeleccionarImg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionarImgActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnSeleccionarImg);
-        btnSeleccionarImg.setBounds(100, 390, 150, 30);
+        btnSalir.setBounds(610, 50, 27, 19);
 
         jLabel14.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 0, 0));
         jLabel14.setText("Id Almuerzo:");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(90, 140, 90, 20);
+        jLabel14.setBounds(90, 110, 90, 20);
         jPanel1.add(txtCosto);
-        txtCosto.setBounds(510, 130, 100, 30);
+        txtCosto.setBounds(230, 350, 120, 30);
 
         btnFinalizar.setBackground(new java.awt.Color(255, 255, 255));
         btnFinalizar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnFinalizar.setText("Finalizar");
+        btnFinalizar.setText("Agregar almuerzo");
         btnFinalizar.setActionCommand("");
         btnFinalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,21 +209,45 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnFinalizar);
-        btnFinalizar.setBounds(340, 390, 90, 30);
+        btnFinalizar.setBounds(400, 350, 140, 30);
+
+        btnActualizar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(153, 0, 0));
+        btnActualizar.setText("Actualizar almuerzo");
+        btnActualizar.setBorder(null);
+        btnActualizar.setBorderPainted(false);
+        btnActualizar.setContentAreaFilled(false);
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnActualizar);
+        btnActualizar.setBounds(350, 430, 190, 23);
+
+        btnMostrar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnMostrar.setForeground(new java.awt.Color(153, 0, 0));
+        btnMostrar.setText("Mostrar Componentes");
+        btnMostrar.setBorder(null);
+        btnMostrar.setBorderPainted(false);
+        btnMostrar.setContentAreaFilled(false);
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMostrar);
+        btnMostrar.setBounds(170, 430, 171, 23);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/otra.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 10, 720, 480);
+        jLabel1.setBounds(0, 0, 740, 490);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSeleccionarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarImgActionPerformed
-      
-    }//GEN-LAST:event_btnSeleccionarImgActionPerformed
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
 
@@ -351,6 +366,19 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
                 successMessage(ex.getMessage() + "Error", "Atención");
         }
     }//GEN-LAST:event_btnFinalizarActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+
+        AdminActualizarAlmuerzo update = new AdminActualizarAlmuerzo();
+        update.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        Admin admin = new Admin();
+        admin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void clearCotronls() {
         txtAlmu.setText("");
@@ -486,12 +514,13 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnContacto;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnFinalizar;
+    private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSeleccionar;
-    private javax.swing.JButton btnSeleccionarImg;
     private javax.swing.JLabel imgContacto1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
