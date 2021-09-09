@@ -18,11 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author dania
+ * @author SoftwareTeam
  */
 public class AdminAlmuerzo extends javax.swing.JFrame {
 
@@ -31,15 +32,15 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
      */
     List<Componente> objListComponentes = new ArrayList<Componente>();
     String tipoid;
-    
+
     public AdminAlmuerzo() throws Exception {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Administrador Almuerzo");
         setLocationRelativeTo(null); //centrar la ventana
-       
+
         mostrar();
-        
+
     }
 
     /**
@@ -54,22 +55,22 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaComp = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblAdmin = new javax.swing.JLabel();
+        lblAddAlmuerzo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnCrear = new javax.swing.JButton();
-        btnSeleccionar = new javax.swing.JButton();
+        btnCrearAlmu = new javax.swing.JButton();
+        btnAddComp = new javax.swing.JButton();
         txtAlmu = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblCosto = new javax.swing.JLabel();
         imgContacto1 = new javax.swing.JLabel();
         btnContacto = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         txtCosto = new javax.swing.JTextField();
-        btnFinalizar = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
-        btnMostrar = new javax.swing.JButton();
+        btnAddAlmu = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnMostrarComp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,46 +110,46 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(80, 150, 550, 170);
 
-        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel3.setText("Administrador");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(400, 50, 104, 40);
+        lblAdmin.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        lblAdmin.setForeground(new java.awt.Color(153, 0, 0));
+        lblAdmin.setText("Administrador");
+        jPanel1.add(lblAdmin);
+        lblAdmin.setBounds(400, 50, 104, 40);
 
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel5.setText("Agregar almuerzo");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(70, 40, 300, 50);
+        lblAddAlmuerzo.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        lblAddAlmuerzo.setForeground(new java.awt.Color(153, 0, 0));
+        lblAddAlmuerzo.setText("Agregar almuerzo");
+        jPanel1.add(lblAddAlmuerzo);
+        lblAddAlmuerzo.setBounds(70, 40, 300, 50);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
         jLabel4.setText("Id:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(-30, 0, 16, 17);
+        jLabel4.setBounds(-30, 0, 16, 18);
 
-        btnCrear.setBackground(new java.awt.Color(255, 255, 255));
-        btnCrear.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnCrear.setText("Crear");
-        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+        btnCrearAlmu.setBackground(new java.awt.Color(255, 255, 255));
+        btnCrearAlmu.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnCrearAlmu.setText("Crear");
+        btnCrearAlmu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearActionPerformed(evt);
+                btnCrearAlmuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCrear);
-        btnCrear.setBounds(310, 100, 70, 30);
+        jPanel1.add(btnCrearAlmu);
+        btnCrearAlmu.setBounds(310, 100, 70, 30);
 
-        btnSeleccionar.setBackground(new java.awt.Color(255, 255, 255));
-        btnSeleccionar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnSeleccionar.setText("Agregar componentes");
-        btnSeleccionar.setActionCommand("");
-        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
+        btnAddComp.setBackground(new java.awt.Color(255, 255, 255));
+        btnAddComp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnAddComp.setText("Agregar componentes");
+        btnAddComp.setActionCommand("");
+        btnAddComp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionarActionPerformed(evt);
+                btnAddCompActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSeleccionar);
-        btnSeleccionar.setBounds(430, 100, 200, 30);
+        jPanel1.add(btnAddComp);
+        btnAddComp.setBounds(430, 100, 200, 30);
         jPanel1.add(txtAlmu);
         txtAlmu.setBounds(170, 100, 130, 30);
 
@@ -156,11 +157,11 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(lblImagen);
         lblImagen.setBounds(390, 180, 240, 140);
 
-        jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel12.setText("Costo:");
-        jPanel1.add(jLabel12);
-        jLabel12.setBounds(180, 360, 50, 20);
+        lblCosto.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        lblCosto.setForeground(new java.awt.Color(153, 0, 0));
+        lblCosto.setText("Costo:");
+        jPanel1.add(lblCosto);
+        lblCosto.setBounds(180, 360, 50, 20);
 
         imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cc.png"))); // NOI18N
         jPanel1.add(imgContacto1);
@@ -177,7 +178,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnContacto);
-        btnContacto.setBounds(520, 60, 83, 17);
+        btnContacto.setBounds(520, 60, 77, 19);
 
         btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         btnSalir.setText("Salir");
@@ -190,7 +191,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(610, 60, 29, 17);
+        btnSalir.setBounds(610, 60, 27, 19);
 
         jLabel14.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 0, 0));
@@ -200,45 +201,45 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(txtCosto);
         txtCosto.setBounds(230, 350, 120, 30);
 
-        btnFinalizar.setBackground(new java.awt.Color(255, 255, 255));
-        btnFinalizar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnFinalizar.setText("Agregar almuerzo");
-        btnFinalizar.setActionCommand("");
-        btnFinalizar.addActionListener(new java.awt.event.ActionListener() {
+        btnAddAlmu.setBackground(new java.awt.Color(255, 255, 255));
+        btnAddAlmu.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnAddAlmu.setText("Agregar almuerzo");
+        btnAddAlmu.setActionCommand("");
+        btnAddAlmu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFinalizarActionPerformed(evt);
+                btnAddAlmuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFinalizar);
-        btnFinalizar.setBounds(400, 350, 140, 30);
+        jPanel1.add(btnAddAlmu);
+        btnAddAlmu.setBounds(400, 350, 140, 30);
 
-        btnActualizar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        btnActualizar.setForeground(new java.awt.Color(153, 0, 0));
-        btnActualizar.setText("Actualizar almuerzo");
-        btnActualizar.setBorder(null);
-        btnActualizar.setBorderPainted(false);
-        btnActualizar.setContentAreaFilled(false);
-        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(153, 0, 0));
+        btnUpdate.setText("Actualizar almuerzo");
+        btnUpdate.setBorder(null);
+        btnUpdate.setBorderPainted(false);
+        btnUpdate.setContentAreaFilled(false);
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizar);
-        btnActualizar.setBounds(360, 420, 190, 23);
+        jPanel1.add(btnUpdate);
+        btnUpdate.setBounds(360, 420, 190, 23);
 
-        btnMostrar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        btnMostrar.setForeground(new java.awt.Color(153, 0, 0));
-        btnMostrar.setText("Mostrar Componentes");
-        btnMostrar.setBorder(null);
-        btnMostrar.setBorderPainted(false);
-        btnMostrar.setContentAreaFilled(false);
-        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarComp.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnMostrarComp.setForeground(new java.awt.Color(153, 0, 0));
+        btnMostrarComp.setText("Mostrar Componentes");
+        btnMostrarComp.setBorder(null);
+        btnMostrarComp.setBorderPainted(false);
+        btnMostrarComp.setContentAreaFilled(false);
+        btnMostrarComp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarActionPerformed(evt);
+                btnMostrarCompActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMostrar);
-        btnMostrar.setBounds(170, 420, 181, 23);
+        jPanel1.add(btnMostrarComp);
+        btnMostrarComp.setBounds(170, 420, 171, 23);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base - copia.png"))); // NOI18N
@@ -250,60 +251,55 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
+    private void btnAddCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCompActionPerformed
 
         //Sacamos el ide de la tabla con los componentes
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
-        
-        
-        String id_Comp = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0));
-        String nombreCom = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),2));
+
+        String id_Comp = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(), 0));
+        String nombreCom = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(), 2));
         String idTipo = convert(nombreCom);
 
-        
         IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo();
-        AlmuerzoService objService= new AlmuerzoService(service);
-        
+        AlmuerzoService objService = new AlmuerzoService(service);
+
         IComponenteRepository serviceCom = Factory.getInstance().getRepositoryComponente();
         ComponenteService objServiceCom = new ComponenteService(serviceCom);
-        
+
         Almuerzo objAlmu = new Almuerzo();
-        
+
         objAlmu.setIdAlmuerzo(txtAlmu.getText());
-        objAlmu.setRestId(1+"");
+        objAlmu.setRestId(1 + "");
         int ban = 0;
-           
+
         try {
-             // Así mismo como el anterior vamos a contar cuantos tiposs de componentes hay en un almuerzo determinado. 
-             String response = objServiceCom.contarComponente(Integer.parseInt(txtAlmu.getText()), Integer.parseInt(idTipo));
-             
-             int valor = Integer.parseInt(response); //convertimos a entero la respuesta de contarComponente
-             if(valor <= 4 ){
+            // Así mismo como el anterior vamos a contar cuantos tiposs de componentes hay en un almuerzo determinado. 
+            String response = objServiceCom.contarComponente(Integer.parseInt(txtAlmu.getText()), Integer.parseInt(idTipo));
+
+            int valor = Integer.parseInt(response); //convertimos a entero la respuesta de contarComponente
+            if (valor <= 4) {
                 ban = 1; //bandera para saber que hay menos de 4 componentes del mismo tipo
-             } 
+            }
         } catch (Exception ex) {
-                System.out.println(ex);
-                successMessage(ex.getMessage() + "Error", "Atención");
+            System.out.println(ex);
+            successMessage(ex.getMessage() + "Error", "Atención");
         }
-        
-        if(ban == 1){ // comparamos la bandera para saber la cantidad de componentes que tiene el almuerzo del mismo tipo
+
+        if (ban == 1) { // comparamos la bandera para saber la cantidad de componentes que tiene el almuerzo del mismo tipo
             try {
                 String response = objService.asociarComp(txtAlmu.getText(), id_Comp); // enviamos al objService el metodo de asocie el componente al almuerzo
-                 successMessage("Componente del Almuerzo " + response + " fue asociado con exito.", "Atención");
+                successMessage("Componente del Almuerzo " + response + " fue asociado con exito.", "Atención");
 
             } catch (Exception ex) {
-                    System.out.println(ex);
-                    successMessage(ex.getMessage() + "Error", "Atención");
+                System.out.println(ex);
+                successMessage(ex.getMessage() + "Error", "Atención");
             }
-        }
-        else{
-             successMessage("El almuerzo se encuentra con 5 componentes del tipo "+nombreCom, "Atención");
+        } else {
+            successMessage("El almuerzo se encuentra con 5 componentes del tipo " + nombreCom, "Atención");
 
         }
-        //adcom.setVisible(true);
-        //this.dispose();                                        
 
-    }//GEN-LAST:event_btnSeleccionarActionPerformed
+    }//GEN-LAST:event_btnAddCompActionPerformed
 
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
         // TODO add your handling code here:
@@ -313,85 +309,90 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContactoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        Login log = new Login();
-        log.setVisible(true);
-        this.dispose();
+        //resp =0 si, resp = 1 no.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp == 0) {
+            Login log = new Login();
+            log.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+    private void btnCrearAlmuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAlmuActionPerformed
         // TODO add your handling code here:
-        
+
         IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo();
-        AlmuerzoService objService= new AlmuerzoService(service);
+        AlmuerzoService objService = new AlmuerzoService(service);
         Almuerzo objAlmu = new Almuerzo();
         objAlmu.setIdAlmuerzo(txtAlmu.getText());
-        objAlmu.setRestId(1+""); //de forma predeterminada lo guardamos en el restaurante 1
-        objAlmu.setCostoAlm(0+""); //fabrica hasta que le enviemos el precio
-        
+        objAlmu.setRestId(1 + ""); //de forma predeterminada lo guardamos en el restaurante 1
+        objAlmu.setCostoAlm(0 + ""); //fabrica hasta que le enviemos el precio
+
         try {
             String cont = objService.contarAlmu(objAlmu);
-            if(Integer.parseInt(cont) == 0){
+            if (Integer.parseInt(cont) == 0) {
                 String response = objService.createAlmuerzo(objAlmu);
                 llenarTabla();
                 successMessage("Almuerzo" + response + " Creado con exito.", "Atención");
                 txtAlmu.setEditable(false);
-                btnCrear.setVisible(false);
-            }
-            else{
+                btnCrearAlmu.setVisible(false);
+            } else {
                 successMessage("Almuerzo no fue creado, ya exite un almuerzo con ese ID", "Error");
                 clearCotronls();
-            }           
-             
-        } catch (Exception ex) {
-                System.out.println(ex);
-                successMessage(ex.getMessage() + "Error", "Atención");
-        }
-    }//GEN-LAST:event_btnCrearActionPerformed
+            }
 
-    private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
+        } catch (Exception ex) {
+            System.out.println(ex);
+            successMessage(ex.getMessage() + "Error", "Atención");
+        }
+    }//GEN-LAST:event_btnCrearAlmuActionPerformed
+
+    private void btnAddAlmuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAlmuActionPerformed
         // TODO add your handling code here:
         IAlmuerzoRepository service = Factory.getInstance().getRepositoryAlmuerzo();
-        AlmuerzoService objService= new AlmuerzoService(service);
+        AlmuerzoService objService = new AlmuerzoService(service);
         Almuerzo objAlmu = new Almuerzo();
         objAlmu.setIdAlmuerzo(txtAlmu.getText());
-        objAlmu.setRestId(1+""); //de forma predeterminada lo guardamos en el restaurante 1
+        objAlmu.setRestId(1 + ""); //de forma predeterminada lo guardamos en el restaurante 1
         objAlmu.setCostoAlm(txtCosto.getText()); //fabrica hasta que le enviemos el precio
-        
-         try {
-                String response = objService.updateCosto(objAlmu);
-                successMessage("Almuerzo" + response + " Creado con exito.", "Atención");
-                clearcontroles();         
-             
-        } catch (Exception ex) {
-                System.out.println(ex);
-                successMessage(ex.getMessage() + "Error", "Atención");
-        }
-    }//GEN-LAST:event_btnFinalizarActionPerformed
 
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        try {
+            String response = objService.updateCosto(objAlmu);
+            successMessage("Almuerzo" + response + " Creado con exito.", "Atención");
+            clearcontroles();
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+            successMessage(ex.getMessage() + "Error", "Atención");
+        }
+    }//GEN-LAST:event_btnAddAlmuActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
 
         AdminActualizarAlmuerzo update = new AdminActualizarAlmuerzo();
         update.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnActualizarActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+    private void btnMostrarCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCompActionPerformed
         Admin admin = new Admin();
         admin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnMostrarActionPerformed
+    }//GEN-LAST:event_btnMostrarCompActionPerformed
 
     private void clearCotronls() {
         txtAlmu.setText("");
     }
+
     private void clearcontroles() {
         txtAlmu.setText("");
         txtCosto.setText("");
-        btnCrear.setVisible(true);
+        btnCrearAlmu.setVisible(true);
         //Sacamos el ide de la tabla con los componentes
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
         tabla1.setRowCount(0);
-    } 
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -445,7 +446,8 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
     }
-     public void mostrar() throws Exception {
+
+    public void mostrar() throws Exception {
         /*IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);
 
@@ -474,11 +476,11 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
 
         }*/
-     }
+    }
 
-     private void llenarTabla() throws Exception {
-        IComponenteRepository service= Factory.getInstance().getRepositoryComponente();
-        ComponenteService componenteService= new ComponenteService(service);
+    private void llenarTabla() throws Exception {
+        IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
+        ComponenteService componenteService = new ComponenteService(service);
 
         //Componente objComponente = new Componente();
         List<Componente> objListComponentes = new ArrayList<Componente>();
@@ -488,7 +490,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         String matriz[][] = new String[objListComponentes.size()][3];
 
         for (int i = 0; i < objListComponentes.size(); i++) {
-            matriz[i][0] = objListComponentes.get(i).getIdComponente()+"";
+            matriz[i][0] = objListComponentes.get(i).getIdComponente() + "";
             matriz[i][1] = objListComponentes.get(i).getNombreComponente();
             matriz[i][2] = objListComponentes.get(i).getTipoComponente();
         }
@@ -496,46 +498,46 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{
-                     "ID","Nombre", "Tipo"
+                    "ID", "Nombre", "Tipo"
                 }
         ));
     }
-    private String convert(String nombre){
-        if(nombre.equals("Entrada")){
-            return 1+"";
+
+    private String convert(String nombre) {
+        if (nombre.equals("Entrada")) {
+            return 1 + "";
         }
-        if(nombre.equals("Principio")){
-            return 2+"";
+        if (nombre.equals("Principio")) {
+            return 2 + "";
         }
-        if(nombre.equals("Proteina")){
-            return 3+"";
+        if (nombre.equals("Proteina")) {
+            return 3 + "";
         }
-        return 4+"";
+        return 4 + "";
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnAddAlmu;
+    private javax.swing.JButton btnAddComp;
     private javax.swing.JButton btnContacto;
-    private javax.swing.JButton btnCrear;
-    private javax.swing.JButton btnFinalizar;
-    private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnCrearAlmu;
+    private javax.swing.JButton btnMostrarComp;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSeleccionar;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel imgContacto1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAddAlmuerzo;
+    private javax.swing.JLabel lblAdmin;
+    private javax.swing.JLabel lblCosto;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JTable tblListaComp;
     private javax.swing.JTextField txtAlmu;
     private javax.swing.JTextField txtCosto;
     // End of variables declaration//GEN-END:variables
 
-    
 }

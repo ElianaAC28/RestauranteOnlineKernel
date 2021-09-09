@@ -241,9 +241,13 @@ public class Usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContactoActionPerformed
     //Vuelve a LogIn
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        //resp =0 si, resp = 1 no.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp==0){
         Login log = new Login();
         log.setVisible(true);
         this.dispose();
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**

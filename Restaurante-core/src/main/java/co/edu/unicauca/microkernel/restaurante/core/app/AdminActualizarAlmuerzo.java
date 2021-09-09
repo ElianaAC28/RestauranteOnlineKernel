@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -58,13 +59,13 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         tblListaComp = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         txtAlmu = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        imgContacto = new javax.swing.JLabel();
+        lblIdAlmu = new javax.swing.JLabel();
+        imgUpdate = new javax.swing.JLabel();
         btnContacto = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         imgContacto1 = new javax.swing.JLabel();
-        imgContacto2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        imgEliminar = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,7 +74,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
 
         btnQuitar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnQuitar.setForeground(new java.awt.Color(153, 0, 0));
-        btnQuitar.setText("Quitar");
+        btnQuitar.setText("Eliminar componente");
         btnQuitar.setBorder(null);
         btnQuitar.setBorderPainted(false);
         btnQuitar.setContentAreaFilled(false);
@@ -83,7 +84,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnQuitar);
-        btnQuitar.setBounds(420, 390, 60, 30);
+        btnQuitar.setBounds(300, 380, 170, 20);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
         jPanel1.add(jLabel2);
@@ -118,7 +119,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnActualizar);
-        btnActualizar.setBounds(510, 390, 120, 30);
+        btnActualizar.setBounds(510, 380, 77, 20);
 
         btnMostrar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnMostrar.setForeground(new java.awt.Color(153, 0, 0));
@@ -132,7 +133,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnMostrar);
-        btnMostrar.setBounds(120, 390, 171, 23);
+        btnMostrar.setBounds(100, 380, 171, 23);
 
         tblListaComp.setAutoCreateRowSorter(true);
         tblListaComp.setFont(new java.awt.Font("Calibri Light", 2, 14)); // NOI18N
@@ -163,7 +164,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblListaComp);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(120, 180, 510, 180);
+        jScrollPane1.setBounds(120, 180, 510, 170);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
@@ -173,15 +174,15 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(txtAlmu);
         txtAlmu.setBounds(220, 130, 130, 30);
 
-        jLabel12.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel12.setText("Id Almuerzo:");
-        jPanel1.add(jLabel12);
-        jLabel12.setBounds(130, 140, 90, 20);
+        lblIdAlmu.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        lblIdAlmu.setForeground(new java.awt.Color(153, 0, 0));
+        lblIdAlmu.setText("Id Almuerzo:");
+        jPanel1.add(lblIdAlmu);
+        lblIdAlmu.setBounds(130, 140, 90, 20);
 
-        imgContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update.png"))); // NOI18N
-        jPanel1.add(imgContacto);
-        imgContacto.setBounds(610, 390, 30, 30);
+        imgUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update.png"))); // NOI18N
+        jPanel1.add(imgUpdate);
+        imgUpdate.setBounds(590, 370, 30, 30);
 
         btnContacto.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         btnContacto.setText("Contactanos");
@@ -213,14 +214,14 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jPanel1.add(imgContacto1);
         imgContacto1.setBounds(470, 60, 48, 48);
 
-        imgContacto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar2.png"))); // NOI18N
-        jPanel1.add(imgContacto2);
-        imgContacto2.setBounds(480, 390, 20, 30);
+        imgEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar2.png"))); // NOI18N
+        jPanel1.add(imgEliminar);
+        imgEliminar.setBounds(470, 370, 20, 30);
 
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, -10, 720, 510);
+        lblFondo.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
+        jPanel1.add(lblFondo);
+        lblFondo.setBounds(0, -10, 720, 510);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
@@ -259,6 +260,11 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
 
     private void btnQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarActionPerformed
         // TODO add your handling code here:
+        int input = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar el componente?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        // 0=yes, 1=no, 
+        System.out.println(input);
+        if (input==0){
+            
         
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel(); // crea la tabla 1, y se le asiigna el modelo
         dato = String.valueOf(tabla1.getValueAt(tblListaComp.getSelectedRow(),0)); // sacar el id del compoente que se selecciona en la tabla1   
@@ -288,6 +294,8 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
                 System.out.println(ex);
                 successMessage(ex.getMessage() + "Error", "Atención");
             }
+        }
+        
     }//GEN-LAST:event_btnQuitarActionPerformed
 
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
@@ -298,9 +306,13 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContactoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         //resp =0 si, resp = 1 no.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp==0){
         Login log = new Login();
         log.setVisible(true);
         this.dispose();
+        }
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
@@ -410,16 +422,16 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnQuitar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JLabel imgContacto;
     private javax.swing.JLabel imgContacto1;
-    private javax.swing.JLabel imgContacto2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel imgEliminar;
+    private javax.swing.JLabel imgUpdate;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIdAlmu;
     private javax.swing.JTable tblListaComp;
     private javax.swing.JTextField txtAlmu;
     // End of variables declaration//GEN-END:variables

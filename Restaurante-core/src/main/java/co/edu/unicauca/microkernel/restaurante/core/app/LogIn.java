@@ -43,19 +43,19 @@ public class Login extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         btnContacto = new javax.swing.JButton();
         btnInvitado = new javax.swing.JButton();
+        lblIngresePass = new javax.swing.JLabel();
         lblIngreseUser = new javax.swing.JLabel();
-        lblIngreseUser1 = new javax.swing.JLabel();
         imgWp5 = new javax.swing.JLabel();
         imgWp8 = new javax.swing.JLabel();
         imgWp6 = new javax.swing.JLabel();
-        imgContacto = new javax.swing.JLabel();
-        imgContacto1 = new javax.swing.JLabel();
+        imgUser = new javax.swing.JLabel();
+        imgPass = new javax.swing.JLabel();
         imgWp7 = new javax.swing.JLabel();
-        imgContacto2 = new javax.swing.JLabel();
-        imgContacto3 = new javax.swing.JLabel();
+        imgLogo = new javax.swing.JLabel();
+        imgWp = new javax.swing.JLabel();
         imgContacto4 = new javax.swing.JLabel();
-        imgContacto5 = new javax.swing.JLabel();
-        imgContacto6 = new javax.swing.JLabel();
+        imgInstagram = new javax.swing.JLabel();
+        imgFb = new javax.swing.JLabel();
         imgWp3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,15 +120,15 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(btnInvitado);
         btnInvitado.setBounds(550, 410, 171, 23);
 
-        lblIngreseUser.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
-        lblIngreseUser.setText("Contraseña");
-        jPanel1.add(lblIngreseUser);
-        lblIngreseUser.setBounds(480, 260, 130, 30);
+        lblIngresePass.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
+        lblIngresePass.setText("Contraseña");
+        jPanel1.add(lblIngresePass);
+        lblIngresePass.setBounds(480, 260, 130, 30);
 
-        lblIngreseUser1.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
-        lblIngreseUser1.setText("Usuario");
-        jPanel1.add(lblIngreseUser1);
-        lblIngreseUser1.setBounds(480, 170, 80, 30);
+        lblIngreseUser.setFont(new java.awt.Font("Calibri Light", 1, 20)); // NOI18N
+        lblIngreseUser.setText("Usuario");
+        jPanel1.add(lblIngreseUser);
+        lblIngreseUser.setBounds(480, 170, 80, 30);
 
         imgWp5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         jPanel1.add(imgWp5);
@@ -142,37 +142,37 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(imgWp6);
         imgWp6.setBounds(500, 0, 360, 480);
 
-        imgContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/round-account-button-with-user-inside_icon-icons.com_72596 (2).png"))); // NOI18N
-        jPanel1.add(imgContacto);
-        imgContacto.setBounds(440, 160, 32, 40);
+        imgUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/round-account-button-with-user-inside_icon-icons.com_72596 (2).png"))); // NOI18N
+        jPanel1.add(imgUser);
+        imgUser.setBounds(440, 160, 32, 40);
 
-        imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/key-silhouette-security-tool-interface-symbol-of-password_icon-icons.com_54503.png"))); // NOI18N
-        jPanel1.add(imgContacto1);
-        imgContacto1.setBounds(440, 250, 40, 40);
+        imgPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/key-silhouette-security-tool-interface-symbol-of-password_icon-icons.com_54503.png"))); // NOI18N
+        jPanel1.add(imgPass);
+        imgPass.setBounds(440, 250, 40, 40);
 
         imgWp7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         jPanel1.add(imgWp7);
         imgWp7.setBounds(350, 0, 350, 480);
 
-        imgContacto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_restaurante .png"))); // NOI18N
-        jPanel1.add(imgContacto2);
-        imgContacto2.setBounds(70, 140, 200, 140);
+        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_restaurante .png"))); // NOI18N
+        jPanel1.add(imgLogo);
+        imgLogo.setBounds(70, 140, 200, 140);
 
-        imgContacto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/whatsapp-logo.png"))); // NOI18N
-        jPanel1.add(imgContacto3);
-        imgContacto3.setBounds(110, 320, 32, 40);
+        imgWp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/whatsapp-logo.png"))); // NOI18N
+        jPanel1.add(imgWp);
+        imgWp.setBounds(110, 320, 32, 40);
 
         imgContacto4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fb_icon-icons.com_65434.png"))); // NOI18N
         jPanel1.add(imgContacto4);
         imgContacto4.setBounds(540, 30, 32, 40);
 
-        imgContacto5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/instagram_icon_125245.png"))); // NOI18N
-        jPanel1.add(imgContacto5);
-        imgContacto5.setBounds(160, 320, 30, 40);
+        imgInstagram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/instagram_icon_125245.png"))); // NOI18N
+        jPanel1.add(imgInstagram);
+        imgInstagram.setBounds(150, 320, 30, 40);
 
-        imgContacto6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fb_icon-icons.com_65434.png"))); // NOI18N
-        jPanel1.add(imgContacto6);
-        imgContacto6.setBounds(200, 320, 32, 40);
+        imgFb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fb_icon-icons.com_65434.png"))); // NOI18N
+        jPanel1.add(imgFb);
+        imgFb.setBounds(190, 320, 32, 40);
 
         imgWp3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/blanco.jpg"))); // NOI18N
         jPanel1.add(imgWp3);
@@ -300,21 +300,21 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnContacto;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton btnInvitado;
-    private javax.swing.JLabel imgContacto;
-    private javax.swing.JLabel imgContacto1;
-    private javax.swing.JLabel imgContacto2;
-    private javax.swing.JLabel imgContacto3;
     private javax.swing.JLabel imgContacto4;
-    private javax.swing.JLabel imgContacto5;
-    private javax.swing.JLabel imgContacto6;
+    private javax.swing.JLabel imgFb;
+    private javax.swing.JLabel imgInstagram;
+    private javax.swing.JLabel imgLogo;
+    private javax.swing.JLabel imgPass;
+    private javax.swing.JLabel imgUser;
+    private javax.swing.JLabel imgWp;
     private javax.swing.JLabel imgWp3;
     private javax.swing.JLabel imgWp5;
     private javax.swing.JLabel imgWp6;
     private javax.swing.JLabel imgWp7;
     private javax.swing.JLabel imgWp8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblIngresePass;
     private javax.swing.JLabel lblIngreseUser;
-    private javax.swing.JLabel lblIngreseUser1;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

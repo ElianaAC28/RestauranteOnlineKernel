@@ -7,6 +7,7 @@ package co.edu.unicauca.microkernel.restaurante.core.app;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,7 +15,8 @@ import java.util.logging.Logger;
  */
 public class Contacto extends javax.swing.JFrame {
 
-    private int numInterfaz=6;
+    private int numInterfaz = 6;
+
     /**
      * Creates new form Contactanos
      */
@@ -23,8 +25,8 @@ public class Contacto extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setTitle("Contactanos");
     }
-    
-    public Contacto(int num){
+
+    public Contacto(int num) {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Contactanos");
@@ -41,14 +43,15 @@ public class Contacto extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblAyuda = new javax.swing.JLabel();
+        lblWp = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         imgWp = new javax.swing.JLabel();
-        btnDudas = new javax.swing.JButton();
-        btnDevolver = new javax.swing.JButton();
+        btnReporte = new javax.swing.JButton();
+        btnAyuda = new javax.swing.JButton();
         imgContacto = new javax.swing.JLabel();
         imgHome = new javax.swing.JLabel();
+        btnOrden = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,15 +59,15 @@ public class Contacto extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jLabel2.setText("Hola, ¿En qué te podemos ayudar?");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(120, 140, 560, 50);
+        lblAyuda.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        lblAyuda.setText("Hola, ¿En qué te podemos ayudar?");
+        jPanel1.add(lblAyuda);
+        lblAyuda.setBounds(120, 110, 560, 50);
 
-        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jLabel3.setText("Whatsapp: 311 7568328");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(470, 350, 160, 40);
+        lblWp.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        lblWp.setText("Whatsapp: 311 7568328");
+        jPanel1.add(lblWp);
+        lblWp.setBounds(470, 350, 160, 40);
 
         btnAtras.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         btnAtras.setText("Atrás");
@@ -83,43 +86,58 @@ public class Contacto extends javax.swing.JFrame {
         jPanel1.add(imgWp);
         imgWp.setBounds(430, 350, 40, 32);
 
-        btnDudas.setBackground(new java.awt.Color(102, 0, 0));
-        btnDudas.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnDudas.setForeground(new java.awt.Color(255, 255, 255));
-        btnDudas.setText("Dudas de Pago");
-        btnDudas.setBorder(null);
-        btnDudas.setBorderPainted(false);
-        btnDudas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnDudas.addActionListener(new java.awt.event.ActionListener() {
+        btnReporte.setBackground(new java.awt.Color(102, 0, 0));
+        btnReporte.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnReporte.setForeground(new java.awt.Color(255, 255, 255));
+        btnReporte.setText("Quiero reportar otro tipo de caso");
+        btnReporte.setBorder(null);
+        btnReporte.setBorderPainted(false);
+        btnReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDudasActionPerformed(evt);
+                btnReporteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDudas);
-        btnDudas.setBounds(170, 280, 170, 50);
+        jPanel1.add(btnReporte);
+        btnReporte.setBounds(140, 310, 220, 50);
 
-        btnDevolver.setBackground(new java.awt.Color(102, 0, 0));
-        btnDevolver.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        btnDevolver.setForeground(new java.awt.Color(255, 255, 255));
-        btnDevolver.setText("Devuelve pedido");
-        btnDevolver.setBorder(null);
-        btnDevolver.setBorderPainted(false);
-        btnDevolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnDevolver.addActionListener(new java.awt.event.ActionListener() {
+        btnAyuda.setBackground(new java.awt.Color(102, 0, 0));
+        btnAyuda.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnAyuda.setForeground(new java.awt.Color(255, 255, 255));
+        btnAyuda.setText("Necesito ayuda con mi domicilio");
+        btnAyuda.setBorder(null);
+        btnAyuda.setBorderPainted(false);
+        btnAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAyuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDevolverActionPerformed(evt);
+                btnAyudaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDevolver);
-        btnDevolver.setBounds(170, 220, 170, 50);
+        jPanel1.add(btnAyuda);
+        btnAyuda.setBounds(140, 170, 220, 50);
 
         imgContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atencionalcliente.png"))); // NOI18N
         jPanel1.add(imgContacto);
-        imgContacto.setBounds(440, 180, 140, 140);
+        imgContacto.setBounds(460, 190, 140, 140);
 
         imgHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/home.png"))); // NOI18N
         jPanel1.add(imgHome);
         imgHome.setBounds(530, 60, 40, 40);
+
+        btnOrden.setBackground(new java.awt.Color(102, 0, 0));
+        btnOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnOrden.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrden.setText("Mi orden fue rechazada");
+        btnOrden.setBorder(null);
+        btnOrden.setBorderPainted(false);
+        btnOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnOrden);
+        btnOrden.setBounds(140, 240, 220, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -131,7 +149,7 @@ public class Contacto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        
+
         switch (numInterfaz) {
             case 1:
                 Admin admin = new Admin();
@@ -179,16 +197,21 @@ public class Contacto extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnAtrasActionPerformed
+    //en construcción
+    private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
+        JOptionPane.showMessageDialog(null, "Lo sentimos, aún estamos trabajando para darte lo mejor", "En contrucción", JOptionPane.WARNING_MESSAGE);
 
-    private void btnDudasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDudasActionPerformed
-        // TODO add your handling code here:
+    }//GEN-LAST:event_btnReporteActionPerformed
+    //en construcción
+    private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
+        JOptionPane.showMessageDialog(null, "Lo sentimos, aún estamos trabajando para darte lo mejor", "En contrucción", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_btnAyudaActionPerformed
 
+    //en construcción
+    private void btnOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenActionPerformed
+        JOptionPane.showMessageDialog(null, "Lo sentimos, aún estamos trabajando para darte lo mejor", "En contrucción", JOptionPane.WARNING_MESSAGE);
 
-    }//GEN-LAST:event_btnDudasActionPerformed
-
-    private void btnDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDevolverActionPerformed
+    }//GEN-LAST:event_btnOrdenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,14 +253,15 @@ public class Contacto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnDevolver;
-    private javax.swing.JButton btnDudas;
+    private javax.swing.JButton btnAyuda;
+    private javax.swing.JButton btnOrden;
+    private javax.swing.JButton btnReporte;
     private javax.swing.JLabel imgContacto;
     private javax.swing.JLabel imgHome;
     private javax.swing.JLabel imgWp;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblAyuda;
+    private javax.swing.JLabel lblWp;
     // End of variables declaration//GEN-END:variables
 }
