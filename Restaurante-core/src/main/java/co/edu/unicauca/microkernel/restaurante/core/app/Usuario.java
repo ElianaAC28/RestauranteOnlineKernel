@@ -34,7 +34,7 @@ public class Usuario extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         try {
-            llenarTabla();
+            llenarTabla();//llama al metodo que se encarga de llenar los cbx
         } catch (Exception ex) {
             Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -229,17 +229,17 @@ public class Usuario extends javax.swing.JFrame {
     private void cbxBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBebidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxBebidaActionPerformed
-
+    //Realiza el pedido con exito
     private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
         JOptionPane.showMessageDialog(null, "Su pedido se ha realizado con éxito");
     }//GEN-LAST:event_btnRealizarPedidoActionPerformed
-
+    //Envia a la ventana donse se ouede contactar con nosotros
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
         Contacto cont = new Contacto(7);
         cont.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnContactoActionPerformed
-
+    //Vuelve a LogIn
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         Login log = new Login();
         log.setVisible(true);
@@ -281,7 +281,7 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
     }
-
+    //Aqui es donde se realiza todo el proceso de llenado de los cbx
     private void llenarTabla() throws Exception {
         IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService = new ComponenteService(service);

@@ -29,10 +29,10 @@ public class GUIVisitante extends javax.swing.JFrame {
      * Creates new form Usuario
      */
     public GUIVisitante() {
-        initComponents();
+        initComponents();//inicializa
           
         try {
-            llenarTabla();
+            llenarTabla();//llama al metodo que se encarga de llenar los cbx
         } catch (Exception ex) {
             Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -225,24 +225,24 @@ public class GUIVisitante extends javax.swing.JFrame {
     private void cbxBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBebidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxBebidaActionPerformed
-
+    //Envia un mensaje al cliente de que debe inicar sesion
     private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
         JOptionPane.showMessageDialog(null, "Debe iniciar sesión para poder realizar el pedido");
     }//GEN-LAST:event_btnRealizarPedidoActionPerformed
-
+    //Aqui se devuelve a la anterior ventana
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
        Visitante vist = new Visitante();
        vist.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
-
+    //Aqui envia a la ventana LogIn
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
-
+    //Vuelve a LogIn
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
         Login log= new Login();
@@ -288,7 +288,7 @@ public class GUIVisitante extends javax.swing.JFrame {
             }
         });
     }
-    
+    //Aqui es donde se realiza todo el proceso de llenado de los cbx
     private void llenarTabla() throws Exception {
         IComponenteRepository service= Factory.getInstance().getRepositoryComponente();
         ComponenteService componenteService= new ComponenteService(service);
