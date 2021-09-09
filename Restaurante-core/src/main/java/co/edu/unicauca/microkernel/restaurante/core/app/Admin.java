@@ -35,6 +35,17 @@ public class Admin extends javax.swing.JFrame {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+     public Admin(int numInterfaz) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        setTitle("Administrador");
+        try {
+            llenarTabla(0);
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public Admin(String restId) {
         this.restId = restId;

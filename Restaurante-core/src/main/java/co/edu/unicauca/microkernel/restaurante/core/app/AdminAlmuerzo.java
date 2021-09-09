@@ -31,6 +31,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
      */
     List<Componente> objListComponentes = new ArrayList<Componente>();
     String tipoid;
+    
     public AdminAlmuerzo() throws Exception {
         initComponents();
         this.setLocationRelativeTo(null);

@@ -5,12 +5,16 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
- * @author dania
+ * @author SoftwareTeam
  */
 public class Contacto extends javax.swing.JFrame {
 
+    private int numInterfaz=6;
     /**
      * Creates new form Contactanos
      */
@@ -18,6 +22,13 @@ public class Contacto extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Contactanos");
+    }
+    
+    public Contacto(int num){
+        initComponents();
+        this.setLocationRelativeTo(null);
+        setTitle("Contactanos");
+        numInterfaz = num;
     }
 
     /**
@@ -120,15 +131,59 @@ public class Contacto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        Login log= new Login();
-        log.setVisible(true);
-        this.dispose();
+        
+        switch (numInterfaz) {
+            case 1:
+                Admin admin = new Admin();
+                admin.setVisible(true);
+                this.dispose();
+                break;
+            case 2:
+                AdminActualizarAlmuerzo adminAlm = new AdminActualizarAlmuerzo();
+                adminAlm.setVisible(true);
+                this.dispose();
+                break;
+            case 3:
+                AdminAlmuerzo adminAl = null;
+                try {
+                    adminAl = new AdminAlmuerzo();
+                } catch (Exception ex) {
+                    Logger.getLogger(Contacto.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                adminAl.setVisible(true);
+                this.dispose();
+                break;
+
+            case 4:
+                AdminCompo admCom = new AdminCompo();
+                admCom.setVisible(true);
+                this.dispose();
+                break;
+            case 5:
+                AdminCompoDispo admComD = new AdminCompoDispo();
+                admComD.setVisible(true);
+                this.dispose();
+                break;
+
+            case 6:
+                Login login = new Login();
+                login.setVisible(true);
+                this.dispose();
+                break;
+            case 7:
+                Usuario user = new Usuario();
+                user.setVisible(true);
+                this.dispose();
+                break;
+        }
+
+
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnDudasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDudasActionPerformed
         // TODO add your handling code here:
-        
-       
+
+
     }//GEN-LAST:event_btnDudasActionPerformed
 
     private void btnDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverActionPerformed
