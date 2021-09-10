@@ -195,7 +195,7 @@ public class AdminCompoDispo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
-        AdminActualizarAlmuerzo adcom = new AdminActualizarAlmuerzo();
+         AdminActualizarAlmuerzo adcom = new AdminActualizarAlmuerzo();
         //Sacamos el ide de la tabla con los componentes
         DefaultTableModel tabla1 = (DefaultTableModel) tblListaComp.getModel();
         
@@ -234,10 +234,16 @@ public class AdminCompoDispo extends javax.swing.JFrame {
                 successMessage(ex.getMessage() + "Error", "Atención");
         }
         
-        if(ban == 1){ // comparamos la bandera para saber la cantidad de componentes que tiene el almuerzo del mismo tipo
+        if(ban == 1  ){ // comparamos la bandera para saber la cantidad de componentes que tiene el almuerzo del mismo tipo
             try {
-                String response = objService.updateAlmuerzo(objAlmu); // enviamos al objService el metodo de updateAlmuerzo el objeto almuerzo con los datos
-                 successMessage("Componente de Almuerzo " + response + " Actualizado con exito.", "Atención");
+                String contar = objServiceCom.buscarComponente(Integer.parseInt(idAlmu), Integer.parseInt(idCompNuevo)) ;
+                if(contar.equals(0+"")){
+                    String response = objService.updateAlmuerzo(objAlmu); // enviamos al objService el metodo de updateAlmuerzo el objeto almuerzo con los datos
+                    successMessage("Componente de Almuerzo " + response + " Actualizado con exito.", "Atención");
+                }
+                else{
+                    successMessage("Componente del Almuerzo " + idComp + " Ya esta en uso .", "Error");
+                }                
 
             } catch (Exception ex) {
                     System.out.println(ex);
