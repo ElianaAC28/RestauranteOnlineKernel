@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.226 sec
-=======
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.252 sec
->>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.963 sec

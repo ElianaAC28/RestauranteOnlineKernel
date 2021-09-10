@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\ComponenteService.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\access\AlmuerzoRepositoryImplMysql.java
@@ -21,27 +20,3 @@ D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\Restaurant
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\Security.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\UsuarioService.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\access\UsuarioRepositoryImplMysql.java
-=======
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\IniciarSesion.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\MenuAdmin.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\Visitante.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\Security.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\Messages.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\Admin.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\Contacto.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\access\RestauranteRepositoryImplMysql.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\access\AlmuerzoRepositoryImplMysql.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\access\Factory.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\access\UsuarioRepositoryImplMysql.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\RestauranteService.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\Usuario.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\Gson.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\UsuarioService.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\access\ComponenteRepositoryImplMysql.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\AlmuerzoService.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\services\ComponenteService.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo.java
-D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-core\src\main\java\co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzo.java
->>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940

@@ -79,7 +79,7 @@ public class ComponenteServiceTest {
         IComponenteRepository repo = Factory.getInstance().getRepositoryComponente();
         ComponenteService instance = new ComponenteService(repo);
 
-        String expResult = "3";
+        String expResult = "2";
         String result = instance.contarComponente(almuid, idtipocom);
         assertEquals(expResult, result);
 

@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: co.edu.unicauca.microkernel.restaurante.core.services.UsuarioServiceTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec
->>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec
