@@ -210,7 +210,12 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMostrarCompActionPerformed
 
     private void btnAddAlm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAlm1ActionPerformed
-        AdminAlmuerzo admin = AdminAlmuerzo();
+        AdminAlmuerzo admin = null;
+        try {
+            admin = new AdminAlmuerzo();
+        } catch (Exception ex) {
+            Logger.getLogger(MenuAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         admin.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_btnAddAlm1ActionPerformed
