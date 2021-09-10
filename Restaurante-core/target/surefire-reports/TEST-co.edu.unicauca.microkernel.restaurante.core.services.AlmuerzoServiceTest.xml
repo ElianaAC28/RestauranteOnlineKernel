@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" time="2.244" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" time="1.36" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="13.0.2+8"/>
@@ -59,10 +59,10 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testDeleteCompAlmuerzo" time="1.506"/>
-  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testCreateAlmuerzo" time="0.33"/>
-  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testContarAlmu" time="0.131"/>
-  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateCosto" time="0.085"/>
-  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testAsociarComp" time="0.095"/>
-  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateAlmuerzo" time="0.097"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testDeleteCompAlmuerzo" time="0.93"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateAlmuerzo" time="0.07"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testCreateAlmuerzo" time="0.186"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateCosto" time="0.052"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testContarAlmu" time="0.077"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testAsociarComp" time="0.045"/>
 </testsuite>
