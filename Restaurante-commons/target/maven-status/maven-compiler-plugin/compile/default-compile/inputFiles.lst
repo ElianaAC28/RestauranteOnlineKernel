@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\entities\Usuario.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\entities\Componente.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\interfaces\IUsuarioRepository.java
@@ -8,3 +9,15 @@ D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\Restaurant
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\entities\Almuerzo.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\infra\JsonError.java
 D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\interfaces\IRestauranteRepository.java
+=======
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\entities\Componente.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\interfaces\IUsuarioRepository.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\entities\Restaurante.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\interfaces\IRestauranteRepository.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\interfaces\IComponenteRepository.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\infra\JsonError.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\entities\Almuerzo.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\entities\Usuario.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\infra\Utilities.java
+D:\Unicauca\Lab Ing Sw\Proyecto\Segunda entrega\RestauranteOnlineKernel\Restaurante-commons\src\main\java\co\edu\unicauca\microkernel\restaurante\commons\interfaces\IAlmuerzoRepository.java
+>>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940

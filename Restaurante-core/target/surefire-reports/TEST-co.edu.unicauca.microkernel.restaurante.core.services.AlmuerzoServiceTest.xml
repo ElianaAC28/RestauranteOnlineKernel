@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="6" failures="0" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" time="3.221" errors="0" skipped="0">
+=======
+<testsuite tests="6" failures="0" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" time="2.244" errors="0" skipped="0">
+>>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_301\jre\bin"/>
@@ -14,7 +18,10 @@
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
+<<<<<<< HEAD
     <property name="sun.os.patch.level" value=""/>
+=======
+>>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="D:\Universidad\Laboratorio Ing. de Software II\Proyecto segundo corte\RestauranteOnlineKernel\Restaurante-core"/>
     <property name="java.runtime.version" value="1.8.0_301-b09"/>
@@ -27,8 +34,13 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
+<<<<<<< HEAD
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-12.4\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-12.4\netbeans\java\maven\bin\..\bin\m2.conf"/>
+=======
+    <property name="maven.ext.class.path" value="F:\Program Files\NetBeans-12.0\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="F:\Program Files\NetBeans-12.0\netbeans\java\maven\bin\..\bin\m2.conf"/>
+>>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_301\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\EDWIN ADRADA\AppData\Local\Microsoft\WindowsApps;;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-12.4\netbeans\java\maven\bin\../conf"/>
@@ -46,8 +58,14 @@
     <property name="java.class.path" value="C:\Program Files\NetBeans-12.4\netbeans\java\maven\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
+<<<<<<< HEAD
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_301\jre"/>
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-12.4\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 install"/>
+=======
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=F:\Program Files\NetBeans-12.0\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 test"/>
+    <property name="java.home" value="F:\Program Files\Java\jdk-13.0.2"/>
+    <property name="user.language" value="es"/>
+>>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="es"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -64,10 +82,19 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testContarAlmu" time="2.09"/>
   <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testAsociarComp" time="0.176"/>
   <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateCosto" time="0.116"/>
   <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateAlmuerzo" time="0.101"/>
   <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testDeleteCompAlmuerzo" time="0.119"/>
   <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testCreateAlmuerzo" time="0.619"/>
+=======
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testDeleteCompAlmuerzo" time="1.506"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testCreateAlmuerzo" time="0.33"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testContarAlmu" time="0.131"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateCosto" time="0.085"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testAsociarComp" time="0.095"/>
+  <testcase classname="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest" name="co.edu.unicauca.microkernel.restaurante.core.services.AlmuerzoServiceTest.testUpdateAlmuerzo" time="0.097"/>
+>>>>>>> 28b1db220b7e1f8c30856464fdeb25e2a3b0b940
 </testsuite>
