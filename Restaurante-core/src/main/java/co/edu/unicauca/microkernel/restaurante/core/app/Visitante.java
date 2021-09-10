@@ -180,7 +180,7 @@ public class Visitante extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRest3ActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-       Login login = new Login();
+       IniciarSesion login = new IniciarSesion();
        login.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed

@@ -65,6 +65,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         imgContacto1 = new javax.swing.JLabel();
         imgEliminar = new javax.swing.JLabel();
+        lblIdAlmu1 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -164,7 +165,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblListaComp);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(120, 180, 510, 170);
+        jScrollPane1.setBounds(120, 190, 510, 170);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
@@ -175,10 +176,9 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         txtAlmu.setBounds(220, 130, 130, 30);
 
         lblIdAlmu.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        lblIdAlmu.setForeground(new java.awt.Color(153, 0, 0));
-        lblIdAlmu.setText("Id Almuerzo:");
+        lblIdAlmu.setText("Seleccione los componentes del almuerzo que desea actualizar o eliminar");
         jPanel1.add(lblIdAlmu);
-        lblIdAlmu.setBounds(130, 140, 90, 20);
+        lblIdAlmu.setBounds(120, 170, 450, 20);
 
         imgUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update.png"))); // NOI18N
         jPanel1.add(imgUpdate);
@@ -217,6 +217,12 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
         imgEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar2.png"))); // NOI18N
         jPanel1.add(imgEliminar);
         imgEliminar.setBounds(470, 370, 20, 30);
+
+        lblIdAlmu1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        lblIdAlmu1.setForeground(new java.awt.Color(153, 0, 0));
+        lblIdAlmu1.setText("Id Almuerzo:");
+        jPanel1.add(lblIdAlmu1);
+        lblIdAlmu1.setBounds(130, 140, 90, 20);
 
         lblFondo.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
@@ -306,12 +312,12 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContactoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-         //resp =0 si, resp = 1 no.
+      //resp =0 si, resp = 1 no.
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
-        if (resp==0){
-        Login log = new Login();
-        log.setVisible(true);
-        this.dispose();
+        if (resp == 0) {
+            MenuAdmin menu = new MenuAdmin();
+            menu.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_btnSalirActionPerformed
 
@@ -432,6 +438,7 @@ public class AdminActualizarAlmuerzo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblIdAlmu;
+    private javax.swing.JLabel lblIdAlmu1;
     private javax.swing.JTable tblListaComp;
     private javax.swing.JTextField txtAlmu;
     // End of variables declaration//GEN-END:variables

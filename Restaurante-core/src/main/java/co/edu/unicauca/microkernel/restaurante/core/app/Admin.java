@@ -39,8 +39,7 @@ public class Admin extends javax.swing.JFrame {
         }
     }
 
-    //Constructor usado por Login para manejar el usuario que se Loggea
-
+    //Constructor usado por IniciarSesion para manejar el usuario que se Loggea
     /**
      *
      * @param restId
@@ -240,20 +239,22 @@ public class Admin extends javax.swing.JFrame {
 
         lblFondo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 720, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Boton salir de la sesion y devolverse a Login
+    //Boton salir de la sesion y devolverse a IniciarSesion
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+
         //resp =0 si, resp = 1 no.
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
-            Login log = new Login();
-            log.setVisible(true);
+            MenuAdmin menu = new MenuAdmin();
+            menu.setVisible(true);
             this.dispose();
         }
+
     }//GEN-LAST:event_btnSalirActionPerformed
 
     //Boton para acceder a la interfaz grafica de agregar almuerzo
@@ -414,7 +415,6 @@ public class Admin extends javax.swing.JFrame {
         cantidad = temp;
 
         //Anterior codigo para llenar con todos los componentes disponibles sin restringir elementos
-     
         tblListaComp.setModel(new javax.swing.table.DefaultTableModel(
                 littleMatriz,
                 new String[]{

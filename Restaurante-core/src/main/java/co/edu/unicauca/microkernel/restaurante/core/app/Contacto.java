@@ -184,7 +184,7 @@ public class Contacto extends javax.swing.JFrame {
                 break;
 
             case 6:
-                Login login = new Login();
+                IniciarSesion login = new IniciarSesion();
                 login.setVisible(true);
                 this.dispose();
                 break;

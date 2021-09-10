@@ -245,7 +245,7 @@ public class GUIVisitante extends javax.swing.JFrame {
     //Aqui envia a la ventana LogIn
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
-        Login login = new Login();
+        IniciarSesion login = new IniciarSesion();
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
@@ -254,7 +254,7 @@ public class GUIVisitante extends javax.swing.JFrame {
          //resp =0 si, resp = 1 no.
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
         if (resp==0){
-        Login log = new Login();
+        IniciarSesion log = new IniciarSesion();
         log.setVisible(true);
         this.dispose();
         }

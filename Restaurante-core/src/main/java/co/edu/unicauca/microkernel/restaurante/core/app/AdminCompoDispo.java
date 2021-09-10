@@ -277,8 +277,8 @@ public class AdminCompoDispo extends javax.swing.JFrame {
          //resp =0 si, resp = 1 no.
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
         if (resp==0){
-        Login log = new Login();
-        log.setVisible(true);
+        MenuAdmin menu = new MenuAdmin();
+        menu.setVisible(true);
         this.dispose();
         }
     }//GEN-LAST:event_btnSalirActionPerformed
