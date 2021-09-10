@@ -31,4 +31,6 @@ public interface IComponenteRepository {
     public List<Componente> almuerzoComponentes(int almuerzo);
 
     public String contarComponentex(int almuid, String nomComp);
+    
+    public String buscarComponente(int almuid,int idcomp);
 }

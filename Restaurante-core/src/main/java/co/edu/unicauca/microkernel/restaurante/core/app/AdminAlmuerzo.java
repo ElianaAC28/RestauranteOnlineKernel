@@ -71,6 +71,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         btnAddAlmu = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnMostrarComp = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,7 +109,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblListaComp);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(80, 150, 550, 170);
+        jScrollPane1.setBounds(90, 180, 550, 170);
 
         lblAdmin.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         lblAdmin.setForeground(new java.awt.Color(153, 0, 0));
@@ -161,7 +162,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         lblCosto.setForeground(new java.awt.Color(153, 0, 0));
         lblCosto.setText("Costo:");
         jPanel1.add(lblCosto);
-        lblCosto.setBounds(180, 360, 50, 20);
+        lblCosto.setBounds(190, 380, 50, 20);
 
         imgContacto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cc.png"))); // NOI18N
         jPanel1.add(imgContacto1);
@@ -194,12 +195,11 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         btnSalir.setBounds(610, 60, 27, 19);
 
         jLabel14.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel14.setText("Id Almuerzo:");
+        jLabel14.setText("Seleccione los componentes para crear el almuerzo");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(90, 110, 90, 20);
+        jLabel14.setBounds(90, 150, 460, 20);
         jPanel1.add(txtCosto);
-        txtCosto.setBounds(230, 350, 120, 30);
+        txtCosto.setBounds(230, 370, 120, 30);
 
         btnAddAlmu.setBackground(new java.awt.Color(255, 255, 255));
         btnAddAlmu.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -211,7 +211,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAddAlmu);
-        btnAddAlmu.setBounds(400, 350, 140, 30);
+        btnAddAlmu.setBounds(400, 370, 140, 30);
 
         btnUpdate.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(153, 0, 0));
@@ -240,6 +240,12 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
         });
         jPanel1.add(btnMostrarComp);
         btnMostrarComp.setBounds(170, 420, 171, 23);
+
+        jLabel15.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel15.setText("Id Almuerzo:");
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(90, 110, 90, 20);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base - copia.png"))); // NOI18N
@@ -309,11 +315,11 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContactoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        //resp =0 si, resp = 1 no.
+     //resp =0 si, resp = 1 no.
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
-            Login log = new Login();
-            log.setVisible(true);
+            MenuAdmin menu = new MenuAdmin();
+            menu.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnSalirActionPerformed
@@ -360,6 +366,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
             String response = objService.updateCosto(objAlmu);
             successMessage("Almuerzo" + response + " Creado con exito.", "Atención");
             clearcontroles();
+            txtAlmu.setEditable(true);
 
         } catch (Exception ex) {
             System.out.println(ex);
@@ -528,6 +535,7 @@ public class AdminAlmuerzo extends javax.swing.JFrame {
     private javax.swing.JLabel imgContacto1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

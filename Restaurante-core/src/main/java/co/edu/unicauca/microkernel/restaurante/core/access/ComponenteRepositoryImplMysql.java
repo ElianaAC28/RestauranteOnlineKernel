@@ -102,6 +102,26 @@ public class ComponenteRepositoryImplMysql implements IComponenteRepository {
     
     }
     
+    
+    public String buscarComponente(int almuid, int idComp) {
+        int cont=0;
+        try {
+            this.connect();
+            String sql = "select count(*) from tiene where almuid = "+almuid+" and compid = '"+ idComp+ "';";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet comp = pstmt.executeQuery();
+            if(comp.next()){
+                cont = comp.getInt(1);
+            }
+            pstmt.close();
+
+            this.disconnect();
+        } catch (SQLException ex) {
+            Logger.getLogger(ComponenteRepositoryImplMysql.class.getName()).log(Level.SEVERE, "Error al insertar el registro", ex);
+        }
+        return cont+"";    
+    
+    }        
     /**
      * Metodo encargado de obtener una lista de todos los componentes .
      * Sin mostrar el componente con el id seleccionado
