@@ -1,4 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: co.edu.unicauca.microkernel.restaurante.core.services.ComponenteServiceTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.732 sec
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.156 sec <<< FAILURE!
+co.edu.unicauca.microkernel.restaurante.core.services.ComponenteServiceTest.testContarComponente()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <3> but was: <2>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at co.edu.unicauca.microkernel.restaurante.core.services.ComponenteServiceTest.testContarComponente(ComponenteServiceTest.java:84)
+
+co.edu.unicauca.microkernel.restaurante.core.services.ComponenteServiceTest.testBuscarComponente()  Time elapsed: 0.078 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at co.edu.unicauca.microkernel.restaurante.core.services.ComponenteServiceTest.testBuscarComponente(ComponenteServiceTest.java:126)
+

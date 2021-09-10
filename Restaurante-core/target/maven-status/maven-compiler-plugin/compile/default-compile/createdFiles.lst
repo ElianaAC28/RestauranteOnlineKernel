@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\Visitante$4.class
 co\edu\unicauca\microkernel\restaurante\core\app\Visitante.class
@@ -18,14 +16,11 @@ co\edu\unicauca\microkernel\restaurante\core\app\Usuario$8.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo.class
->>>>>>> 1a272656f4d0bee3611cdd1b22591aa721c0d190
 co\edu\unicauca\microkernel\restaurante\core\access\Factory.class
 co\edu\unicauca\microkernel\restaurante\core\services\UsuarioService.class
 co\edu\unicauca\microkernel\restaurante\core\access\UsuarioRepositoryImplMysql.class
 co\edu\unicauca\microkernel\restaurante\core\access\AlmuerzoRepositoryImplMysql.class
 co\edu\unicauca\microkernel\restaurante\core\services\Security.class
-<<<<<<< HEAD
-=======
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\MenuAdmin.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$6.class
@@ -49,15 +44,10 @@ co\edu\unicauca\microkernel\restaurante\core\app\Admin$10.class
 co\edu\unicauca\microkernel\restaurante\core\app\Visitante$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\IniciarSesion$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzo$5.class
->>>>>>> 1a272656f4d0bee3611cdd1b22591aa721c0d190
 co\edu\unicauca\microkernel\restaurante\core\services\Gson.class
 co\edu\unicauca\microkernel\restaurante\core\app\IniciarSesion$7.class
 co\edu\unicauca\microkernel\restaurante\core\app\MenuAdmin$3.class
 co\edu\unicauca\microkernel\restaurante\core\access\RestauranteRepositoryImplMysql.class
-<<<<<<< HEAD
-co\edu\unicauca\microkernel\restaurante\core\services\AlmuerzoService.class
-co\edu\unicauca\microkernel\restaurante\core\services\RestauranteService.class
-=======
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzo$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzo$6.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$7.class
@@ -91,12 +81,9 @@ co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompoDispo$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzo.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$1.class
->>>>>>> 1a272656f4d0bee3611cdd1b22591aa721c0d190
 co\edu\unicauca\microkernel\restaurante\core\services\Messages.class
 co\edu\unicauca\microkernel\restaurante\core\services\ComponenteService.class
 co\edu\unicauca\microkernel\restaurante\core\access\ComponenteRepositoryImplMysql.class
-<<<<<<< HEAD
-=======
 co\edu\unicauca\microkernel\restaurante\core\app\AdminAlmuerzo$2.class
 co\edu\unicauca\microkernel\restaurante\core\app\IniciarSesion$3.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminCompo$2.class
@@ -104,4 +91,3 @@ co\edu\unicauca\microkernel\restaurante\core\app\Visitante$9.class
 co\edu\unicauca\microkernel\restaurante\core\app\Admin$4.class
 co\edu\unicauca\microkernel\restaurante\core\app\AdminActualizarAlmuerzo$5.class
 co\edu\unicauca\microkernel\restaurante\core\app\Usuario$7.class
->>>>>>> 1a272656f4d0bee3611cdd1b22591aa721c0d190
