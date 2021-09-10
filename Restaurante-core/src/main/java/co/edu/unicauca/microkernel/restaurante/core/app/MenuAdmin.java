@@ -204,13 +204,15 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void btnMostrarCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCompActionPerformed
-        AdminCompoDispo admiComDis = new AdminCompoDispo();
+        Admin admiComDis = new Admin();
         admiComDis.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMostrarCompActionPerformed
 
     private void btnAddAlm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAlm1ActionPerformed
-        // TODO add your handling code here:
+        AdminAlmuerzo admin = AdminAlmuerzo();
+        admin.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_btnAddAlm1ActionPerformed
 
     /**
@@ -269,4 +271,12 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblElegirRest;
     private javax.swing.JButton lblInicioSesion;
     // End of variables declaration//GEN-END:variables
+
+    private Admin Admin() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private AdminAlmuerzo AdminAlmuerzo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

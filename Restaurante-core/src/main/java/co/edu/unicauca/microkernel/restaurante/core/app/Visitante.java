@@ -5,7 +5,19 @@
  */
 package co.edu.unicauca.microkernel.restaurante.core.app;
 
+import co.edu.unicauca.microkernel.restaurante.commons.entities.Componente;
+import co.edu.unicauca.microkernel.restaurante.commons.interfaces.IComponenteRepository;
+import co.edu.unicauca.microkernel.restaurante.core.access.Factory;
+import co.edu.unicauca.microkernel.restaurante.core.services.ComponenteService;
+import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -13,12 +25,26 @@ import javax.swing.JOptionPane;
  */
 public class Visitante extends javax.swing.JFrame {
 
+    String restId = "";
+
     /**
-     * Creates new form Contactanos
+     * Creates new form Usuario
      */
     public Visitante() {
+        initComponents();//inicializa
+         setLocationRelativeTo(null);
+
+        try {
+            llenarTabla();//llama al metodo que se encarga de llenar los cbx
+        } catch (Exception ex) {
+            Logger.getLogger(AdminActualizarAlmuerzo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Visitante(String restId) {
+        this.restId = restId;
         initComponents();
-        this.setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
         setTitle("Visitante");
     }
 
@@ -32,68 +58,123 @@ public class Visitante extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblElegirRest = new javax.swing.JLabel();
-        lblInicioSesion = new javax.swing.JButton();
-        btnRest3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        btnIniciarSesion = new javax.swing.JButton();
-        btnRest2 = new javax.swing.JButton();
-        btnRest1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        imgLogo = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lblBienvenido = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        cbxEntrada = new javax.swing.JComboBox<>();
+        cbxProteina = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        cbxPrincipio = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        cbxBebida = new javax.swing.JComboBox<>();
+        btnRealizarPedido = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
+        btnIniciarSesion = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        imgRes = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(null);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        lblElegirRest.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
-        lblElegirRest.setForeground(new java.awt.Color(255, 255, 255));
-        lblElegirRest.setText("Elige un restaurante ");
-        jPanel1.add(lblElegirRest);
-        lblElegirRest.setBounds(190, 90, 460, 40);
+        jLabel6.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel6.setText("mejores menús y llevarte lo que selecciones hasta donde te encuentres.");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 550, 30));
 
-        lblInicioSesion.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        lblInicioSesion.setBorder(null);
-        lblInicioSesion.setBorderPainted(false);
-        lblInicioSesion.setContentAreaFilled(false);
-        lblInicioSesion.addActionListener(new java.awt.event.ActionListener() {
+        lblBienvenido.setFont(new java.awt.Font("Calibri Light", 3, 36)); // NOI18N
+        lblBienvenido.setForeground(new java.awt.Color(153, 0, 0));
+        lblBienvenido.setText("Bienvenido");
+        getContentPane().add(lblBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 180, 70));
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel7.setText("Entrada:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 60, 20));
+
+        cbxEntrada.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        cbxEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblInicioSesionActionPerformed(evt);
+                cbxEntradaActionPerformed(evt);
             }
         });
-        jPanel1.add(lblInicioSesion);
-        lblInicioSesion.setBounds(370, 330, 210, 20);
+        getContentPane().add(cbxEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 90, -1));
 
-        btnRest3.setBackground(new java.awt.Color(102, 0, 0));
-        btnRest3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnRest3.setForeground(new java.awt.Color(255, 255, 255));
-        btnRest3.setText("El Sotano");
-        btnRest3.setBorder(null);
-        btnRest3.setBorderPainted(false);
-        btnRest3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRest3.addActionListener(new java.awt.event.ActionListener() {
+        cbxProteina.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        cbxProteina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRest3ActionPerformed(evt);
+                cbxProteinaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRest3);
-        btnRest3.setBounds(150, 300, 170, 50);
+        getContentPane().add(cbxProteina, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 90, -1));
 
-        jButton6.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jButton6.setText("Inicio");
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jLabel8.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel8.setText("Proteina:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, 30));
+
+        jLabel9.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel9.setText("Principio:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+
+        cbxPrincipio.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        cbxPrincipio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                cbxPrincipioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(530, 80, 90, 23);
+        getContentPane().add(cbxPrincipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 90, -1));
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel10.setText("Bebida:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
+
+        cbxBebida.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        cbxBebida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxBebidaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbxBebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 90, -1));
+
+        btnRealizarPedido.setBackground(new java.awt.Color(102, 0, 0));
+        btnRealizarPedido.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnRealizarPedido.setForeground(new java.awt.Color(255, 255, 255));
+        btnRealizarPedido.setText("Realizar Pedido");
+        btnRealizarPedido.setBorder(null);
+        btnRealizarPedido.setBorderPainted(false);
+        btnRealizarPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRealizarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarPedidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRealizarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 110, 30));
+
+        jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel11.setText("Sabemos que el almuerzo es el plato más importante de día por eso queremos ofrecerte los");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 560, 30));
+
+        btnAtras.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnAtras.setText("Atras");
+        btnAtras.setBorder(null);
+        btnAtras.setBorderPainted(false);
+        btnAtras.setContentAreaFilled(false);
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 60, 30));
 
         btnIniciarSesion.setBackground(new java.awt.Color(102, 0, 0));
         btnIniciarSesion.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -107,96 +188,77 @@ public class Visitante extends javax.swing.JFrame {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIniciarSesion);
-        btnIniciarSesion.setBounds(420, 360, 130, 30);
+        getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 90, 30));
 
-        btnRest2.setBackground(new java.awt.Color(102, 0, 0));
-        btnRest2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnRest2.setForeground(new java.awt.Color(255, 255, 255));
-        btnRest2.setText("Sazón de Emmy");
-        btnRest2.setBorder(null);
-        btnRest2.setBorderPainted(false);
-        btnRest2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRest2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRest2ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRest2);
-        btnRest2.setBounds(150, 230, 170, 50);
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 60, 30));
 
-        btnRest1.setBackground(new java.awt.Color(102, 0, 0));
-        btnRest1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnRest1.setForeground(new java.awt.Color(255, 255, 255));
-        btnRest1.setText("Buffon Hut");
-        btnRest1.setBorder(null);
-        btnRest1.setBorderPainted(false);
-        btnRest1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnRest1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRest1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnRest1);
-        btnRest1.setBounds(150, 160, 170, 50);
+        imgRes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.jpg"))); // NOI18N
+        getContentPane().add(imgRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 220, 180));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("¿Desea iniciar sesión?");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(410, 320, 180, 40);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base2.png"))); // NOI18N
+        jLabel1.setText(" ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 490));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("¿Desea iniciar sesión?");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(410, 320, 180, 40);
-
-        imgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo_restaurante .png"))); // NOI18N
-        jPanel1.add(imgLogo);
-        imgLogo.setBounds(390, 180, 200, 140);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/visitante.jpg"))); // NOI18N
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(0, 0, 720, 480);
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo restaurante esquina.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 70, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void cbxEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEntradaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_cbxEntradaActionPerformed
 
-    private void lblInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblInicioSesionActionPerformed
+    private void cbxProteinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProteinaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblInicioSesionActionPerformed
+    }//GEN-LAST:event_cbxProteinaActionPerformed
 
-    private void btnRest3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest3ActionPerformed
-      // JOptionPane.showMessageDialog(null, "Su pedido se ha realizado con éxito");
-              JOptionPane.showMessageDialog(null, "Lo sentimos, aún estamos trabajando para darte lo mejor", "En contrucción", JOptionPane.WARNING_MESSAGE);
-
-    }//GEN-LAST:event_btnRest3ActionPerformed
-
-    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-       IniciarSesion login = new IniciarSesion();
-       login.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_btnIniciarSesionActionPerformed
-
-    private void btnRest2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest2ActionPerformed
+    private void cbxPrincipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPrincipioActionPerformed
         // TODO add your handling code here:
-            JOptionPane.showMessageDialog(null, "Lo sentimos, aún estamos trabajando para darte lo mejor", "En contrucción", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_cbxPrincipioActionPerformed
 
-    }//GEN-LAST:event_btnRest2ActionPerformed
-
-    private void btnRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRest1ActionPerformed
+    private void cbxBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBebidaActionPerformed
         // TODO add your handling code here:
-        GUIVisitante vist = new GUIVisitante();
+    }//GEN-LAST:event_cbxBebidaActionPerformed
+    //Envia un mensaje al cliente de que debe inicar sesion
+    private void btnRealizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPedidoActionPerformed
+
+        JOptionPane.showMessageDialog(null, "Debe iniciar sesión para poder realizar el pedido", "Realizar pedido", JOptionPane.WARNING_MESSAGE);
+
+    }//GEN-LAST:event_btnRealizarPedidoActionPerformed
+    //Aqui se devuelve a la anterior ventana
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        Visitante vist = new Visitante();
         vist.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnRest1ActionPerformed
+    }//GEN-LAST:event_btnAtrasActionPerformed
+    //Aqui envia a la ventana LogIn
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+        // TODO add your handling code here:
+        IniciarSesion login = new IniciarSesion();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
+    //Vuelve a LogIn
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         //resp =0 si, resp = 1 no.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp==0){
+        IniciarSesion log = new IniciarSesion();
+        log.setVisible(true);
+        this.dispose();
+        }
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,6 +289,10 @@ public class Visitante extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -236,18 +302,57 @@ public class Visitante extends javax.swing.JFrame {
         });
     }
 
+    //Aqui es donde se realiza todo el proceso de llenado de los cbx
+    private void llenarTabla() throws Exception {
+        IComponenteRepository service = Factory.getInstance().getRepositoryComponente();
+        ComponenteService componenteService = new ComponenteService(service);
+
+        List<Componente> objListComponentes = new ArrayList<Componente>();
+        int almuerzo = 1;
+        objListComponentes = componenteService.listComponentesAlmuerzo(almuerzo);
+
+        String matriz[][] = new String[objListComponentes.size()][3];
+
+        for (int i = 0; i < objListComponentes.size(); i++) {
+            matriz[i][0] = objListComponentes.get(i).getNombreComponente();
+            matriz[i][1] = objListComponentes.get(i).getTipoComponente();
+            if ("Entrada".equals(objListComponentes.get(i).getTipoComponente())) {
+                cbxEntrada.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+            if ("Principio".equals(objListComponentes.get(i).getTipoComponente())) {
+                cbxPrincipio.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+            if ("Proteina".equals(objListComponentes.get(i).getTipoComponente())) {
+                cbxProteina.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+            if ("Bebida".equals(objListComponentes.get(i).getTipoComponente())) {
+                cbxBebida.addItem(objListComponentes.get(i).getNombreComponente());
+            }
+        }
+
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnIniciarSesion;
-    private javax.swing.JButton btnRest1;
-    private javax.swing.JButton btnRest2;
-    private javax.swing.JButton btnRest3;
-    private javax.swing.JLabel imgLogo;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnRealizarPedido;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JComboBox<String> cbxBebida;
+    private javax.swing.JComboBox<String> cbxEntrada;
+    private javax.swing.JComboBox<String> cbxPrincipio;
+    private javax.swing.JComboBox<String> cbxProteina;
+    private javax.swing.JLabel imgRes;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblElegirRest;
-    private javax.swing.JButton lblInicioSesion;
+    private javax.swing.JLabel lblBienvenido;
     // End of variables declaration//GEN-END:variables
+
 }

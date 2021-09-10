@@ -11,6 +11,7 @@ import co.edu.unicauca.microkernel.restaurante.core.services.UsuarioService;
 import co.edu.unicauca.microkernel.restaurante.core.services.Messages.*;
 import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.successMessage;
 import static co.edu.unicauca.microkernel.restaurante.core.services.Messages.warningMessage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -194,11 +195,11 @@ public class IniciarSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-         IUsuarioRepository repo = Factory.getInstance().getRepositoryUsuario();
+        IUsuarioRepository repo = Factory.getInstance().getRepositoryUsuario();
         UsuarioService customerService = new UsuarioService(repo);
         try {
             if (txtUsuario.getText().isEmpty() || txtPassword.getText().isEmpty()) {
-                warningMessage("CAMPOS VACIOS", "Atención");
+                JOptionPane.showMessageDialog(null, "Por favor ingrese datos", "Campos vacios", JOptionPane.ERROR_MESSAGE);
             } else {
                 String login = customerService.autenticarUsuario(txtUsuario.getText(), txtPassword.getText());
                 if (login.equals("usuario")) {
@@ -208,8 +209,8 @@ public class IniciarSesion extends javax.swing.JFrame {
                             Usuario ins = new Usuario(restId);
 
                             ins.setVisible(true);
+                            JOptionPane.showMessageDialog(null, "Bienvenid@", "Datos correctos", JOptionPane.INFORMATION_MESSAGE);
 
-                            successMessage("Autenticacion exitosa!", "BIENVENIDO");
                         }
                     });
                     this.dispose();
@@ -223,22 +224,24 @@ public class IniciarSesion extends javax.swing.JFrame {
 
                             ins.setVisible(true);
 
-                            successMessage("Autenticacion exitosa!", "BIENVENIDO");
+                            JOptionPane.showMessageDialog(null, "Bienvenid@", "Datos correctos", JOptionPane.INFORMATION_MESSAGE);
                         }
                     });
                     this.dispose();
                 }
                 if (login != "admin" && login != "usuario") {
-                    warningMessage("DATOS NO ENCONTRADOS!", "ERROR");
+                    JOptionPane.showMessageDialog(null, "Datos no encontrados", "Error", JOptionPane.ERROR_MESSAGE);
+
                     txtUsuario.setText("");
                     txtPassword.setText("");
                 }
             }
+
         } catch (Exception ex) {
             System.out.println(ex);
             successMessage(ex.getMessage() + "", "");
         }
-    
+
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void btnInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvitadoActionPerformed
