@@ -64,7 +64,7 @@ public class IniciarSesion extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        txtPassword.setFont(new java.awt.Font("Calibri Light", 0, 10)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
         jPanel1.add(txtPassword);
         txtPassword.setBounds(440, 290, 180, 30);
 
@@ -81,7 +81,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         jPanel1.add(btnIniciarSesion);
         btnIniciarSesion.setBounds(480, 350, 120, 40);
 
-        txtUsuario.setFont(new java.awt.Font("Calibri Light", 0, 10)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(102, 102, 102));
         txtUsuario.setActionCommand("null");
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -214,11 +214,12 @@ public class IniciarSesion extends javax.swing.JFrame {
                     });
                     this.dispose();
                 }
+                //Si es administrador ingresará directamente al menú del administrador
                 if (login.equals("admin")) {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
                             String restId = "";
-                            Admin ins = new Admin(restId);
+                            MenuAdmin ins = new MenuAdmin();
 
                             ins.setVisible(true);
 

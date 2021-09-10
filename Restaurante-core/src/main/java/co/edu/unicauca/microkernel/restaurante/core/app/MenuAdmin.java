@@ -46,13 +46,13 @@ public class MenuAdmin extends javax.swing.JFrame {
         lblElegirRest = new javax.swing.JLabel();
         lblInicioSesion = new javax.swing.JButton();
         btnAddComp = new javax.swing.JButton();
-        lblInicio = new javax.swing.JButton();
         btnUpdateAlm = new javax.swing.JButton();
-        btnAddAlm = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         imgLogo = new javax.swing.JLabel();
         btnMostrarComp = new javax.swing.JButton();
+        btnAddAlm1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -92,19 +92,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1.add(btnAddComp);
         btnAddComp.setBounds(100, 280, 210, 50);
 
-        lblInicio.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        lblInicio.setText("Inicio");
-        lblInicio.setBorder(null);
-        lblInicio.setBorderPainted(false);
-        lblInicio.setContentAreaFilled(false);
-        lblInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lblInicioActionPerformed(evt);
-            }
-        });
-        jPanel1.add(lblInicio);
-        lblInicio.setBounds(580, 80, 90, 23);
-
         btnUpdateAlm.setBackground(new java.awt.Color(102, 0, 0));
         btnUpdateAlm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnUpdateAlm.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,20 +107,20 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1.add(btnUpdateAlm);
         btnUpdateAlm.setBounds(100, 220, 210, 50);
 
-        btnAddAlm.setBackground(new java.awt.Color(102, 0, 0));
-        btnAddAlm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnAddAlm.setForeground(new java.awt.Color(255, 255, 255));
-        btnAddAlm.setText("Agregar Almuerzo");
-        btnAddAlm.setBorder(null);
-        btnAddAlm.setBorderPainted(false);
-        btnAddAlm.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnAddAlm.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
+        btnCerrarSesion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.setBorder(null);
+        btnCerrarSesion.setBorderPainted(false);
+        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddAlmActionPerformed(evt);
+                btnCerrarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddAlm);
-        btnAddAlm.setBounds(100, 160, 210, 50);
+        jPanel1.add(btnCerrarSesion);
+        btnCerrarSesion.setBounds(550, 60, 100, 40);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,6 +153,21 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1.add(btnMostrarComp);
         btnMostrarComp.setBounds(100, 340, 210, 50);
 
+        btnAddAlm1.setBackground(new java.awt.Color(102, 0, 0));
+        btnAddAlm1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAddAlm1.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddAlm1.setText("Agregar Almuerzo");
+        btnAddAlm1.setBorder(null);
+        btnAddAlm1.setBorderPainted(false);
+        btnAddAlm1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAddAlm1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddAlm1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAddAlm1);
+        btnAddAlm1.setBounds(100, 160, 210, 50);
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Base - copia.png"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(0, 0, 720, 480);
@@ -174,10 +176,6 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lblInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblInicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblInicioActionPerformed
 
     private void lblInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblInicioSesionActionPerformed
         // TODO add your handling code here:
@@ -195,23 +193,25 @@ public class MenuAdmin extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnUpdateAlmActionPerformed
 
-    private void btnAddAlmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAlmActionPerformed
-        // TODO add your handling code here:
-        AdminAlmuerzo adminAlm = null;
-        try {
-            adminAlm = new AdminAlmuerzo();
-        } catch (Exception ex) {
-            Logger.getLogger(MenuAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        adminAlm.setVisible(true);
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+         //resp =0 si, resp = 1 no.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea salir?", "Alerta!", JOptionPane.YES_NO_OPTION);
+        if (resp==0){
+        IniciarSesion login = new IniciarSesion();
+        login.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnAddAlmActionPerformed
+        }
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void btnMostrarCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCompActionPerformed
         AdminCompoDispo admiComDis = new AdminCompoDispo();
         admiComDis.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMostrarCompActionPerformed
+
+    private void btnAddAlm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAlm1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddAlm1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,8 +256,9 @@ public class MenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddAlm;
+    private javax.swing.JButton btnAddAlm1;
     private javax.swing.JButton btnAddComp;
+    private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnMostrarComp;
     private javax.swing.JButton btnUpdateAlm;
     private javax.swing.JLabel imgLogo;
@@ -266,7 +267,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblElegirRest;
-    private javax.swing.JButton lblInicio;
     private javax.swing.JButton lblInicioSesion;
     // End of variables declaration//GEN-END:variables
 }
