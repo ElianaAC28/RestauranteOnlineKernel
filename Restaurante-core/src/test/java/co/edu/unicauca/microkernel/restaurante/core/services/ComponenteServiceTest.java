@@ -79,7 +79,7 @@ public class ComponenteServiceTest {
         IComponenteRepository repo = Factory.getInstance().getRepositoryComponente();
         ComponenteService instance = new ComponenteService(repo);
 
-        String expResult = "3";
+        String expResult = "2";
         String result = instance.contarComponente(almuid, idtipocom);
         assertEquals(expResult, result);
 
@@ -116,7 +116,7 @@ public class ComponenteServiceTest {
     public void testBuscarComponente() {
         System.out.println("buscarComponente");
         int almuid = 1;
-        int nomComp = 1;
+        int nomComp = 2;
 
         IComponenteRepository repo = Factory.getInstance().getRepositoryComponente();
         ComponenteService instance = new ComponenteService(repo);
@@ -126,7 +126,7 @@ public class ComponenteServiceTest {
         assertEquals(expResult, result);
 
         // Dato erroneo
-        result = instance.buscarComponente(55, 22);
+        result = instance.buscarComponente(1,1);
         assertEquals("0", result);
     }
 }
